@@ -2,7 +2,7 @@
 //  QueueViewController.m
 //  AutoQueue
 //
-//  Created by alone on 13-11-19.
+//  Created by alone on 14-04-11.
 //  Copyright (c) 2013年 Queue. All rights reserved.
 //
 
@@ -57,6 +57,7 @@ AKSegmentedControl * segmentedControl;
    
     segmentedControl=[segmentedControl setupSegmentedControl:segmentedControl];
     // [segmentedControl setDelegate:self];
+    
     MerImageArr = [[NSMutableArray alloc] init];
     MerNameArr = [[NSMutableArray alloc] init];
     MerAddrArr = [[NSMutableArray alloc] init];
