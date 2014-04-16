@@ -5,41 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>6FE7BB00-D0B6-403D-9F4F-E70A779B9F4C</string>
+	<string>EE2DFA17-5774-4568-8764-B707235388B9</string>
 	<key>IDESourceControlProjectName</key>
 	<string>AutoQueue</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>BB90A73D-FDAE-40C9-BBD6-12F7E4199CF9</key>
-		<string>https://192.168.110.238/svn/ITZC/CODE/IOS</string>
+		<key>2C01AF54-4EEC-49BA-B614-6A5CCD448048</key>
+		<string>https://github.com/hbtelecom/AutoQueue.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>AutoQueue.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>BB90A73D-FDAE-40C9-BBD6-12F7E4199CF9</key>
+		<key>2C01AF54-4EEC-49BA-B614-6A5CCD448048</key>
 		<string>../..</string>
 	</dict>
-	<key>IDESourceControlProjectRepositoryRootDictionary</key>
-	<dict>
-		<key>BB90A73D-FDAE-40C9-BBD6-12F7E4199CF9</key>
-		<string>https://192.168.110.238/svn/ITZC</string>
-	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>file://localhost/Users/leo/Documents/proj/UserQueue/AutoQueue.xcodeproj/project.xcworkspace/</string>
+	<string>https://github.com/hbtelecom/AutoQueue.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>BB90A73D-FDAE-40C9-BBD6-12F7E4199CF9</string>
+	<string>2C01AF54-4EEC-49BA-B614-6A5CCD448048</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.subversion</string>
+			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>BB90A73D-FDAE-40C9-BBD6-12F7E4199CF9</string>
+			<string>2C01AF54-4EEC-49BA-B614-6A5CCD448048</string>
 			<key>IDESourceControlWCCName</key>
-			<string>workspace</string>
+			<string>AutoQueue</string>
 		</dict>
 	</array>
 </dict>
