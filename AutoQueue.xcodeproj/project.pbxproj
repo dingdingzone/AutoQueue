@@ -259,6 +259,12 @@
 		0FC5BF0018F671D700F4A509 /* ShopDetailService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC5BEF518F671D700F4A509 /* ShopDetailService.m */; };
 		0FC5BF0118F671D700F4A509 /* SortedService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC5BEF718F671D700F4A509 /* SortedService.m */; };
 		0FC5BF0218F671D700F4A509 /* UserUpdateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC5BEF918F671D700F4A509 /* UserUpdateService.m */; };
+		0FF9D388195D4CB70051A572 /* find.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FF9D382195D4CB70051A572 /* find.png */; };
+		0FF9D389195D4CB70051A572 /* foodenjoy.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FF9D383195D4CB70051A572 /* foodenjoy.png */; };
+		0FF9D38A195D4CB70051A572 /* order.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FF9D384195D4CB70051A572 /* order.png */; };
+		0FF9D38B195D4CB70051A572 /* queue.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FF9D385195D4CB70051A572 /* queue.png */; };
+		0FF9D38C195D4CB70051A572 /* sales.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FF9D386195D4CB70051A572 /* sales.png */; };
+		0FF9D38D195D4CB70051A572 /* youhui.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FF9D387195D4CB70051A572 /* youhui.png */; };
 		9F83507C183F2FD100E1C0B5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F83507B183F2FD100E1C0B5 /* CFNetwork.framework */; };
 		9F83507E183F2FDB00E1C0B5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F83507D183F2FDB00E1C0B5 /* SystemConfiguration.framework */; };
 		9F835080183F2FEA00E1C0B5 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F83507F183F2FEA00E1C0B5 /* libxml2.dylib */; };
@@ -653,6 +659,12 @@
 		0FC5BEF718F671D700F4A509 /* SortedService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortedService.m; sourceTree = "<group>"; };
 		0FC5BEF818F671D700F4A509 /* UserUpdateService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserUpdateService.h; sourceTree = "<group>"; };
 		0FC5BEF918F671D700F4A509 /* UserUpdateService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserUpdateService.m; sourceTree = "<group>"; };
+		0FF9D382195D4CB70051A572 /* find.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = find.png; sourceTree = "<group>"; };
+		0FF9D383195D4CB70051A572 /* foodenjoy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foodenjoy.png; sourceTree = "<group>"; };
+		0FF9D384195D4CB70051A572 /* order.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = order.png; sourceTree = "<group>"; };
+		0FF9D385195D4CB70051A572 /* queue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = queue.png; sourceTree = "<group>"; };
+		0FF9D386195D4CB70051A572 /* sales.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sales.png; sourceTree = "<group>"; };
+		0FF9D387195D4CB70051A572 /* youhui.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youhui.png; sourceTree = "<group>"; };
 		9F83507B183F2FD100E1C0B5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		9F83507D183F2FDB00E1C0B5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9F83507F183F2FEA00E1C0B5 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -766,6 +778,12 @@
 		0FB2B85418F7917200844627 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0FF9D382195D4CB70051A572 /* find.png */,
+				0FF9D383195D4CB70051A572 /* foodenjoy.png */,
+				0FF9D384195D4CB70051A572 /* order.png */,
+				0FF9D385195D4CB70051A572 /* queue.png */,
+				0FF9D386195D4CB70051A572 /* sales.png */,
+				0FF9D387195D4CB70051A572 /* youhui.png */,
 				0FB2B85518F7917200844627 /* bakflag.png */,
 				0FB2B85618F7917200844627 /* bg_007@2x.png */,
 				0FB2B85718F7917200844627 /* bg_023old@2x.png */,
@@ -1443,11 +1461,13 @@
 				0FB2B90018F7917200844627 /* choice.png in Resources */,
 				0FB2B95318F7917200844627 /* 列表背景.png in Resources */,
 				0FB2B96318F7917200844627 /* 新浪图标.png in Resources */,
+				0FF9D38A195D4CB70051A572 /* order.png in Resources */,
 				0FB2B93118F7917200844627 /* segmented-bg-pressed-left@2x.png in Resources */,
 				9F87FB63183B1E1200DE6FDD /* InfoPlist.strings in Resources */,
 				0FB2BA3D18F7917D00844627 /* zbar-helpicons.png in Resources */,
 				0FB2B92A18F7917200844627 /* same_recommend_up.png in Resources */,
 				0FB2B8F918F7917200844627 /* btn_020.press@2x.png in Resources */,
+				0FF9D38D195D4CB70051A572 /* youhui.png in Resources */,
 				0FB2B8EC18F7917200844627 /* bg_023old@2x.png in Resources */,
 				0FB2BA1218F7917D00844627 /* blackArrow@2x.png in Resources */,
 				0FB2B91B18F7917200844627 /* main_navigation_background.png in Resources */,
@@ -1504,6 +1524,7 @@
 				0FB2B90B18F7917200844627 /* home_activity_frame2.png in Resources */,
 				0FB2B95E18F7917200844627 /* 定位.png in Resources */,
 				0FB2B91518F7917200844627 /* main_list_estimate.png in Resources */,
+				0FF9D389195D4CB70051A572 /* foodenjoy.png in Resources */,
 				0FB2B91E18F7917200844627 /* near_goods_up.png in Resources */,
 				0FB2B94518F7917200844627 /* tab_red_info@2x.png in Resources */,
 				9F87FB6D183B1E1200DE6FDD /* Default@2x.png in Resources */,
@@ -1517,6 +1538,7 @@
 				0FB2B95918F7917200844627 /* 向下箭头.png in Resources */,
 				0FB2B96718F7917200844627 /* 用户.png in Resources */,
 				0FB2B90C18F7917200844627 /* home_ad_banner1.jpg in Resources */,
+				0FF9D38C195D4CB70051A572 /* sales.png in Resources */,
 				0FB2B96F18F7917200844627 /* 系统设置.png in Resources */,
 				0FB2BA7F18F7918600844627 /* FavourViewController.xib in Resources */,
 				0FB2B91718F7917200844627 /* main_list_recommended.png in Resources */,
@@ -1529,6 +1551,7 @@
 				9F87FB6F183B1E1300DE6FDD /* Default-568h@2x.png in Resources */,
 				0FB2B92718F7917200844627 /* red_btn_bg.png in Resources */,
 				0FB2BA1418F7917D00844627 /* blueArrow@2x.png in Resources */,
+				0FF9D388195D4CB70051A572 /* find.png in Resources */,
 				0FB2B92618F7917200844627 /* radio_btn_nochecked.png in Resources */,
 				0FB2B97C18F7917200844627 /* 选项卡背景.png in Resources */,
 				0FB2B8F118F7917200844627 /* book_remark.png in Resources */,
@@ -1567,6 +1590,7 @@
 				0FB2B95518F7917200844627 /* 勾选1.png in Resources */,
 				0FB2B8FA18F7917200844627 /* btn_020@2x.png in Resources */,
 				0FB2BA1318F7917D00844627 /* blueArrow.png in Resources */,
+				0FF9D38B195D4CB70051A572 /* queue.png in Resources */,
 				0FB2B96A18F7917200844627 /* 登录与搜索输入框.png in Resources */,
 				0FB2B90118F7917200844627 /* default_loading_img.9.png in Resources */,
 				0FB2B95618F7917200844627 /* 勾选2.png in Resources */,
@@ -1781,7 +1805,7 @@
 				GCC_PREFIX_HEADER = "AutoQueue/AutoQueue-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "AutoQueue/AutoQueue-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AutoQueue/ZBarSDK",
@@ -1814,7 +1838,7 @@
 				GCC_PREFIX_HEADER = "AutoQueue/AutoQueue-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "AutoQueue/AutoQueue-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AutoQueue/ZBarSDK",
