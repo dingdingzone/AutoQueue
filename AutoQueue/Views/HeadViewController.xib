@@ -44,27 +44,27 @@
                     </state>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="queue.png" translatesAutoresizingMaskIntoConstraints="NO" id="p85-iG-5Ix">
-                    <rect key="frame" x="6" y="237" width="99" height="79"/>
+                    <rect key="frame" x="6" y="237" width="95" height="85"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sales.png" translatesAutoresizingMaskIntoConstraints="NO" id="4nE-ng-MCX">
-                    <rect key="frame" x="110" y="237" width="105" height="38"/>
+                    <rect key="frame" x="105" y="237" width="110" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="youhui.png" translatesAutoresizingMaskIntoConstraints="NO" id="wED-hO-9Gf">
-                    <rect key="frame" x="222" y="237" width="94" height="80"/>
+                    <rect key="frame" x="220" y="237" width="95" height="85"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="order.png" translatesAutoresizingMaskIntoConstraints="NO" id="sw8-bn-1Zj">
-                    <rect key="frame" x="110" y="281" width="105" height="36"/>
+                    <rect key="frame" x="105" y="282" width="110" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="foodenjoy.png" translatesAutoresizingMaskIntoConstraints="NO" id="FIE-Yd-UGr">
-                    <rect key="frame" x="6" y="324" width="153" height="108"/>
+                    <rect key="frame" x="6" y="328" width="153" height="108"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="find.png" translatesAutoresizingMaskIntoConstraints="NO" id="XlK-TE-pmd">
-                    <rect key="frame" x="167" y="324" width="149" height="108"/>
+                    <rect key="frame" x="166" y="328" width="149" height="108"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>
