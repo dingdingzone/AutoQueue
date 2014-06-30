@@ -1404,6 +1404,11 @@
 				CLASSPREFIX = Queue;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Queue;
+				TargetAttributes = {
+					9F87FB54183B1E1200DE6FDD = {
+						DevelopmentTeam = Q6PTM7XUL7;
+					};
+				};
 			};
 			buildConfigurationList = 9F87FB50183B1E1200DE6FDD /* Build configuration list for PBXProject "AutoQueue" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1756,8 +1761,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "2569F235-5AE4-41DE-AC6C-2522FDB1169C";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2569F235-5AE4-41DE-AC6C-2522FDB1169C";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1783,8 +1788,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "2569F235-5AE4-41DE-AC6C-2522FDB1169C";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2569F235-5AE4-41DE-AC6C-2522FDB1169C";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1795,8 +1800,8 @@
 			buildSettings = {
 				ARCHS = armv7;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: China Telecom Corporation Limited Shanghai enterprise information operations center";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: China Telecom Corporation Limited Shanghai enterprise information operations center";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -1805,7 +1810,7 @@
 				GCC_PREFIX_HEADER = "AutoQueue/AutoQueue-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "AutoQueue/AutoQueue-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AutoQueue/ZBarSDK",
@@ -1813,8 +1818,8 @@
 					"$(PROJECT_DIR)/AutoQueue/Vendors/Qrscan/ZBarSDK",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2569F235-5AE4-41DE-AC6C-2522FDB1169C";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2569F235-5AE4-41DE-AC6C-2522FDB1169C";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "";
@@ -1828,8 +1833,8 @@
 			buildSettings = {
 				ARCHS = armv7;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: China Telecom Corporation Limited Shanghai enterprise information operations center";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: China Telecom Corporation Limited Shanghai enterprise information operations center";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -1838,7 +1843,7 @@
 				GCC_PREFIX_HEADER = "AutoQueue/AutoQueue-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "AutoQueue/AutoQueue-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AutoQueue/ZBarSDK",
@@ -1846,8 +1851,8 @@
 					"$(PROJECT_DIR)/AutoQueue/Vendors/Qrscan/ZBarSDK",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2569F235-5AE4-41DE-AC6C-2522FDB1169C";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2569F235-5AE4-41DE-AC6C-2522FDB1169C";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "";
 				VALID_ARCHS = "armv7 armv7s";
