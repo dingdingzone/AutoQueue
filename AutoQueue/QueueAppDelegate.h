@@ -12,6 +12,8 @@
 {
     UITabBarController* tabBarViewController;
     TabViewController * tabView;
+    UIViewController * topView ;
+    
 }
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic,retain) id userObj;
@@ -19,4 +21,5 @@
 @property (nonatomic,retain) NSString * passWordApp;
 @property (nonatomic,retain) UITabBarController* tabBarViewController;
 @property (nonatomic,retain) TabViewController * tabView;
+@property (nonatomic,retain)  UIViewController * topView ;
 @end

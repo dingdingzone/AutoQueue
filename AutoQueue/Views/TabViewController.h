@@ -12,5 +12,6 @@
 @interface TabViewController : UIViewController <PushViewDelegate>
 {
     UITabBarController* tabBarViewController;
+    UIViewController * topView ;
 }
 @end

@@ -15,56 +15,38 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_ad_banner1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="tcw-df-fEj">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="155"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="banner.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="tcw-df-fEj">
+                    <rect key="frame" x="0.0" y="59" width="320" height="155"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZx-ZG-ZxT">
-                    <rect key="frame" x="104" y="163" width="102" height="52"/>
+                    <rect key="frame" x="105" y="222" width="110" height="46"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="home_dishsearch_frame1.png">
+                    <state key="normal" image="sales.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="foodOnClick:" destination="-1" eventType="touchUpInside" id="dbQ-NP-wgr"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qX-OF-xou">
-                    <rect key="frame" x="214" y="163" width="101" height="51"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="home_activity_frame1.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqR-qv-jgV">
-                    <rect key="frame" x="6" y="163" width="90" height="48"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="home_queue_frame1.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="queue.png" translatesAutoresizingMaskIntoConstraints="NO" id="p85-iG-5Ix">
-                    <rect key="frame" x="6" y="237" width="95" height="85"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sales.png" translatesAutoresizingMaskIntoConstraints="NO" id="4nE-ng-MCX">
-                    <rect key="frame" x="105" y="237" width="110" height="40"/>
+                    <rect key="frame" x="5" y="222" width="96" height="96"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="youhui.png" translatesAutoresizingMaskIntoConstraints="NO" id="wED-hO-9Gf">
-                    <rect key="frame" x="220" y="237" width="95" height="85"/>
+                    <rect key="frame" x="219" y="222" width="95" height="96"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="order.png" translatesAutoresizingMaskIntoConstraints="NO" id="sw8-bn-1Zj">
-                    <rect key="frame" x="105" y="282" width="110" height="40"/>
+                    <rect key="frame" x="105" y="272" width="110" height="46"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="foodenjoy.png" translatesAutoresizingMaskIntoConstraints="NO" id="FIE-Yd-UGr">
-                    <rect key="frame" x="6" y="328" width="153" height="108"/>
+                    <rect key="frame" x="5" y="323" width="151" height="115"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="find.png" translatesAutoresizingMaskIntoConstraints="NO" id="XlK-TE-pmd">
-                    <rect key="frame" x="166" y="328" width="149" height="108"/>
+                    <rect key="frame" x="163" y="323" width="151" height="115"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>
@@ -74,12 +56,9 @@
         </view>
     </objects>
     <resources>
+        <image name="banner.jpg" width="456" height="206"/>
         <image name="find.png" width="221" height="165"/>
         <image name="foodenjoy.png" width="110" height="82"/>
-        <image name="home_activity_frame1.png" width="155" height="86"/>
-        <image name="home_ad_banner1.jpg" width="640" height="274"/>
-        <image name="home_dishsearch_frame1.png" width="155" height="86"/>
-        <image name="home_queue_frame1.png" width="155" height="86"/>
         <image name="order.png" width="167" height="66"/>
         <image name="queue.png" width="144" height="136"/>
         <image name="sales.png" width="167" height="66"/>

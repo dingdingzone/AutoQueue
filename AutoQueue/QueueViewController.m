@@ -17,7 +17,7 @@
 #import "StringUtil.h"
 #import "User.h"
 #import "ProSetting.h"
-
+#import "TopBarViewController.h"
 @interface QueueViewController ()
 
 
@@ -63,8 +63,8 @@ AKSegmentedControl * segmentedControl;
     MerAddrArr = [[NSMutableArray alloc] init];
     MerCountArr = [[NSMutableArray alloc] init];
     MerIdArr = [[NSMutableArray alloc] init];
-    m_sqlite = [[CSqlite alloc]init];
-    [m_sqlite openSqlite];
+   // m_sqlite = [[CSqlite alloc]init];//SQL
+   // [m_sqlite openSqlite];
     [self.view addSubview:segmentedControl];
     self.view.layer.backgroundColor = [UIColor grayColor].CGColor;
     
@@ -79,7 +79,7 @@ AKSegmentedControl * segmentedControl;
     
     if ([self.navigationController.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)])
     {
-       [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation.jpg"] forBarMetrics:UIBarMetricsDefault];
+       //[self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation.jpg"] forBarMetrics:UIBarMetricsDefault];
        //[SELF.navigationController.navigationBar SET]
     }
     [super viewDidLoad];
@@ -103,7 +103,7 @@ AKSegmentedControl * segmentedControl;
     queueService = [QueueService alloc];
     [queueService getMerchantInfo:@"" :@"" :@"" :@"" :@"" :@"" :@"" :MerImageArr :MerNameArr :MerAddrArr :MerCountArr :MerIdArr :[NSString stringWithFormat:@"%d",posNum] :@"10"];
     refreshNum = [MerNameArr count];
-    [self locationPosition];
+    //[self locationPosition];GPS
     if (refreshHeaderView == nil)
     {
 		
@@ -113,6 +113,19 @@ AKSegmentedControl * segmentedControl;
 		refreshHeaderView = view;
 		
 	}
+    
+    for(UIView * myView in self.navigationController.navigationBar.subviews)
+    {
+//        if ([myView isKindOfClass:[UIView class]])
+//        {
+//            [myView removeFromSuperview];
+//        }
+          if(myView.tag==10000)
+          {
+             [myView removeFromSuperview];
+          }
+    }
+    
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -266,6 +279,10 @@ AKSegmentedControl * segmentedControl;
     }
     else
     {
+        TopBarViewController* topView = [TopBarViewController alloc];
+        topView.view.tag=10000;
+        [self.navigationController.navigationBar addSubview: topView.view];
+
         [self.navigationController popViewControllerAnimated:YES];
 //        UIStoryboard *stryBoard=[UIStoryboard storyboardWithName:@"TabBarStoryboard" bundle:nil];
 //        self.view.window.rootViewController=[stryBoard instantiateInitialViewController];
