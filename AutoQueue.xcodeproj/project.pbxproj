@@ -17,7 +17,6 @@
 		0F979C0A196144DE0055506F /* tab_red_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F979C08196144DE0055506F /* tab_red_home@2x.png */; };
 		0F979C0C1961457A0055506F /* tab_gray_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F979C0B1961457A0055506F /* tab_gray_home@2x.png */; };
 		0F979C1019615A4B0055506F /* main_menu_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F979C0F19615A4B0055506F /* main_menu_bg.jpg */; };
-		0F9D41DA19628CEC0088F7D9 /* TopMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9D41D919628CEC0088F7D9 /* TopMainView.m */; };
 		0F9D41DE196292020088F7D9 /* TopBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9D41DC196292020088F7D9 /* TopBarViewController.m */; };
 		0F9D41DF196292020088F7D9 /* TopBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9D41DD196292020088F7D9 /* TopBarViewController.xib */; };
 		0FB2B83C18F7915900844627 /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB2B83718F7915900844627 /* Queue.m */; };
@@ -314,8 +313,6 @@
 		0F979C08196144DE0055506F /* tab_red_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_red_home@2x.png"; sourceTree = "<group>"; };
 		0F979C0B1961457A0055506F /* tab_gray_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_gray_home@2x.png"; sourceTree = "<group>"; };
 		0F979C0F19615A4B0055506F /* main_menu_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = main_menu_bg.jpg; sourceTree = "<group>"; };
-		0F9D41D819628CEC0088F7D9 /* TopMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopMainView.h; sourceTree = "<group>"; };
-		0F9D41D919628CEC0088F7D9 /* TopMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopMainView.m; sourceTree = "<group>"; };
 		0F9D41DB196292020088F7D9 /* TopBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopBarViewController.h; sourceTree = "<group>"; };
 		0F9D41DC196292020088F7D9 /* TopBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopBarViewController.m; sourceTree = "<group>"; };
 		0F9D41DD196292020088F7D9 /* TopBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopBarViewController.xib; sourceTree = "<group>"; };
@@ -1250,8 +1247,6 @@
 				0FB2BA7518F7918600844627 /* UserUpdateViewController.m */,
 				0FB2BA7618F7918600844627 /* ViewControllerObject.h */,
 				0FB2BA7718F7918600844627 /* ViewControllerObject.m */,
-				0F9D41D819628CEC0088F7D9 /* TopMainView.h */,
-				0F9D41D919628CEC0088F7D9 /* TopMainView.m */,
 				0F9D41DB196292020088F7D9 /* TopBarViewController.h */,
 				0F9D41DC196292020088F7D9 /* TopBarViewController.m */,
 				0F9D41DD196292020088F7D9 /* TopBarViewController.xib */,
@@ -1713,7 +1708,6 @@
 				0FB2BA0D18F7917D00844627 /* ASIFormDataRequest.m in Sources */,
 				0FC5BEFF18F671D700F4A509 /* RegeisterService.m in Sources */,
 				0FB2BA8918F7918600844627 /* FPTouchView.m in Sources */,
-				0F9D41DA19628CEC0088F7D9 /* TopMainView.m in Sources */,
 				0FB2B83C18F7915900844627 /* Queue.m in Sources */,
 				0FB2BA1B18F7917D00844627 /* ObjectMapping.m in Sources */,
 				0FB2BA2718F7917D00844627 /* SBJsonTokeniser.m in Sources */,
@@ -1854,7 +1848,7 @@
 				GCC_PREFIX_HEADER = "AutoQueue/AutoQueue-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "AutoQueue/AutoQueue-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AutoQueue/ZBarSDK",
@@ -1887,7 +1881,7 @@
 				GCC_PREFIX_HEADER = "AutoQueue/AutoQueue-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "AutoQueue/AutoQueue-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AutoQueue/ZBarSDK",
