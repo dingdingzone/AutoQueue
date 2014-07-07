@@ -39,20 +39,22 @@ extern NSString* const url = @"http://pay.hb.189.cn/aqse/services/autoQueueServi
     [request setRequestMethod:@"POST"];
     //传soap信息
     [request appendPostData:[soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
-    [request setValidatesSecureCertificate:NO];
+    [request setValidatesSecureCertificate:YES];
     [request setTimeOutSeconds:60.0];
     [request setDefaultResponseEncoding:NSUTF8StringEncoding];
     
-    [request startSynchronous];
-    
-    NSData *data  = [request responseData];
+    [request startSynchronous];//同步
+//    [request startAsynchronous];//异步
+       NSData *data  = [request responseData];
     if([request error] != nil)
     {
         //[StringUtil tipsInfo:@"网络错误" :@"您的网络设置有误"];
     }
     NSString *result = [[NSString alloc] initWithData:data  encoding:NSUTF8StringEncoding];
     return result;
+    
 }
+
 
 +(NSString  *) getServiceResult:(NSString *)param
 {

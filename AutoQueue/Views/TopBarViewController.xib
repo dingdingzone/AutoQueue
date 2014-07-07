@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TopBarViewController">
             <connections>
+                <outlet property="areaImg" destination="Dw8-BI-QBj" id="uze-yX-gzV"/>
+                <outlet property="areaLabel" destination="nhO-0T-JvN" id="865-kg-Ut9"/>
+                <outlet property="logoImg" destination="SZb-Tr-hil" id="sXG-w7-aEg"/>
+                <outlet property="scanBtn" destination="C4g-Md-1dc" id="Xsb-AI-Ihg"/>
+                <outlet property="searchBtn" destination="KpK-5B-3Va" id="Paj-OV-6fL"/>
+                <outlet property="topBackBtn" destination="cfW-2r-8yd" id="CJf-JG-1Sg"/>
+                <outlet property="topTitleLabel" destination="bUk-qE-aph" id="DIT-Ls-ixv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,18 +23,18 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main_top_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="SZb-Tr-hil">
-                    <rect key="frame" x="7" y="9" width="25" height="25"/>
+                    <rect key="frame" x="15" y="9" width="25" height="25"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="添翼好吃佬" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUk-qE-aph">
-                    <rect key="frame" x="38" y="16" width="85" height="21"/>
+                    <rect key="frame" x="48" y="16" width="85" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="武汉" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhO-0T-JvN">
-                    <rect key="frame" x="111" y="16" width="25" height="21"/>
+                    <rect key="frame" x="121" y="16" width="25" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <nil key="highlightedColor"/>
@@ -47,12 +54,16 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dw8-BI-QBj">
-                    <rect key="frame" x="137" y="22" width="10" height="10"/>
+                    <rect key="frame" x="147" y="22" width="10" height="10"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" image="down_arrow.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="left_arrow_gray.png" translatesAutoresizingMaskIntoConstraints="NO" id="cfW-2r-8yd">
+                    <rect key="frame" x="3" y="15" width="4" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -62,6 +73,7 @@
     <resources>
         <image name="down_arrow.png" width="11" height="7"/>
         <image name="erweima_img.png" width="39" height="39"/>
+        <image name="left_arrow_gray.png" width="14" height="22"/>
         <image name="main_top_logo.png" width="32" height="32"/>
         <image name="main_top_search.png" width="32" height="32"/>
     </resources>

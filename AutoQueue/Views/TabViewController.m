@@ -86,43 +86,31 @@ UIViewController * topView ;
     
     [self.view addSubview:tabBarViewController.view];
     
-    
-//    UIToolbar * mycustomToolBar;
-//    mycustomToolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(80.0f, 5.0f,1.0f, 40.0f)];
-   // mycustomToolBar.center = CGPointMake(160.0f,200.0f);
-  //  mycustomToolBar.barStyle = UIBarStyleDefault;
-//    NSMutableArray *mycustomButtons = [[NSMutableArray alloc] init];
-//    UIBarButtonItem *myButton1 = [[UIBarButtonItem alloc]
-//                                  initWithTitle:@"Get5"
-//                                  style:UIBarButtonItemStyleBordered
-//                                  target:self
-//                                  action:@selector(action)];
-//    myButton1.width = 40;
-//    [mycustomButtons addObject: myButton1];
-//    UIBarButtonItem *myButton2 = [[UIBarButtonItem alloc]
-//                                  initWithTitle:@"Play5"
-//                                  style:UIBarButtonItemStyleBordered
-//                                  target:self
-//                                  action:@selector(action)];
-//    myButton2.width = 40;
-//    [mycustomButtons addObject: myButton2];
-//    [mycustomToolBar setItems:mycustomButtons animated:YES];
-//    mycustomToolBar.barStyle = UIBarStyleDefault;
-//    [mycustomToolBar setItems:mycustomButtons animated:YES];
-    //[mycustomToolBar sizeToFit];
- //  [self.navigationController.navigationBar addSubview: mycustomToolBar];
-    //[self.view addSubview:mycustomToolBar];
-//    self.navigationItem.titleView = mycustomToolBar;
 
-//    [self.navigationController setNavigationBarHidden:YES];
-//    self.navigationController.navigationBar.alpha = 0.3;
-   
-    UILabel* myLabel;
-    myLabel=[[UILabel alloc] initWithFrame:CGRectMake(118.0f, 16.0f, 50.0f, 20.0f)];
-    myLabel.text=@"武汉";
-    myLabel.font=[UIFont systemFontOfSize:12];
-    myLabel.backgroundColor = [UIColor clearColor];
-//    [self.navigationController.navigationBar addSubview: myLabel];
+    [self addTopBarItems];
+//     topView = [TopBarViewController alloc];
+//     topView.view.tag=10000;
+//     [self.navigationController.navigationBar addSubview: topView.view] ;
+    
+}
+
+#pragma mark 添加导航条TOPBAR的ITEM
+-(void) addTopBarItems
+{
+    UIButton * backBtn=[[UIButton alloc] initWithFrame:CGRectMake(6.0f, 15.0f, 5.0f, 14.0f)];
+    [backBtn setBackgroundImage:[UIImage imageNamed:@"left_arrow_gray.png" ] forState:UIControlStateNormal];
+    backBtn.tag=1;
+    backBtn.hidden=YES;
+    [self.navigationController.navigationBar addSubview: backBtn];
+    
+    
+    UILabel* areaLabel;
+    areaLabel=[[UILabel alloc] initWithFrame:CGRectMake(118.0f, 16.0f, 50.0f, 20.0f)];
+    areaLabel.text=@"武汉";
+    areaLabel.font=[UIFont systemFontOfSize:12];
+    areaLabel.backgroundColor = [UIColor clearColor];
+    areaLabel.tag=2;
+    [self.navigationController.navigationBar addSubview: areaLabel];
     
     UILabel* logoLabel;
     logoLabel=[[UILabel alloc] initWithFrame:CGRectMake(42.0f, 16.0f, 70.0f, 20.0f)];
@@ -130,21 +118,36 @@ UIViewController * topView ;
     logoLabel.textColor=[UIColor redColor];
     logoLabel.font=[UIFont systemFontOfSize:14];
     logoLabel.backgroundColor = [UIColor clearColor];
-//    [self.navigationController.navigationBar addSubview: logoLabel];
+    logoLabel.tag=3;
+    [self.navigationController.navigationBar addSubview: logoLabel];
     
-
+    UILabel* titleLabel;
+    titleLabel=[[UILabel alloc] initWithFrame:CGRectMake(42.0f, 16.0f, 70.0f, 20.0f)];
+    titleLabel.text=@"自助排队";
+    titleLabel.font=[UIFont systemFontOfSize:14];
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.tag=4;
+    titleLabel.hidden=YES;
+    [self.navigationController.navigationBar addSubview: titleLabel];
+    
     UIButton * addressBtn=[[UIButton alloc] initWithFrame:CGRectMake(145.0f, 25.0f, 10.0f, 6.0f)];
     [addressBtn setBackgroundImage:[UIImage imageNamed:@"down_arrow.png" ] forState:UIControlStateNormal];
-//    [self.navigationController.navigationBar addSubview: addressBtn];
+    addressBtn.tag=5;
+    [self.navigationController.navigationBar addSubview: addressBtn];
     
     UIButton * searchBtn=[[UIButton alloc] initWithFrame:CGRectMake(235.0f, 10.0f, 25.0f,25.0f)];
     [searchBtn setBackgroundImage:[UIImage imageNamed:@"main_top_search.png" ] forState:UIControlStateNormal];
-//    [self.navigationController.navigationBar addSubview: searchBtn];
+    searchBtn.tag=6;
+    [self.navigationController.navigationBar addSubview: searchBtn];
     
-     topView = [TopBarViewController alloc];
-     topView.view.tag=10000;
-     [self.navigationController.navigationBar addSubview: topView.view];
+    UIButton * scanBtn=[[UIButton alloc] initWithFrame:CGRectMake(280.0f, 10.0f, 25.0f,25.0f)];
+    [scanBtn setBackgroundImage:[UIImage imageNamed:@"erweima_img.png" ] forState:UIControlStateNormal];
+    scanBtn.tag=7;
+    [self.navigationController.navigationBar addSubview: scanBtn];
+    
 }
+
+
 
 + (UIImage *)createImageWithColor:(UIColor *)color
 {

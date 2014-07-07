@@ -7,7 +7,7 @@
 //
 
 #import "LoginService.h"
-//#import "NetWebServiceRequest.h"
+#import "NetWebServiceRequest.h"
 #import "ASIHTTPRequest.h"
 #import "SoapXmlParseHelper.h"
 #import "SBJsonObj.h"
@@ -15,15 +15,17 @@
 
 @implementation LoginService
 
-//@synthesize runningRequest = _runningRequest;
-//@synthesize asiRequest;
-//@synthesize xmlData;
+@synthesize runningRequest = _runningRequest;
+@synthesize asiRequest;
+@synthesize xmlData;
 @synthesize myDelegate;
 
--(bool) userLogin:(NSString *) userName:(NSString*) password
+-(bool) userLoginSA:(NSString *) userName:(NSString*) password
 {
-    NSString *param = [[NSString alloc] initWithFormat:@"{channel:\"Q\",channelType:\"PC\",serviceType:\"BUS1022\",securityCode:\"0000000000\",params:{userName:\"%@\",password:\"%@\",userType:\"C\"},rtnDataFormatType:\"JSON\"}",userName,password];
+//    NSString *param = [[NSString alloc] initWithFormat:@"{channel:\"Q\",channelType:\"PC\",serviceType:\"BUS1022\",securityCode:\"0000000000\",params:{userName:\"%@\",password:\"%@\",userType:\"C\"},rtnDataFormatType:\"JSON\"}",userName,password];
   	
+    NSString *param = [[NSString alloc] initWithFormat:@"{channel:\"Q\",channelType:\"PC\",serviceType:\"BUS1022\",securityCode:\"0000000000\",params:{userName:\"18907181672\",password:\"Zhikh0B8cUs=\",userType:\"C\"},rtnDataFormatType:\"JSON\"}"];
+    
     NSString *result = [InvokeService callService:param];
     
     NSString *jsonStr = [SoapXmlParseHelper SoapMessageResultXml:result ServiceMethodName:@"ns:return"];
@@ -46,19 +48,30 @@
     
 }
 
-/*
- 
- 
- /*
- NetWebServiceRequest *request = [NetWebServiceRequest serviceRequestUrl:url SOAPActionURL:nil ServiceMethodName:nil SoapMessage:soapMessage];
- 
- [request startAsynchronous];
- [request setDelegate:self];
- self.runningRequest = request;
- NSString *responseString = [request responseString ];
- //NSString *response = [request finishedInfoToResult:result responseData:requestData ];
- NSLog ( @"%@" ,responseString);
- 
+-(bool) userLogin:(NSString *) userName:(NSString*) password
+{
+    NSString *param = [[NSString alloc] initWithFormat:@"{channel:\"Q\",channelType:\"PC\",serviceType:\"BUS1022\",securityCode:\"0000000000\",params:{userName:\"18907181672\",password:\"Zhikh0B8cUs=\",userType:\"C\"},rtnDataFormatType:\"JSON\"}"];
+    
+    NSString *soapMessage = [NSString stringWithFormat:
+							 @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+							 "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+							 "<soap:Body>\n"
+							 "<autoQueueService xmlns=\"http://service.hbgz.com\">\n"
+							 "<param>%@</param>\n"
+							 "</autoQueueService>\n"
+							 "</soap:Body>\n"
+							 "</soap:Envelope>\n", param
+							 ];
+    
+    NSString*  url = @"http://pay.hb.189.cn/aqse/services/autoQueueService?wsdl";
+     NSString *soapActionURL = @"http://service.hbgz.com";
+    NetWebServiceRequest * request = [NetWebServiceRequest serviceRequestUrl:url SOAPActionURL:soapActionURL ServiceMethodName:nil SoapMessage:soapMessage];
+    
+    [request startAsynchronous];
+    [request setDelegate:self];
+    self.runningRequest = request;
+    
+}
 
 
 - (void)netRequestStarted:(NetWebServiceRequest *)request
@@ -76,7 +89,7 @@
     
 }
 
-
+/*
 - (void)netRequestFailed:(NetWebServiceRequest *)request didRequestError:(NSError *)error{
     NSLog(@"%@",error);
  //方法1.

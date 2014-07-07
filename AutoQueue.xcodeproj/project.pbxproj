@@ -7,9 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F0C253419669A86003D61D9 /* AutoQueueUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0C253319669A86003D61D9 /* AutoQueueUtil.m */; };
+		0F7B124A1963A82900522557 /* left_arrow_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F7B12491963A82900522557 /* left_arrow_gray.png */; };
+		0F927D5319677BC2004E4F7A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F927D5219677BC2004E4F7A /* BaseViewController.m */; };
 		0F952DD319623F29000F20EF /* main_top_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F952DD219623F29000F20EF /* main_top_logo.png */; };
 		0F952DD5196246F4000F20EF /* banner.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F952DD4196246F4000F20EF /* banner.jpg */; };
 		0F952DD719626237000F20EF /* main_top_search.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F952DD619626237000F20EF /* main_top_search.png */; };
+		0F9680701966F18A00DDB307 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F96806F1966F18A00DDB307 /* MBProgressHUD.m */; };
+		0F968078196700A100DDB307 /* Icon-iOS7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F968073196700A100DDB307 /* Icon-iOS7@2x.png */; };
+		0F968079196700A100DDB307 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F968074196700A100DDB307 /* Icon-Small.png */; };
+		0F96807A196700A100DDB307 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F968075196700A100DDB307 /* Icon-Small@2x.png */; };
+		0F96807B196700A100DDB307 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F968076196700A100DDB307 /* Icon.png */; };
+		0F96807C196700A100DDB307 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F968077196700A100DDB307 /* Icon@2x.png */; };
 		0F979C00196138C20055506F /* tab_gray_haochilao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F979BFD196138C20055506F /* tab_gray_haochilao@2x.png */; };
 		0F979C04196140650055506F /* tab_gray_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F979C03196140650055506F /* tab_gray_info@2x.png */; };
 		0F979C061961412E0055506F /* tab_red_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F979C051961412E0055506F /* tab_red_info@2x.png */; };
@@ -303,9 +312,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F0C253219669A86003D61D9 /* AutoQueueUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoQueueUtil.h; sourceTree = "<group>"; };
+		0F0C253319669A86003D61D9 /* AutoQueueUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoQueueUtil.m; sourceTree = "<group>"; };
+		0F7B12491963A82900522557 /* left_arrow_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_arrow_gray.png; sourceTree = "<group>"; };
+		0F927D5119677BC2004E4F7A /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		0F927D5219677BC2004E4F7A /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		0F952DD219623F29000F20EF /* main_top_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_top_logo.png; sourceTree = "<group>"; };
 		0F952DD4196246F4000F20EF /* banner.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = banner.jpg; sourceTree = "<group>"; };
 		0F952DD619626237000F20EF /* main_top_search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_top_search.png; sourceTree = "<group>"; };
+		0F96806E1966F18A00DDB307 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		0F96806F1966F18A00DDB307 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		0F968073196700A100DDB307 /* Icon-iOS7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-iOS7@2x.png"; sourceTree = "<group>"; };
+		0F968074196700A100DDB307 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		0F968075196700A100DDB307 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		0F968076196700A100DDB307 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		0F968077196700A100DDB307 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		0F979BFD196138C20055506F /* tab_gray_haochilao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_gray_haochilao@2x.png"; sourceTree = "<group>"; };
 		0F979C03196140650055506F /* tab_gray_info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_gray_info@2x.png"; sourceTree = "<group>"; };
 		0F979C051961412E0055506F /* tab_red_info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_red_info@2x.png"; sourceTree = "<group>"; };
@@ -746,6 +767,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F927D5019677B8D004E4F7A /* base */ = {
+			isa = PBXGroup;
+			children = (
+				0F927D5119677BC2004E4F7A /* BaseViewController.h */,
+				0F927D5219677BC2004E4F7A /* BaseViewController.m */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		0F96806D1966F18A00DDB307 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				0F96806E1966F18A00DDB307 /* MBProgressHUD.h */,
+				0F96806F1966F18A00DDB307 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		0F968072196700A100DDB307 /* loading */ = {
+			isa = PBXGroup;
+			children = (
+				0F968073196700A100DDB307 /* Icon-iOS7@2x.png */,
+				0F968074196700A100DDB307 /* Icon-Small.png */,
+				0F968075196700A100DDB307 /* Icon-Small@2x.png */,
+				0F968076196700A100DDB307 /* Icon.png */,
+				0F968077196700A100DDB307 /* Icon@2x.png */,
+			);
+			path = loading;
+			sourceTree = "<group>";
+		};
 		0FB2B83518F7915900844627 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -775,6 +826,8 @@
 				0FB2B84A18F7916800844627 /* StringUtil.m */,
 				0FB2B84B18F7916800844627 /* TimerUtil.h */,
 				0FB2B84C18F7916800844627 /* TimerUtil.m */,
+				0F0C253219669A86003D61D9 /* AutoQueueUtil.h */,
+				0F0C253319669A86003D61D9 /* AutoQueueUtil.m */,
 			);
 			path = Pub;
 			sourceTree = "<group>";
@@ -797,6 +850,8 @@
 		0FB2B85418F7917200844627 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0F968072196700A100DDB307 /* loading */,
+				0F7B12491963A82900522557 /* left_arrow_gray.png */,
 				0F952DD619626237000F20EF /* main_top_search.png */,
 				0F952DD4196246F4000F20EF /* banner.jpg */,
 				0F952DD219623F29000F20EF /* main_top_logo.png */,
@@ -973,6 +1028,7 @@
 		0FB2B97E18F7917C00844627 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				0F96806D1966F18A00DDB307 /* MBProgressHUD */,
 				0FB2B97F18F7917C00844627 /* External */,
 				0FB2B9D218F7917D00844627 /* Qrscan */,
 				0FB2BA0418F7917D00844627 /* sqlite */,
@@ -1209,6 +1265,7 @@
 		0FB2BA4018F7918600844627 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0F927D5019677B8D004E4F7A /* base */,
 				0FB2BA5B18F7918600844627 /* Popover */,
 				0FB2BA4118F7918600844627 /* AKSegmentedControl */,
 				0FB2BA4418F7918600844627 /* Cell */,
@@ -1510,7 +1567,9 @@
 				0FB2B91B18F7917200844627 /* main_navigation_background.png in Resources */,
 				0FB2B93A18F7917200844627 /* settings-icon@2x.png in Resources */,
 				0FB2B8EE18F7917200844627 /* book_my_seat.png in Resources */,
+				0F96807C196700A100DDB307 /* Icon@2x.png in Resources */,
 				0FB2BA1718F7917D00844627 /* grayArrow@2x.png in Resources */,
+				0F96807B196700A100DDB307 /* Icon.png in Resources */,
 				0FB2B8EB18F7917200844627 /* bg_007@2x.png in Resources */,
 				0FB2B90A18F7917200844627 /* home_activity_frame1.png in Resources */,
 				0FB2BA2D18F7917D00844627 /* SortedSelController.xib in Resources */,
@@ -1530,7 +1589,9 @@
 				0FB2B97D18F7917200844627 /* 锁.png in Resources */,
 				0FB2B92E18F7917200844627 /* segmented-bg-pressed-center.png in Resources */,
 				0FB2B96C18F7917200844627 /* 白色按键.png in Resources */,
+				0F7B124A1963A82900522557 /* left_arrow_gray.png in Resources */,
 				0FB2B93318F7917200844627 /* segmented-bg-pressed-right@2x.png in Resources */,
+				0F968079196700A100DDB307 /* Icon-Small.png in Resources */,
 				0FB2B92318F7917200844627 /* queue_num.png in Resources */,
 				0FB2B92218F7917200844627 /* qq图标.png in Resources */,
 				0FB2B97018F7917200844627 /* 纠错.png in Resources */,
@@ -1621,6 +1682,7 @@
 				0FB2B96B18F7917200844627 /* 登录背景.jpg in Resources */,
 				0FB2B93E18F7917200844627 /* social-icon@2x.png in Resources */,
 				0FB2B93F18F7917200844627 /* star-icon.png in Resources */,
+				0F968078196700A100DDB307 /* Icon-iOS7@2x.png in Resources */,
 				0FB2BA9A18F7936D00844627 /* SelPickerView.xib in Resources */,
 				0FB2B93718F7917200844627 /* segmented-separator@2x.png in Resources */,
 				0FB2B95118F7917200844627 /* 二维码扫描.png in Resources */,
@@ -1631,6 +1693,7 @@
 				B3D8246218C5E889003C1E1D /* gps.db in Resources */,
 				0FB2B95518F7917200844627 /* 勾选1.png in Resources */,
 				0FB2B8FA18F7917200844627 /* btn_020@2x.png in Resources */,
+				0F96807A196700A100DDB307 /* Icon-Small@2x.png in Resources */,
 				0FB2BA1318F7917D00844627 /* blueArrow.png in Resources */,
 				0FF9D38B195D4CB70051A572 /* queue.png in Resources */,
 				0FB2B96A18F7917200844627 /* 登录与搜索输入框.png in Resources */,
@@ -1697,13 +1760,16 @@
 				0FB2BA9918F7936D00844627 /* SelPickerView.m in Sources */,
 				0FB2B83E18F7915900844627 /* User.m in Sources */,
 				0FB2BA8318F7918600844627 /* LoginViewController.m in Sources */,
+				0F0C253419669A86003D61D9 /* AutoQueueUtil.m in Sources */,
 				0FB2BA0C18F7917D00844627 /* ASIDownloadCache.m in Sources */,
 				0FB2BA1918F7917D00844627 /* NetWebServiceRequest.m in Sources */,
 				0FB2BA2218F7917D00844627 /* SBJsonStreamParserAdapter.m in Sources */,
 				0FB2BA2E18F7917D00844627 /* SortedSelectCell.m in Sources */,
+				0F927D5319677BC2004E4F7A /* BaseViewController.m in Sources */,
 				0FB2BA2B18F7917D00844627 /* SoapXmlParseHelper.m in Sources */,
 				0FB2BA2A18F7917D00844627 /* SlideImageView.m in Sources */,
 				0FC5BEFE18F671D700F4A509 /* QueueService.m in Sources */,
+				0F9680701966F18A00DDB307 /* MBProgressHUD.m in Sources */,
 				0FB2B84D18F7916800844627 /* InvokeService.m in Sources */,
 				0FB2BA0D18F7917D00844627 /* ASIFormDataRequest.m in Sources */,
 				0FC5BEFF18F671D700F4A509 /* RegeisterService.m in Sources */,

@@ -109,13 +109,13 @@ NSString* const NetWebServiceRequestErrorDomain = @"NetWebServiceRequestErrorDom
 
 - (void) setDelegate:(id)delegate
 {
-  //  CLog(@"begin");
+
     [self.cancelLock lock];
     
     _delegate = delegate;
     
     [self.cancelLock unlock];
-    //CLog(@"end");
+
 }
 
 
@@ -124,7 +124,6 @@ NSString* const NetWebServiceRequestErrorDomain = @"NetWebServiceRequestErrorDom
 {
    NSLog(@"Url_path:%@",_runningRequest.url);
    NSLog(@"Method:%@",_runningRequest.requestMethod);
-  // NSLog(@"PostData:%@",_runningRequest.postBody);
     [_runningRequest startAsynchronous];
 }
 
@@ -134,44 +133,43 @@ NSString* const NetWebServiceRequestErrorDomain = @"NetWebServiceRequestErrorDom
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     
-   // CLog(@"begin");
-    [self.cancelLock lock];
+     [self.cancelLock lock];
     
     self.delegate = nil;
     
-    if (self.runningRequest) {
+    if (self.runningRequest)
+    {
         [self.runningRequest clearDelegatesAndCancel];
         self.runningRequest = nil;
     }
     
     [self.cancelLock unlock];
     
-    //CLog(@"end");
+
 }
 
 
 - (void)NetWebServiceRequestStarted
-{//
-   // CLog(@"begin");
-    if (_delegate && [_delegate respondsToSelector:@selector(netRequestStarted:)]) {
+{
+    if (_delegate && [_delegate respondsToSelector:@selector(netRequestStarted:)])
+    {
         [self.delegate netRequestStarted:self];
     }
-  //  CLog(@"end");
+ 
 }
 
 
 
 - (void)FinisheddidRecvedInfoToResult:(NSString *)result responseData:(NSData*)requestData
 {
-  //  CLog(@"begin");
+
     if (_delegate && [_delegate respondsToSelector:@selector(netRequestFinished: finishedInfoToResult: responseData:)]) {
 		[_delegate netRequestFinished:self finishedInfoToResult:result responseData:requestData];
 	}
-   // CLog(@"end");
 }
 
 - (void) FaileddidRequestError:(NSError *)error
-{//
+{
    NSLog(@"begin");
     
     if (_delegate && [_delegate respondsToSelector:@selector(netRequestFailed:didRequestError:)]) {
@@ -215,6 +213,7 @@ NSString* const NetWebServiceRequestErrorDomain = @"NetWebServiceRequestErrorDom
         [self FinisheddidRecvedInfoToResult:result responseData:responseData];
     }
     else{
+        NSLog(@"error 1");
        // NSError *error;
         /*
         if (request.responseStatusMessage) {
@@ -235,6 +234,8 @@ NSString* const NetWebServiceRequestErrorDomain = @"NetWebServiceRequestErrorDom
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    NSLog(@"网络错误");
+
   /*
     NSError *error = ERROR_DICTINFO(NetWebServiceRequestErrorDomain, request.error.code, request.error.userInfo);
     

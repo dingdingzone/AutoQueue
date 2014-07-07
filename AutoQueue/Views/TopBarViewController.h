@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QueueViewController.h"
+@interface TopBarViewController : UIViewController<MainTopBarDelegate>
 
-@interface TopBarViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *topTitleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *logoImg;
 
+@property (weak, nonatomic) IBOutlet UIImageView *topBackBtn;
+@property (weak, nonatomic) IBOutlet UILabel *areaLabel;
+@property (weak, nonatomic) IBOutlet UIButton *areaImg;
+@property (weak, nonatomic) IBOutlet UIButton *searchBtn;
+@property (weak, nonatomic) IBOutlet UIButton *scanBtn;
 @end

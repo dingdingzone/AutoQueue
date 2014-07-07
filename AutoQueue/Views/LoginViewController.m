@@ -8,14 +8,11 @@
 
 #import "LoginViewController.h"
 #import "UINavigationItem+custom.h"
-#import "LoginService.h"
-#import "StringUtil.h"
 #import "User.h"
-#import "ProSetting.h"
 
-@interface LoginViewController ()
 
-@end
+
+
 
 @implementation LoginViewController
 
@@ -23,6 +20,8 @@
 @synthesize passWord;
 @synthesize loginBtn;
 @synthesize myDelegate;
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,9 +39,9 @@
     userName.delegate = self;
     passWord.delegate = self;
     
-    UIButton * backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 44)];
-    [backButton addTarget:self action:@selector(backToIndex) forControlEvents:UIControlEventTouchUpInside];
-    [self.navigationItem setUIBarButtonItem:self.navigationItem : backButton];
+//    UIButton * backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 44)];
+//    [backButton addTarget:self action:@selector(backToIndex) forControlEvents:UIControlEventTouchUpInside];
+//    [self.navigationItem setUIBarButtonItem:self.navigationItem : backButton];
 
     UIImageView *image=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"用户2.png"]];
     image.frame = CGRectMake(0, 0, 16, 16);
@@ -77,19 +76,41 @@
 
 -(IBAction) loginAction:(id)sender
 {
-    //NSString * name=myDelegate.userNameApp;
-    //userName.text=name;
-    LoginService * loginService=[LoginService alloc];
     if(![StringUtil isNullString:userName.text,passWord.text,nil])
     {
         [StringUtil tipsInfo:@"登录失败" :@"用户名或密码不能为空!"];
         return ;
     }
-    //UIActivityIndicatorView *indicator = [StringUtil loading:self];
-    bool result = [loginService userLogin :userName.text :passWord.text];
     
-    //[indicator stopAnimating];
-    if(result)
+    [self shwoProgress];
+    
+    NSString *param = [AutoQueueUtil loginAction:userName.text :passWord.text];
+    NetWebServiceRequest *request =[AutoQueueUtil  initServiceRequest:param];
+    [request startAsynchronous];
+    [request setDelegate:self];
+    self.runningRequest = request;
+}
+
+- (void)netRequestStarted:(NetWebServiceRequest *)request
+{
+    NSLog(@"Start");
+}
+
+
+- (void)netRequestFinished:(NetWebServiceRequest *)request finishedInfoToResult:(NSString *)result responseData:(NSData *)requestData
+{
+    NSLog(@"Result");
+    NSString *resultMsg = [[NSString alloc] initWithData:requestData  encoding:NSUTF8StringEncoding];
+    NSLog(@"%@",resultMsg);
+    
+    NSString *jsonStr = [SoapXmlParseHelper SoapMessageResultXml:resultMsg ServiceMethodName:@"ns:return"];
+    
+    NSString *returnMsgStr = [SBJsonObj getNodeStr:jsonStr :@"returnMsg"];
+    
+    [self hudWasHidden:HUD];//结束进度条
+    
+    id obj = [SBJsonObj toBean:returnMsgStr :@"User"];
+    if (obj != nil)
     {
         [self performSegueWithIdentifier:@"Segue_LoginSuccess" sender:self];
     }
@@ -97,12 +118,16 @@
     {
         [StringUtil tipsInfo:@"登录失败" :@"用户名或密码错误!"];
     }
+    
+}
+
+- (void)netRequestFailed:(NetWebServiceRequest *)request didRequestError:(NSError *)error{
+    NSLog(@"%@",error);
 }
 
 -(void)backToIndex
 {
-    //do something.
-    
+  
     [self.navigationController popViewControllerAnimated:YES];
     
 }

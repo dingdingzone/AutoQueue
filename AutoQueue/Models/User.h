@@ -10,13 +10,17 @@
 
 @interface User : NSObject
 {
-    NSDate *createTime;
+    NSDate * createTime;
     NSString *mobileNbr;
     NSString *status;
     NSString *userId;
     NSString *userName;
     NSString *userPassword;	
     NSString *userType;
+    NSString *pushChannelId;
+    NSString *pushUserId;
+    NSString *sex;
+    
 }
 
 @property(strong, nonatomic) NSString *mobileNbr;
@@ -26,5 +30,7 @@
 @property(strong, nonatomic) NSString *userType;
 @property(strong, nonatomic) NSDate *createTime;
 @property(nonatomic) NSString *userId;
-
+@property(nonatomic) NSString *pushChannelId;
+@property(nonatomic) NSString *pushUserId;
+@property(nonatomic) NSString *sex;
 @end

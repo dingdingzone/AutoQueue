@@ -18,6 +18,7 @@
 #import "User.h"
 #import "ProSetting.h"
 #import "TopBarViewController.h"
+
 @interface QueueViewController ()
 
 
@@ -45,8 +46,10 @@ int posNum;
 @synthesize searchShop;
 @synthesize searchSeg;
 @synthesize myDelegate;
+@synthesize topBarDelegate;
 
 AKSegmentedControl * segmentedControl;
+
 - (void)viewDidLoad
 {
     searchShop.delegate = self;
@@ -58,11 +61,7 @@ AKSegmentedControl * segmentedControl;
     segmentedControl=[segmentedControl setupSegmentedControl:segmentedControl];
     // [segmentedControl setDelegate:self];
     
-    MerImageArr = [[NSMutableArray alloc] init];
-    MerNameArr = [[NSMutableArray alloc] init];
-    MerAddrArr = [[NSMutableArray alloc] init];
-    MerCountArr = [[NSMutableArray alloc] init];
-    MerIdArr = [[NSMutableArray alloc] init];
+ 
    // m_sqlite = [[CSqlite alloc]init];//SQL
    // [m_sqlite openSqlite];
     [self.view addSubview:segmentedControl];
@@ -85,9 +84,7 @@ AKSegmentedControl * segmentedControl;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.view.layer.backgroundColor = [ProSetting getColorByStr:@"f5f5f5"].CGColor;
-    float srcHeight = [ProSetting getSysHeight:self.view];
-    float chaVal = srcHeight - 505;
-    tableView.frame = CGRectMake(tableView.frame.origin.x , tableView.frame.origin.y - chaVal , tableView.frame.size.width , tableView.frame.size.height + chaVal);
+    
     
     coordLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 97, 322.0, 25.0)];
     UIImage *posImage = [UIImage imageNamed:@"local_erea_img.png"];
@@ -95,37 +92,144 @@ AKSegmentedControl * segmentedControl;
     posImgView.frame = CGRectMake(4, 101, 12, 20);
     coordLabel.backgroundColor = [ProSetting getColorByStr:@"f5f5f5"];
     
+    //[self locationPosition];GPS
+    [self loadingTableData];
+    
+    
+    
+    [self controlTopBarDisplay:NO];
+
+    
+}
+
+#pragma mark------------------加载tableview数据
+-(void)loadingTableData
+{
+    MerImageArr = [[NSMutableArray alloc] init];
+    MerNameArr = [[NSMutableArray alloc] init];
+    MerAddrArr = [[NSMutableArray alloc] init];
+    MerCountArr = [[NSMutableArray alloc] init];
+    MerIdArr = [[NSMutableArray alloc] init];
+    
+    float srcHeight = [ProSetting getSysHeight:self.view];
+    float chaVal = srcHeight - 505;
+
+    tableView.frame = CGRectMake(tableView.frame.origin.x , tableView.frame.origin.y - chaVal , tableView.frame.size.width , tableView.frame.size.height + chaVal);
+    
     UIView *v = [[UIView alloc] initWithFrame:CGRectZero];
     [tableView setTableFooterView:v];
     
-    refreshNum = 0;
     posNum = 1;
-    queueService = [QueueService alloc];
-    [queueService getMerchantInfo:@"" :@"" :@"" :@"" :@"" :@"" :@"" :MerImageArr :MerNameArr :MerAddrArr :MerCountArr :MerIdArr :[NSString stringWithFormat:@"%d",posNum] :@"10"];
-    refreshNum = [MerNameArr count];
-    //[self locationPosition];GPS
-    if (refreshHeaderView == nil)
-    {
-		
-		EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height)];
-		view.delegate = self;
-		[self.tableView addSubview:view];
-		refreshHeaderView = view;
-		
-	}
+    NSString * param = [AutoQueueUtil getMerchantInfoParam:@"" :@"" :@"" :@"" :@"" :@"" :@"":[NSString stringWithFormat:@"%d",posNum] :@"10"];
+    NetWebServiceRequest *request =[AutoQueueUtil  initServiceRequest:param];
+    [request startAsynchronous];
+    [request setDelegate:self];
+    self.runningRequest = request;
+}
+
+
+- (void)netRequestStarted:(NetWebServiceRequest *)request
+{
+    [self shwoProgress];
+    NSLog(@"Start");
+}
+
+
+- (void)netRequestFinished:(NetWebServiceRequest *)request finishedInfoToResult:(NSString *)result responseData:(NSData *)requestData
+{
+    NSLog(@"Result");
+    NSString *resultMsg = [[NSString alloc] initWithData:requestData  encoding:NSUTF8StringEncoding];
+    NSLog(@"%@",resultMsg);
     
-    for(UIView * myView in self.navigationController.navigationBar.subviews)
+    NSString *jsonStr = [SoapXmlParseHelper SoapMessageResultXml:resultMsg ServiceMethodName:@"ns:return"];
+    NSString *returnMsgStr = [SBJsonObj getNodeStr:jsonStr :@"merchantList"];
+    
+    NSMutableDictionary *dict = [SBJsonObj fromDitionary:returnMsgStr];
+    NSEnumerator *enumerator = [dict objectEnumerator];
+    id value;
+    while(value = [enumerator nextObject])
     {
-//        if ([myView isKindOfClass:[UIView class]])
-//        {
-//            [myView removeFromSuperview];
-//        }
-          if(myView.tag==10000)
-          {
-             [myView removeFromSuperview];
-          }
+        [MerImageArr addObject:[value objectForKey:@"imageName"]];
+        [MerNameArr  addObject:[value objectForKey:@"merchantName"]];
+        [MerAddrArr  addObject:[value objectForKey:@"addr"]];
+        [MerCountArr addObject:[value objectForKey:@"queueUserNum"]];
+        [MerIdArr    addObject:[value objectForKey:@"merchantId"]];
     }
     
+    if (refreshHeaderView == nil)
+    {
+    
+    	 EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height)];
+    		view.delegate = self;
+        [self.tableView addSubview:view];
+        refreshHeaderView = view;
+        [tableView reloadData];
+    }
+    
+    [self hudWasHidden:HUD];//结束进度条
+    
+}
+
+- (void)netRequestFailed:(NetWebServiceRequest *)request didRequestError:(NSError *)error
+{
+    NSLog(@"%@",error);
+}
+
+#pragma mark -----------------控制topbar的item显示
+-(void) controlTopBarDisplay:(Boolean *)flag
+{
+    for(UIView * myView in self.navigationController.navigationBar.subviews)
+    {
+        //        if ([myView isKindOfClass:[UIView class]])
+        //        {
+        //            [myView removeFromSuperview];
+        //        }
+        if(myView.tag==1 || myView.tag==4)
+        {
+            myView.hidden=flag;
+        }
+        else if(myView.tag==2 || myView.tag==3 || myView.tag==4 || myView.tag==5 || myView.tag==6 || myView.tag==7)
+        {
+             myView.hidden=!flag;
+            //              [myView removeFromSuperview];
+            //              for (UIView* next = myView; next; next = next.superview)
+            //              {
+            //                  UIResponder* nextResponder = [next nextResponder];
+            //                  if ([nextResponder isKindOfClass:[TopBarViewController class]])
+            //                  {
+            //                        topBarDelegate=nextResponder;
+            //                        TopBarViewController * top=nextResponder;
+            //                        [top  hiddenTopBar];
+            //                        break;
+            //                  }
+            //              }
+            
+        }
+    }
+}
+
+
+
+
+
+-(IBAction)loginClick:(id)sender
+{
+    if(userObj != nil)
+    {
+        [self performSegueWithIdentifier:@"segue_logged" sender:self];
+    }
+    else
+    {
+         [self controlTopBarDisplay:YES];
+//        TopBarViewController* topView = [TopBarViewController alloc];
+//        topView.view.tag=10000;
+//        [self.navigationController.navigationBar addSubview: topView.view];
+        
+        [self.navigationController popViewControllerAnimated:YES];
+        //        UIStoryboard *stryBoard=[UIStoryboard storyboardWithName:@"TabBarStoryboard" bundle:nil];
+        //        self.view.window.rootViewController=[stryBoard instantiateInitialViewController];
+        // [self.navigationController pushViewController:stryBoard animated:YES];
+    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -271,24 +375,7 @@ AKSegmentedControl * segmentedControl;
 
 /////////////////////
 
--(IBAction)loginClick:(id)sender
-{
-    if(userObj != nil)
-    {
-        [self performSegueWithIdentifier:@"segue_logged" sender:self];
-    }
-    else
-    {
-        TopBarViewController* topView = [TopBarViewController alloc];
-        topView.view.tag=10000;
-        [self.navigationController.navigationBar addSubview: topView.view];
 
-        [self.navigationController popViewControllerAnimated:YES];
-//        UIStoryboard *stryBoard=[UIStoryboard storyboardWithName:@"TabBarStoryboard" bundle:nil];
-//        self.view.window.rootViewController=[stryBoard instantiateInitialViewController];
-       // [self.navigationController pushViewController:stryBoard animated:YES];
-    }
-}
 
 -(IBAction)scanQR:(id)sender
 {

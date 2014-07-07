@@ -15,4 +15,5 @@
 
 +(NSString  *) getServiceResult:(NSString *)param;
 
+- (void)requestFinished:(ASIHTTPRequest *)request;
 @end

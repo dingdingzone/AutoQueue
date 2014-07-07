@@ -18,6 +18,9 @@
 @synthesize userType;
 @synthesize createTime;
 @synthesize userId;
+@synthesize pushChannelId;
+@synthesize pushUserId;
+@synthesize sex;
 
 - (ObjectMapping *)objectMapping {
     ObjectMapping *mapping = [ObjectMapping mappingForClass:[User class]];
@@ -27,7 +30,10 @@
     [mapping converEntityFromJsonToEntity:@"userPassword" to:@"userPassword" withClass: @"NSString"];
     [mapping converEntityFromJsonToEntity:@"userType" to:@"userType" withClass: @"NSString"];
     [mapping converEntityFromJsonToEntity:@"userId" to:@"userId" withClass: @"NSString"];
-    [mapping converEntityFromJsonToEntity:@"createTime" to:@"createTime" withClass: @"NSDate"];   
+    [mapping converEntityFromJsonToEntity:@"createTime" to:@"createTime" withClass: @"NSDate"];
+    [mapping converEntityFromJsonToEntity:@"createTime" to:@"pushChannelId" withClass: @"NSString"];
+    [mapping converEntityFromJsonToEntity:@"createTime" to:@"pushUserId" withClass: @"NSString"];
+    [mapping converEntityFromJsonToEntity:@"createTime" to:@"sex" withClass: @"NSString"];
     return mapping;
 }
 @end

@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "UIImage.h"
 #import "QueueAppDelegate.h"
+#import "BaseViewController.h"
 
-
-@interface LoginViewController : UIViewController<UITextFieldDelegate>
+@interface LoginViewController : BaseViewController<UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UIButton *loginBtn;
 @property (strong, nonatomic) IBOutlet UITextField *passWord;

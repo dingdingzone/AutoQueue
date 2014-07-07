@@ -255,6 +255,18 @@
     [_parentView release]; _parentView=nil;
 }
 
+-(void)willPresentNewPopover:(NSNotification*)notification
+{
+    if(notification.object != self)
+    {
+        if([self.delegate respondsToSelector:@selector(presentedNewPopoverController:shouldDismissVisiblePopover:)])
+        {
+            [self.delegate presentedNewPopoverController:notification.object
+                             shouldDismissVisiblePopover:self];
+        }
+    }
+}
+
 -(void)dismissPopoverAnimated:(BOOL)animated
 {
     if(animated)
@@ -290,17 +302,7 @@
     }];
 }
 
--(void)willPresentNewPopover:(NSNotification*)notification
-{
-    if(notification.object != self)
-    {
-        if([self.delegate respondsToSelector:@selector(presentedNewPopoverController:shouldDismissVisiblePopover:)])
-        {
-            [self.delegate presentedNewPopoverController:notification.object
-                             shouldDismissVisiblePopover:self];
-        }
-    }
-}
+
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {

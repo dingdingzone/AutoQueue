@@ -14,6 +14,18 @@
 #import "ShopDetailViewController.h"
 #import "QueueAppDelegate.h"
 #import "EGORefreshTableHeaderView.h"
+#import "MBProgressHUD.h"
+#import "BaseViewController.h"
+
+#define SCREENSHOT_MODE 0
+
+@protocol MainTopBarDelegate <NSObject>
+
+
+- (void) hiddenTopBar;
+
+
+@end
 
 @interface POI : NSObject <MKAnnotation> {
     
@@ -30,9 +42,10 @@
 
 @end
 
-@interface QueueViewController : UIViewController
-<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,EGORefreshTableHeaderDelegate,EGORefreshTableHeaderDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,ZBarReaderDelegate,CLLocationManagerDelegate>
+@interface QueueViewController : BaseViewController
+<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,EGORefreshTableHeaderDelegate,EGORefreshTableHeaderDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,ZBarReaderDelegate,CLLocationManagerDelegate,MBProgressHUDDelegate>
 {
+    
     EGORefreshTableHeaderView *refreshHeaderView;
     CLLocationManager *locationManager;
     CSqlite *m_sqlite;
@@ -40,6 +53,7 @@
     BOOL upOrdown;
     NSTimer * timer;
     bool reloading;
+    id<MainTopBarDelegate>topBarDelegate;
 }
 
 @property (nonatomic, strong) UIImageView * line;
@@ -52,7 +66,7 @@
 @property (strong,nonatomic) UINavigationController *navController;
 
 @property (nonatomic,retain) QueueAppDelegate * myDelegate;
-
+@property (retain, nonatomic) id<MainTopBarDelegate> topBarDelegate;
 -(IBAction)loginClick:(id)sender;
 
 -(IBAction)scanQR:(id)sender;
@@ -60,6 +74,8 @@
 -(IBAction) searchPopClick:(id)sender;
 
 - (void)reloadTableViewDataSource;
+
 - (void)doneLoadingTableViewData;
 
+-(void)loadingTableData;
 @end
