@@ -80,7 +80,7 @@
         self.arrowDirection = FPPopoverArrowDirectionAny;
         self.view.userInteractionEnabled = YES;
         _touchView = [[FPTouchView alloc] initWithFrame:self.view.bounds];
-       _touchView.backgroundColor = [UIColor clearColor];
+        _touchView.backgroundColor = [UIColor clearColor];
         _touchView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         _touchView.clipsToBounds = NO;
         [self.view addSubview:_touchView];
@@ -88,11 +88,12 @@
             [self dismissPopoverAnimated:YES];
         }];
         
-        
-        self.contentSize = CGSizeMake(320, 400); //default size
+        //default size
+        self.contentSize = CGSizeMake(320, 370);
 
-        _contentView = [[FPPopoverView alloc] initWithFrame:CGRectMake(10, 10,
-                                              self.contentSize.width, self.contentSize.height)];
+//        self.contentSize = CGSizeMake(320, 450);
+        
+        _contentView = [[FPPopoverView alloc] initWithFrame:CGRectMake(10, 10,self.contentSize.width, self.contentSize.height)];
         
         _viewController = [viewController retain];
         

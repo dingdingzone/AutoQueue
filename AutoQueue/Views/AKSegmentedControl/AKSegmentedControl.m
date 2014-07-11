@@ -54,6 +54,7 @@
 #pragma mark -
 #pragma mark Init and Dealloc
 
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -79,6 +80,7 @@
 
 - (void)layoutSubviews
 {
+    NSLog(@"AKSegment layoutSubviews");
     // creating the content rect that will "contain" the button
     CGRect contentRect = UIEdgeInsetsInsetRect(self.bounds, _contentEdgeInsets);
     
@@ -132,19 +134,24 @@
     }
 }
 
+-(void)selectedTableRow:(NSUInteger)rowNum
+{
+    NSLog(@"SELECTED ROW %d",rowNum);
+    [popover dismissPopoverAnimated:YES];
+}
+
 #pragma mark -
-#pragma mark Button Actions
+#pragma mark Button Actions 弹出选择框入口
 
 -(IBAction) searchPopClick:(id)sender
 {
     
     
     DoubleTableController *controller = [DoubleTableController alloc] ;
-    
-    FPPopoverController *popover = [[FPPopoverController alloc] initWithViewController:controller];
-    
-    popover.arrowDirection = FPPopoverArrowDirectionAny;
+    controller.delegate = self;
+    popover = [[FPPopoverKeyboardResponsiveController alloc] initWithViewController:controller];
     popover.tint = FPPopoverDefaultTint;
+    popover.keyboardHeight = _keyboardHeight;
     
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
     {
@@ -222,6 +229,7 @@
     [_buttonsArray enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
          if (idx < separatorsNumber)
          {
+             NSLog(@"-------");
              UIImageView *separatorImageView = [[UIImageView alloc] initWithImage:_separatorImage];
              [self addSubview:separatorImageView];
              [separatorsArray addObject:separatorImageView];

@@ -19,6 +19,9 @@
 #import "ProSetting.h"
 #import "TopBarViewController.h"
 
+#import "PPiFlatSegmentedControl.h"
+#import "NSString+FontAwesome.h"
+
 @interface QueueViewController ()
 
 
@@ -59,12 +62,40 @@ AKSegmentedControl * segmentedControl;
     segmentedControl = [[AKSegmentedControl alloc] initWithFrame:CGRectMake(-1.0,63.0,322.0, 35.0)];
    
     segmentedControl=[segmentedControl setupSegmentedControl:segmentedControl];
+    
     // [segmentedControl setDelegate:self];
     
- 
-   // m_sqlite = [[CSqlite alloc]init];//SQL
-   // [m_sqlite openSqlite];
+
     [self.view addSubview:segmentedControl];
+
+       // m_sqlite = [[CSqlite alloc]init];//SQL
+       // [m_sqlite openSqlite];
+    
+//    PPiFlatSegmentedControl *segmented2=[[PPiFlatSegmentedControl alloc] initWithFrame:CGRectMake(0, 64, 320, 35) items:
+//    @[
+//                                                                                                                          
+//       @{@"text":@"地区"},
+//       @{@"text":@"菜系"},
+//       @{@"text":@"人气"}
+//     ]
+//    iconPosition:IconPositionRight andSelectionBlock:^(NSUInteger segmentIndex) {
+//                                                                              
+//                                                                          }];
+//    segmented2.color=[UIColor whiteColor];
+//    segmented2.borderWidth=0.5;
+//    segmented2.borderColor=[UIColor colorWithRed:244.0f/255.0 green:67.0f/255.0 blue:60.0f/255.0 alpha:1];
+//    segmented2.selectedColor=[UIColor colorWithRed:244.0f/255.0 green:67.0f/255.0 blue:60.0f/255.0 alpha:1];
+//    segmented2.textAttributes=@{NSFontAttributeName:[UIFont systemFontOfSize:13],
+//                                NSForegroundColorAttributeName:[UIColor colorWithRed:244.0f/255.0 green:67.0f/255.0 blue:60.0f/255.0 alpha:1]};
+//    segmented2.selectedTextAttributes=@{NSFontAttributeName:[UIFont systemFontOfSize:13],
+//                                        NSForegroundColorAttributeName:[UIColor whiteColor]};
+//    [self.view addSubview:segmented2];
+
+
+    
+
+
+    
     self.view.layer.backgroundColor = [UIColor grayColor].CGColor;
     
     UIImageView *image=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"放大镜.png"]];
@@ -121,7 +152,9 @@ AKSegmentedControl * segmentedControl;
     
     posNum = 1;
     NSString * param = [AutoQueueUtil getMerchantInfoParam:@"" :@"" :@"" :@"" :@"" :@"" :@"":[NSString stringWithFormat:@"%d",posNum] :@"10"];
+    NSLog(@"%@",runningRequest);
     NetWebServiceRequest *request =[AutoQueueUtil  initServiceRequest:param];
+    [request setDownCache:appDelegate.appCache];
     [request startAsynchronous];
     [request setDelegate:self];
     self.runningRequest = request;
@@ -130,7 +163,7 @@ AKSegmentedControl * segmentedControl;
 
 - (void)netRequestStarted:(NetWebServiceRequest *)request
 {
-    [self shwoProgress];
+    [self showProgress];
     NSLog(@"Start");
 }
 
@@ -139,7 +172,7 @@ AKSegmentedControl * segmentedControl;
 {
     NSLog(@"Result");
     NSString *resultMsg = [[NSString alloc] initWithData:requestData  encoding:NSUTF8StringEncoding];
-    NSLog(@"%@",resultMsg);
+//    NSLog(@"%@",resultMsg);
     
     NSString *jsonStr = [SoapXmlParseHelper SoapMessageResultXml:resultMsg ServiceMethodName:@"ns:return"];
     NSString *returnMsgStr = [SBJsonObj getNodeStr:jsonStr :@"merchantList"];

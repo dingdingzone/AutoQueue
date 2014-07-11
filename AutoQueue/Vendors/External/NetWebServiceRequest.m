@@ -8,7 +8,7 @@
 
 #import "NetWebServiceRequest.h"
 #import "SoapXmlParseHelper.h"
-
+#import "ASIDownloadCache.h"
 
 
 NSString* const NetWebServiceRequestErrorDomain = @"NetWebServiceRequestErrorDomain";
@@ -53,7 +53,7 @@ NSString* const NetWebServiceRequestErrorDomain = @"NetWebServiceRequestErrorDom
     
 	if ((self = [super init])) {
         self.runningRequest = [[ASIHTTPRequest alloc] initWithURL:url];
-        
+      
         NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMsg length]];
         
         //以下对请求信息添加属性前四句是必有的，第五句是soap信息。
@@ -65,7 +65,7 @@ NSString* const NetWebServiceRequestErrorDomain = @"NetWebServiceRequestErrorDom
         //传soap信息
         [self.runningRequest appendPostData:[soapMsg dataUsingEncoding:NSUTF8StringEncoding]];
         [self.runningRequest setValidatesSecureCertificate:NO];
-        [self.runningRequest setTimeOutSeconds:60.0];
+        [self.runningRequest setTimeOutSeconds:30.0];
         [self.runningRequest setDefaultResponseEncoding:NSUTF8StringEncoding];
         
         
@@ -118,12 +118,16 @@ NSString* const NetWebServiceRequestErrorDomain = @"NetWebServiceRequestErrorDom
 
 }
 
-
+-(void) setDownCache:(ASIDownloadCache *)cache
+{
+    [self.runningRequest setDownloadCache:cache];
+    [self.runningRequest setCacheStoragePolicy:ASICachePermanentlyCacheStoragePolicy];
+}
 
 - (void)startAsynchronous
 {
-   NSLog(@"Url_path:%@",_runningRequest.url);
-   NSLog(@"Method:%@",_runningRequest.requestMethod);
+    NSLog(@"Url_path:%@",_runningRequest.url);
+    NSLog(@"Method:%@",_runningRequest.requestMethod);
     [_runningRequest startAsynchronous];
 }
 
@@ -205,14 +209,24 @@ NSString* const NetWebServiceRequestErrorDomain = @"NetWebServiceRequestErrorDom
 	// Use when fetching text data
 	NSString *responseString = [request responseString];
 	NSString *result = nil;
-    if (statusCode == 200) {
+    
+    if (request.didUseCachedResponse)
+    {
+        NSLog(@"使用缓存数据");
+    } else {
+        NSLog(@"请求网络数据");
+    }
+    
+    if (statusCode == 200)
+    {
         //表示正常请求
         result = [SoapXmlParseHelper SoapMessageResultXml:responseString ServiceMethodName:methodName];
 
         NSData *responseData = [request responseData];
         [self FinisheddidRecvedInfoToResult:result responseData:responseData];
     }
-    else{
+    else
+    {
         NSLog(@"error 1");
        // NSError *error;
         /*

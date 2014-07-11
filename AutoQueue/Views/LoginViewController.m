@@ -82,7 +82,7 @@
         return ;
     }
     
-    [self shwoProgress];
+    [self showProgress];
     
     NSString *param = [AutoQueueUtil loginAction:userName.text :passWord.text];
     NetWebServiceRequest *request =[AutoQueueUtil  initServiceRequest:param];
@@ -151,10 +151,10 @@
  
  // buttonImage = [buttonImage stretchableImageWithLeftCapWidth:floorf(buttonImage.size.width/2) topCapHeight:floorf(buttonImage.size.height/2)];
  
- // [loginBtn setBackgroundImage:loginBtnImg forState:UIControlStateNormal];
- //［regesiter］
- //  [loginBtn setBackgroundImage:[UIImage imageNamed:@"蓝色按键.9.png"] forState:UIControlStateNormal];
- //  loginBtn.frame = CGRectMake(0, 0, 60, 20);
+ //  [loginBtn setBackgroundImage:loginBtnImg forState:UIControlStateNormal];
+ //  ［regesiter］
+ //   [loginBtn setBackgroundImage:[UIImage imageNamed:@"蓝色按键.9.png"] forState:UIControlStateNormal];
+ //   loginBtn.frame = CGRectMake(0, 0, 60, 20);
  
  //  UIImage * navigationImage = [UIImage imageNamed:@"向左箭头.png" ];
  

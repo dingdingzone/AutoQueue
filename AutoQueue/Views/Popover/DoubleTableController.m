@@ -10,15 +10,11 @@
 #import "DoubleTableService.h"
 #import "StringUtil.h"
 
-@interface DoubleTableController ()
-	
-@end
-
 @implementation DoubleTableController
 
 @synthesize parentTab;
 @synthesize subTab;
-
+@synthesize delegate=_delegate;
 int parCellSel;
 
 DoubleTableService *doubleTableService;
@@ -63,6 +59,15 @@ DoubleTableService *doubleTableService;
     }
 }
 
+#pragma mark ----------------隐藏tableview没有数据的cell
+- (void)setExtraCellLineHidden: (UITableView *)tableView
+{
+    UIView *view =[ [UIView alloc]init];
+    view.backgroundColor = [UIColor clearColor];
+    [tableView setTableFooterView:view];
+    [view release];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *simpleTableIdentifier = @"SimpleTableItem";
@@ -73,29 +78,36 @@ DoubleTableService *doubleTableService;
         //cell.selectionStyle = UITableViewCellSelectionStyleGray;
 
         //[cell setBackgroundView:backgroundViews];
-        [self.subTab setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+//        分割线
+//        [self.subTab setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     }
     UIView *backgroundViews = [[UIView alloc]initWithFrame:cell.frame];
-    UIColor *ccColor = [UIColor colorWithRed:204/255.0 green:204/255.0 blue:204/255.0 alpha:1];
+    UIColor *ccColor = [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1];
     backgroundViews.backgroundColor = ccColor;
-    [cell setSelectedBackgroundView:backgroundViews];
     
-    cell.textLabel.font = [UIFont systemFontOfSize:17.0f];
+    cell.textLabel.font = [UIFont systemFontOfSize:14.0f];
     
-    //cell.backgroundColor = [UIColor colorWithRed:204/255.0 green:204/255.0 blue:204/255.0 alpha:1];
-    //cell.backgroundColor = [UIColor colorWithRed:204/255.0 green:204/255.0 blue:204/255.0 alpha:1];
+//    cell.backgroundColor = ccColor;
+//    cell.backgroundColor = ccColor;
+    
+//    换行线
+//    tableView.separatorColor = [UIColor blueColor];
     
     NSString * labelText;
-    
+   
     if(tableView==self.parentTab)
     {
+        [cell setSelectedBackgroundView:backgroundViews];
+
         labelText=[[doubleTableService tableData] objectAtIndex:indexPath.row];
     }
     else
     {
+       [self setExtraCellLineHidden:tableView];
+       tableView.backgroundColor=ccColor;
        [cell setBackgroundView:backgroundViews];
-       cell.textLabel.backgroundColor = ccColor;
-       cell.textLabel.textColor = [UIColor blackColor];
+//       cell.textLabel.backgroundColor = ccColor;
+//       cell.textLabel.textColor = [UIColor blackColor];
        labelText=[[doubleTableService subTableData] objectAtIndex:indexPath.row];
     }
     cell.textLabel.text =labelText;
@@ -118,6 +130,7 @@ DoubleTableService *doubleTableService;
     {
         NSString *cont = [NSString stringWithFormat:@"%@-%@",[[doubleTableService tableData] objectAtIndex:parCellSel],[[doubleTableService subTableData] objectAtIndex:pos]];
         [StringUtil tipsInfo:@"" :cont];
+        [self.delegate selectedTableRow:indexPath.row];
     }
 
     

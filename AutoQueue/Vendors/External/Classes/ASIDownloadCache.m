@@ -73,7 +73,7 @@ static NSArray *fileExtensionsToHandleAsHTML = nil;
 - (void)setStoragePath:(NSString *)path
 {
 	[[self accessLock] lock];
-	[self clearCachedResponsesForStoragePolicy:ASICacheForSessionDurationCacheStoragePolicy];
+//	[self clearCachedResponsesForStoragePolicy:ASICacheForSessionDurationCacheStoragePolicy];
 	[storagePath release];
 	storagePath = [path retain];
 
@@ -94,7 +94,7 @@ static NSArray *fileExtensionsToHandleAsHTML = nil;
 			}
 		}
 	}
-	[self clearCachedResponsesForStoragePolicy:ASICacheForSessionDurationCacheStoragePolicy];
+//	[self clearCachedResponsesForStoragePolicy:ASICacheForSessionDurationCacheStoragePolicy];
 	[[self accessLock] unlock];
 }
 

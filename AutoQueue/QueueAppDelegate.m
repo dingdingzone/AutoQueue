@@ -2,7 +2,7 @@
 //  QueueAppDelegate.m
 //  AutoQueue
 //
-//  Created by alone on 13-11-19.
+//  Created by Lapland_Alone on 13-11-19.
 //  Copyright (c) 2013年 Queue. All rights reserved.
 //
 
@@ -12,8 +12,20 @@
 
 @synthesize tabBarViewController;
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //创建缓存对象
+    ASIDownloadCache *cache =[[ASIDownloadCache alloc] init];
+    self.appCache=cache;
+    //设置缓存路径
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [paths objectAtIndex:0];
+    NSLog(@"%@",documentDirectory);
+    
+    [self.appCache setStoragePath:[documentDirectory stringByAppendingPathComponent:@"resource"]];
+    [self.appCache setDefaultCachePolicy:ASIOnlyLoadIfNotCachedCachePolicy];
+    
     return YES;
 }
 							

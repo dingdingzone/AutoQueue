@@ -886,8 +886,9 @@ static NSOperationQueue *sharedQueue = nil;
 			[self buildPostBody];
 		}
 		
-		if (![[self requestMethod] isEqualToString:@"GET"]) {
-			[self setDownloadCache:nil];
+		if (![[self requestMethod] isEqualToString:@"GET"])
+        {
+//			[self setDownloadCache:nil];
 		}
 		
 		

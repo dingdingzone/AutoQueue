@@ -22,6 +22,7 @@
 // THE SOFTWARE.
 
 #import <UIKit/UIKit.h>
+#import "FPPopoverKeyboardResponsiveController.h"
 
 @class AKSegmentedControl;
 
@@ -39,6 +40,12 @@ typedef enum : NSUInteger
 @end
 
 @interface AKSegmentedControl : UIView
+{
+    FPPopoverKeyboardResponsiveController *popover;
+    CGFloat _keyboardHeight;
+}
+
+-(void)selectedTableRow:(NSUInteger)rowNum;
 
 - (AKSegmentedControl * )setupSegmentedControl:(AKSegmentedControl*)selecter;
 

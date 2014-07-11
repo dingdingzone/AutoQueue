@@ -13,7 +13,7 @@
 @end
 
 @implementation BaseViewController
-
+@synthesize appDelegate;
 @synthesize runningRequest = _runningRequest;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -29,6 +29,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.appDelegate=[[UIApplication sharedApplication] delegate];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,7 +68,7 @@
 	HUD = nil;
 }
 
--(void)shwoProgress
+-(void)showProgress
 {
     HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
 	[self.navigationController.view addSubview:HUD];

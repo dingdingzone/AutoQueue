@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+@class AKSegmentedControl;
 
 @interface DoubleTableController : UIViewController
-@property (weak, nonatomic) IBOutlet UITableView *parentTab;
-@property (weak, nonatomic) IBOutlet UITableView *subTab;
 
 
+@property (assign, nonatomic) IBOutlet UITableView *parentTab;
+
+@property (assign, nonatomic) IBOutlet UITableView *subTab;
+
+@property(assign,nonatomic) AKSegmentedControl * delegate;
 
 @end

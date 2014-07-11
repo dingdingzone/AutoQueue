@@ -10,7 +10,10 @@
 #import "TabItemViewController.h"
 #import "QueueAppDelegate.h"
 #import "TopBarViewController.h"
+#import "DoubleTableController.h"
+
 @interface TabViewController ()
+
 
 @end
 
@@ -45,8 +48,8 @@ UIViewController * topView ;
     delegate.topView=topView;
     
     TabItemViewController * tabItemView=[[TabItemViewController alloc] init];
-    UITableViewController* second = [[UITableViewController alloc]init];
-    UITableViewController* three = [[UITableViewController alloc]init];
+    UITableViewController* second = [[DoubleTableController alloc]init];
+    UITableViewController* three = [[DoubleTableController alloc]init];
     tabBarViewController.viewControllers = [NSArray arrayWithObjects:tabItemView, second,three, nil];
     
     

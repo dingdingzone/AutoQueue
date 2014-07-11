@@ -8,13 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "TabViewController.h"
+#import "ASIDownloadCache.h"
 @interface QueueAppDelegate : UIResponder <UIApplicationDelegate>
 {
     UITabBarController* tabBarViewController;
     TabViewController * tabView;
     UIViewController * topView ;
+    ASIDownloadCache * appCache;
     
 }
+@property (nonatomic,retain) ASIDownloadCache * appCache;
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic,retain) id userObj;
 @property (nonatomic,retain) NSString * userNameApp;

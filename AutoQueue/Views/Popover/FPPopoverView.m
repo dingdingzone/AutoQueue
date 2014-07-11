@@ -310,6 +310,7 @@
     CGContextRestoreGState(ctx);
 }
 
+#pragma mark ----------------子视图起始位置设置
 -(void)setupViews
 {
     //content posizion and size
@@ -317,7 +318,7 @@
 
     if(_arrowDirection == FPPopoverArrowDirectionUp)
     {
-        contentRect.origin = CGPointMake(10, 20);
+        contentRect.origin = CGPointMake(0, 1);
         contentRect.size = CGSizeMake(self.bounds.size.width-20, self.bounds.size.height-35);
         _titleLabel.frame = CGRectMake(10, 30, self.bounds.size.width-20, 20);        
     }

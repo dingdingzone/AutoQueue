@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
-
+#import "ASIDownloadCache.h"
 
 typedef enum _NetworkRequestErrorType {
     NetRequestConnectionFailureErrorType = 1,
@@ -48,6 +48,9 @@ extern NSString* const NetWebServiceRequestErrorDomain;
 - (BOOL)isFinished;
 
 - (void)startAsynchronous;
+
+
+-(void) setDownCache:(ASIDownloadCache *)cache;
 
 @end
 

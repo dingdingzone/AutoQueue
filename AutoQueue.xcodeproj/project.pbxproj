@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		0F0C253419669A86003D61D9 /* AutoQueueUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0C253319669A86003D61D9 /* AutoQueueUtil.m */; };
+		0F6E51FE196D2EAE00A3BF3F /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E51EC196D2EAE00A3BF3F /* fontawesome-webfont.ttf */; };
+		0F6E51FF196D2EAE00A3BF3F /* FAImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E51F0196D2EAE00A3BF3F /* FAImageView.m */; };
+		0F6E5200196D2EAE00A3BF3F /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E51F2196D2EAE00A3BF3F /* NSString+FontAwesome.m */; };
+		0F6E5201196D2EAE00A3BF3F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E51F3196D2EAE00A3BF3F /* README.md */; };
+		0F6E5202196D2EAE00A3BF3F /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E51F5196D2EAE00A3BF3F /* FontAwesome.ttf */; };
+		0F6E5203196D2EAE00A3BF3F /* UIFont+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E51F7196D2EAE00A3BF3F /* UIFont+FontAwesome.m */; };
+		0F6E5204196D2EAE00A3BF3F /* FontAwesome+iOS.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E51F8196D2EAE00A3BF3F /* FontAwesome+iOS.podspec */; };
+		0F6E5205196D2EAE00A3BF3F /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E51F9196D2EAE00A3BF3F /* fontawesome-webfont.ttf */; };
+		0F6E5206196D2EAE00A3BF3F /* UIButton+PPiAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E51FB196D2EAE00A3BF3F /* UIButton+PPiAwesome.m */; };
+		0F6E5207196D2EAE00A3BF3F /* PPiFlatSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E51FD196D2EAE00A3BF3F /* PPiFlatSegmentedControl.m */; };
 		0F7B124A1963A82900522557 /* left_arrow_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F7B12491963A82900522557 /* left_arrow_gray.png */; };
 		0F927D5319677BC2004E4F7A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F927D5219677BC2004E4F7A /* BaseViewController.m */; };
 		0F952DD319623F29000F20EF /* main_top_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F952DD219623F29000F20EF /* main_top_logo.png */; };
@@ -26,6 +36,7 @@
 		0F979C0A196144DE0055506F /* tab_red_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F979C08196144DE0055506F /* tab_red_home@2x.png */; };
 		0F979C0C1961457A0055506F /* tab_gray_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F979C0B1961457A0055506F /* tab_gray_home@2x.png */; };
 		0F979C1019615A4B0055506F /* main_menu_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F979C0F19615A4B0055506F /* main_menu_bg.jpg */; };
+		0F9884A0196E9ABB0046BA6D /* foot.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F98849F196E9ABB0046BA6D /* foot.png */; };
 		0F9D41DE196292020088F7D9 /* TopBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9D41DC196292020088F7D9 /* TopBarViewController.m */; };
 		0F9D41DF196292020088F7D9 /* TopBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9D41DD196292020088F7D9 /* TopBarViewController.xib */; };
 		0FB2B83C18F7915900844627 /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB2B83718F7915900844627 /* Queue.m */; };
@@ -250,12 +261,11 @@
 		0FB2BA8218F7918600844627 /* HeadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FB2BA5618F7918600844627 /* HeadViewController.xib */; };
 		0FB2BA8318F7918600844627 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB2BA5818F7918600844627 /* LoginViewController.m */; };
 		0FB2BA8418F7918600844627 /* MyQueueController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB2BA5A18F7918600844627 /* MyQueueController.m */; };
-		0FB2BA8518F7918600844627 /* DoubleTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB2BA5D18F7918600844627 /* DoubleTableController.m */; };
+		0FB2BA8518F7918600844627 /* DoubleTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB2BA5D18F7918600844627 /* DoubleTableController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0FB2BA8618F7918600844627 /* DoubleTableController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FB2BA5E18F7918600844627 /* DoubleTableController.xib */; };
 		0FB2BA8718F7918600844627 /* FPPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB2BA6018F7918600844627 /* FPPopoverController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0FB2BA8818F7918600844627 /* FPPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB2BA6218F7918600844627 /* FPPopoverView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0FB2BA8918F7918600844627 /* FPTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB2BA6418F7918600844627 /* FPTouchView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		0FB2BA8A18F7918600844627 /* FPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB2BA6618F7918600844627 /* FPViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0FB2BA8B18F7918600844627 /* RegeisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB2BA6818F7918600844627 /* RegeisterViewController.m */; };
 		0FB2BA8C18F7918600844627 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB2BA6A18F7918600844627 /* SecondViewController.m */; };
 		0FB2BA8D18F7918600844627 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FB2BA6B18F7918600844627 /* SecondViewController.xib */; };
@@ -277,6 +287,7 @@
 		0FC5BF0018F671D700F4A509 /* ShopDetailService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC5BEF518F671D700F4A509 /* ShopDetailService.m */; };
 		0FC5BF0118F671D700F4A509 /* SortedService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC5BEF718F671D700F4A509 /* SortedService.m */; };
 		0FC5BF0218F671D700F4A509 /* UserUpdateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC5BEF918F671D700F4A509 /* UserUpdateService.m */; };
+		0FD930A2196ED87000C89C2D /* FPPopoverKeyboardResponsiveController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD930A1196ED87000C89C2D /* FPPopoverKeyboardResponsiveController.m */; };
 		0FF9D388195D4CB70051A572 /* find.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FF9D382195D4CB70051A572 /* find.png */; };
 		0FF9D389195D4CB70051A572 /* foodenjoy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FF9D383195D4CB70051A572 /* foodenjoy@2x.png */; };
 		0FF9D38A195D4CB70051A572 /* order.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FF9D384195D4CB70051A572 /* order.png */; };
@@ -314,6 +325,21 @@
 /* Begin PBXFileReference section */
 		0F0C253219669A86003D61D9 /* AutoQueueUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoQueueUtil.h; sourceTree = "<group>"; };
 		0F0C253319669A86003D61D9 /* AutoQueueUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoQueueUtil.m; sourceTree = "<group>"; };
+		0F6E51EC196D2EAE00A3BF3F /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
+		0F6E51EF196D2EAE00A3BF3F /* FAImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAImageView.h; sourceTree = "<group>"; };
+		0F6E51F0196D2EAE00A3BF3F /* FAImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAImageView.m; sourceTree = "<group>"; };
+		0F6E51F1196D2EAE00A3BF3F /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
+		0F6E51F2196D2EAE00A3BF3F /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
+		0F6E51F3196D2EAE00A3BF3F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		0F6E51F5196D2EAE00A3BF3F /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		0F6E51F6196D2EAE00A3BF3F /* UIFont+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+FontAwesome.h"; sourceTree = "<group>"; };
+		0F6E51F7196D2EAE00A3BF3F /* UIFont+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+FontAwesome.m"; sourceTree = "<group>"; };
+		0F6E51F8196D2EAE00A3BF3F /* FontAwesome+iOS.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "FontAwesome+iOS.podspec"; sourceTree = "<group>"; };
+		0F6E51F9196D2EAE00A3BF3F /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
+		0F6E51FA196D2EAE00A3BF3F /* UIButton+PPiAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+PPiAwesome.h"; sourceTree = "<group>"; };
+		0F6E51FB196D2EAE00A3BF3F /* UIButton+PPiAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+PPiAwesome.m"; sourceTree = "<group>"; };
+		0F6E51FC196D2EAE00A3BF3F /* PPiFlatSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPiFlatSegmentedControl.h; sourceTree = "<group>"; };
+		0F6E51FD196D2EAE00A3BF3F /* PPiFlatSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPiFlatSegmentedControl.m; sourceTree = "<group>"; };
 		0F7B12491963A82900522557 /* left_arrow_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_arrow_gray.png; sourceTree = "<group>"; };
 		0F927D5119677BC2004E4F7A /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		0F927D5219677BC2004E4F7A /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
@@ -334,6 +360,7 @@
 		0F979C08196144DE0055506F /* tab_red_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_red_home@2x.png"; sourceTree = "<group>"; };
 		0F979C0B1961457A0055506F /* tab_gray_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_gray_home@2x.png"; sourceTree = "<group>"; };
 		0F979C0F19615A4B0055506F /* main_menu_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = main_menu_bg.jpg; sourceTree = "<group>"; };
+		0F98849F196E9ABB0046BA6D /* foot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foot.png; sourceTree = "<group>"; };
 		0F9D41DB196292020088F7D9 /* TopBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopBarViewController.h; sourceTree = "<group>"; };
 		0F9D41DC196292020088F7D9 /* TopBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopBarViewController.m; sourceTree = "<group>"; };
 		0F9D41DD196292020088F7D9 /* TopBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopBarViewController.xib; sourceTree = "<group>"; };
@@ -657,8 +684,6 @@
 		0FB2BA6218F7918600844627 /* FPPopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPPopoverView.m; sourceTree = "<group>"; };
 		0FB2BA6318F7918600844627 /* FPTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPTouchView.h; sourceTree = "<group>"; };
 		0FB2BA6418F7918600844627 /* FPTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPTouchView.m; sourceTree = "<group>"; };
-		0FB2BA6518F7918600844627 /* FPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPViewController.h; sourceTree = "<group>"; };
-		0FB2BA6618F7918600844627 /* FPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPViewController.m; sourceTree = "<group>"; };
 		0FB2BA6718F7918600844627 /* RegeisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegeisterViewController.h; sourceTree = "<group>"; };
 		0FB2BA6818F7918600844627 /* RegeisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegeisterViewController.m; sourceTree = "<group>"; };
 		0FB2BA6918F7918600844627 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
@@ -699,6 +724,8 @@
 		0FC5BEF718F671D700F4A509 /* SortedService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortedService.m; sourceTree = "<group>"; };
 		0FC5BEF818F671D700F4A509 /* UserUpdateService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserUpdateService.h; sourceTree = "<group>"; };
 		0FC5BEF918F671D700F4A509 /* UserUpdateService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserUpdateService.m; sourceTree = "<group>"; };
+		0FD930A0196ED87000C89C2D /* FPPopoverKeyboardResponsiveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPPopoverKeyboardResponsiveController.h; sourceTree = "<group>"; };
+		0FD930A1196ED87000C89C2D /* FPPopoverKeyboardResponsiveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPPopoverKeyboardResponsiveController.m; sourceTree = "<group>"; };
 		0FF9D382195D4CB70051A572 /* find.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = find.png; sourceTree = "<group>"; };
 		0FF9D383195D4CB70051A572 /* foodenjoy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "foodenjoy@2x.png"; sourceTree = "<group>"; };
 		0FF9D384195D4CB70051A572 /* order.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = order.png; sourceTree = "<group>"; };
@@ -767,6 +794,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F6E51EB196D2EAE00A3BF3F /* PPiFlatSegmented */ = {
+			isa = PBXGroup;
+			children = (
+				0F6E51EC196D2EAE00A3BF3F /* fontawesome-webfont.ttf */,
+				0F6E51ED196D2EAE00A3BF3F /* PPiAwesomeButton */,
+				0F6E51FC196D2EAE00A3BF3F /* PPiFlatSegmentedControl.h */,
+				0F6E51FD196D2EAE00A3BF3F /* PPiFlatSegmentedControl.m */,
+			);
+			path = PPiFlatSegmented;
+			sourceTree = "<group>";
+		};
+		0F6E51ED196D2EAE00A3BF3F /* PPiAwesomeButton */ = {
+			isa = PBXGroup;
+			children = (
+				0F6E51EE196D2EAE00A3BF3F /* FontAwesome */,
+				0F6E51F8196D2EAE00A3BF3F /* FontAwesome+iOS.podspec */,
+				0F6E51F9196D2EAE00A3BF3F /* fontawesome-webfont.ttf */,
+				0F6E51FA196D2EAE00A3BF3F /* UIButton+PPiAwesome.h */,
+				0F6E51FB196D2EAE00A3BF3F /* UIButton+PPiAwesome.m */,
+			);
+			path = PPiAwesomeButton;
+			sourceTree = "<group>";
+		};
+		0F6E51EE196D2EAE00A3BF3F /* FontAwesome */ = {
+			isa = PBXGroup;
+			children = (
+				0F6E51EF196D2EAE00A3BF3F /* FAImageView.h */,
+				0F6E51F0196D2EAE00A3BF3F /* FAImageView.m */,
+				0F6E51F1196D2EAE00A3BF3F /* NSString+FontAwesome.h */,
+				0F6E51F2196D2EAE00A3BF3F /* NSString+FontAwesome.m */,
+				0F6E51F3196D2EAE00A3BF3F /* README.md */,
+				0F6E51F4196D2EAE00A3BF3F /* Resources */,
+				0F6E51F6196D2EAE00A3BF3F /* UIFont+FontAwesome.h */,
+				0F6E51F7196D2EAE00A3BF3F /* UIFont+FontAwesome.m */,
+			);
+			path = FontAwesome;
+			sourceTree = "<group>";
+		};
+		0F6E51F4196D2EAE00A3BF3F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0F6E51F5196D2EAE00A3BF3F /* FontAwesome.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		0F927D5019677B8D004E4F7A /* base */ = {
 			isa = PBXGroup;
 			children = (
@@ -850,6 +923,7 @@
 		0FB2B85418F7917200844627 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0F98849F196E9ABB0046BA6D /* foot.png */,
 				0F968072196700A100DDB307 /* loading */,
 				0F7B12491963A82900522557 /* left_arrow_gray.png */,
 				0F952DD619626237000F20EF /* main_top_search.png */,
@@ -1267,6 +1341,7 @@
 			children = (
 				0F927D5019677B8D004E4F7A /* base */,
 				0FB2BA5B18F7918600844627 /* Popover */,
+				0F6E51EB196D2EAE00A3BF3F /* PPiFlatSegmented */,
 				0FB2BA4118F7918600844627 /* AKSegmentedControl */,
 				0FB2BA4418F7918600844627 /* Cell */,
 				0FB2BA4A18F7918600844627 /* CustomUI */,
@@ -1355,8 +1430,8 @@
 				0FB2BA6218F7918600844627 /* FPPopoverView.m */,
 				0FB2BA6318F7918600844627 /* FPTouchView.h */,
 				0FB2BA6418F7918600844627 /* FPTouchView.m */,
-				0FB2BA6518F7918600844627 /* FPViewController.h */,
-				0FB2BA6618F7918600844627 /* FPViewController.m */,
+				0FD930A0196ED87000C89C2D /* FPPopoverKeyboardResponsiveController.h */,
+				0FD930A1196ED87000C89C2D /* FPPopoverKeyboardResponsiveController.m */,
 			);
 			path = Popover;
 			sourceTree = "<group>";
@@ -1430,16 +1505,16 @@
 		9F87FB5E183B1E1200DE6FDD /* AutoQueue */ = {
 			isa = PBXGroup;
 			children = (
-				0FB2BA4018F7918600844627 /* Views */,
-				0FB2B97E18F7917C00844627 /* Vendors */,
-				0FB2B83F18F7916800844627 /* Pub */,
-				0FB2B83518F7915900844627 /* Models */,
-				0FC5BEE718F671D700F4A509 /* Service */,
 				9F87FB67183B1E1200DE6FDD /* QueueAppDelegate.h */,
 				9F87FB68183B1E1200DE6FDD /* QueueAppDelegate.m */,
 				9F87FB70183B1E1300DE6FDD /* MainStoryboard.storyboard */,
 				9F87FB73183B1E1300DE6FDD /* QueueViewController.h */,
 				9F87FB74183B1E1300DE6FDD /* QueueViewController.m */,
+				0FB2BA4018F7918600844627 /* Views */,
+				0FB2B97E18F7917C00844627 /* Vendors */,
+				0FB2B83F18F7916800844627 /* Pub */,
+				0FB2B83518F7915900844627 /* Models */,
+				0FC5BEE718F671D700F4A509 /* Service */,
 				0FB2B85318F7917200844627 /* Resources */,
 				9F87FB5F183B1E1200DE6FDD /* Supporting Files */,
 			);
@@ -1530,6 +1605,7 @@
 				0FB2B97118F7917200844627 /* 红心.png in Resources */,
 				0FB2B93818F7917200844627 /* selector_background.png in Resources */,
 				0FB2B94A18F7917200844627 /* tab_white_sale@2x.png in Resources */,
+				0F6E5201196D2EAE00A3BF3F /* README.md in Resources */,
 				0FB2B97418F7917200844627 /* 蓝色按键.9.png in Resources */,
 				0FB2B94118F7917200844627 /* superman_image.png in Resources */,
 				0FB2B96018F7917200844627 /* 我的页面背景.jpg in Resources */,
@@ -1544,6 +1620,7 @@
 				0F952DD5196246F4000F20EF /* banner.jpg in Resources */,
 				0FB2B94718F7917200844627 /* tab_white_haochilao@2x.png in Resources */,
 				0F979C0C1961457A0055506F /* tab_gray_home@2x.png in Resources */,
+				0F6E5205196D2EAE00A3BF3F /* fontawesome-webfont.ttf in Resources */,
 				0FB2B90218F7917200844627 /* default_loading_img.png in Resources */,
 				0FB2B90D18F7917200844627 /* home_background.png in Resources */,
 				0FB2B8F418F7917200844627 /* book_table_bg@2x.png in Resources */,
@@ -1622,10 +1699,12 @@
 				9F87FB6B183B1E1200DE6FDD /* Default.png in Resources */,
 				0FB2BA3E18F7917D00844627 /* zbar-samples.png in Resources */,
 				0FB2B90B18F7917200844627 /* home_activity_frame2.png in Resources */,
+				0F6E5204196D2EAE00A3BF3F /* FontAwesome+iOS.podspec in Resources */,
 				0FB2B95E18F7917200844627 /* 定位.png in Resources */,
 				0FB2B91518F7917200844627 /* main_list_estimate.png in Resources */,
 				0FF9D389195D4CB70051A572 /* foodenjoy@2x.png in Resources */,
 				0FB2B91E18F7917200844627 /* near_goods_up.png in Resources */,
+				0F9884A0196E9ABB0046BA6D /* foot.png in Resources */,
 				9F87FB6D183B1E1200DE6FDD /* Default@2x.png in Resources */,
 				0FB2B90318F7917200844627 /* del_rubbish_box.png in Resources */,
 				0FB2B93C18F7917200844627 /* share_img.png in Resources */,
@@ -1643,10 +1722,12 @@
 				0FB2BA7F18F7918600844627 /* FavourViewController.xib in Resources */,
 				0F979C00196138C20055506F /* tab_gray_haochilao@2x.png in Resources */,
 				0FB2B91718F7917200844627 /* main_list_recommended.png in Resources */,
+				0F6E51FE196D2EAE00A3BF3F /* fontawesome-webfont.ttf in Resources */,
 				0FB2B90518F7917200844627 /* dish_plus.png in Resources */,
 				0FB2B8F018F7917200844627 /* book_red_right_arrow.png in Resources */,
 				0FB2BA1618F7917D00844627 /* grayArrow.png in Resources */,
 				0FB2B90F18F7917200844627 /* home_dishsearch_frame2.png in Resources */,
+				0F6E5202196D2EAE00A3BF3F /* FontAwesome.ttf in Resources */,
 				0FB2B8F518F7917200844627 /* booking_seat.png in Resources */,
 				0FB2B92818F7917200844627 /* red_btn_bg@2x.png in Resources */,
 				9F87FB6F183B1E1300DE6FDD /* Default-568h@2x.png in Resources */,
@@ -1722,6 +1803,7 @@
 			files = (
 				0FB2BA3418F7917D00844627 /* qrencode.c in Sources */,
 				0FB2BA2018F7917D00844627 /* SBJsonStreamParser.m in Sources */,
+				0F6E5207196D2EAE00A3BF3F /* PPiFlatSegmentedControl.m in Sources */,
 				0FB2B85018F7916800844627 /* SBJsonObj.m in Sources */,
 				0FB2BA7D18F7918600844627 /* UINavigationItem+custom.m in Sources */,
 				0FB2BA3918F7917D00844627 /* QRViewController.m in Sources */,
@@ -1733,6 +1815,7 @@
 				9F87FB69183B1E1200DE6FDD /* QueueAppDelegate.m in Sources */,
 				0FB2BA8B18F7918600844627 /* RegeisterViewController.m in Sources */,
 				0FB2BA9118F7918600844627 /* TabViewController.m in Sources */,
+				0FD930A2196ED87000C89C2D /* FPPopoverKeyboardResponsiveController.m in Sources */,
 				0FB2BA8018F7918600844627 /* GetNumInfoController.m in Sources */,
 				0FB2BA3118F7917D00844627 /* bitstream.c in Sources */,
 				0FB2BA1E18F7917D00844627 /* Reachability.m in Sources */,
@@ -1748,6 +1831,7 @@
 				0FB2B85218F7916800844627 /* TimerUtil.m in Sources */,
 				0FB2BA8F18F7918600844627 /* SortedViewController.m in Sources */,
 				0FB2BA7E18F7918600844627 /* FavourViewController.m in Sources */,
+				0F6E5203196D2EAE00A3BF3F /* UIFont+FontAwesome.m in Sources */,
 				9F87FB75183B1E1300DE6FDD /* QueueViewController.m in Sources */,
 				0FC5BEFD18F671D700F4A509 /* MyQueueService.m in Sources */,
 				0FB2BA8718F7918600844627 /* FPPopoverController.m in Sources */,
@@ -1774,6 +1858,7 @@
 				0FB2BA0D18F7917D00844627 /* ASIFormDataRequest.m in Sources */,
 				0FC5BEFF18F671D700F4A509 /* RegeisterService.m in Sources */,
 				0FB2BA8918F7918600844627 /* FPTouchView.m in Sources */,
+				0F6E51FF196D2EAE00A3BF3F /* FAImageView.m in Sources */,
 				0FB2B83C18F7915900844627 /* Queue.m in Sources */,
 				0FB2BA1B18F7917D00844627 /* ObjectMapping.m in Sources */,
 				0FB2BA2718F7917D00844627 /* SBJsonTokeniser.m in Sources */,
@@ -1797,16 +1882,17 @@
 				0FB2BA2C18F7917D00844627 /* SortedSelController.m in Sources */,
 				0FB2BA1D18F7917D00844627 /* ObjectMappingLoader.m in Sources */,
 				0FB2BA3318F7917D00844627 /* QRCodeGenerator.m in Sources */,
+				0F6E5206196D2EAE00A3BF3F /* UIButton+PPiAwesome.m in Sources */,
 				0FB2BA8E18F7918600844627 /* ShopDetailViewController.m in Sources */,
 				0F9D41DE196292020088F7D9 /* TopBarViewController.m in Sources */,
 				0FB2BA7818F7918600844627 /* AKSegmentedControl.m in Sources */,
 				0FC5BF0218F671D700F4A509 /* UserUpdateService.m in Sources */,
-				0FB2BA8A18F7918600844627 /* FPViewController.m in Sources */,
 				0FB2BA1818F7917D00844627 /* GDataXMLNode.m in Sources */,
 				0FC5BEFA18F671D700F4A509 /* DoubleTableService.m in Sources */,
 				0FB2BA3F18F7917D00844627 /* CSqlite.m in Sources */,
 				0FB2BA8818F7918600844627 /* FPPopoverView.m in Sources */,
 				0FB2BA8518F7918600844627 /* DoubleTableController.m in Sources */,
+				0F6E5200196D2EAE00A3BF3F /* NSString+FontAwesome.m in Sources */,
 				0FB2BA2418F7917D00844627 /* SBJsonStreamWriter.m in Sources */,
 				0FC5BF0118F671D700F4A509 /* SortedService.m in Sources */,
 				0FB2BA7C18F7918600844627 /* UIImage.m in Sources */,
@@ -1914,7 +2000,7 @@
 				GCC_PREFIX_HEADER = "AutoQueue/AutoQueue-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "AutoQueue/AutoQueue-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AutoQueue/ZBarSDK",
@@ -1947,7 +2033,7 @@
 				GCC_PREFIX_HEADER = "AutoQueue/AutoQueue-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "AutoQueue/AutoQueue-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AutoQueue/ZBarSDK",

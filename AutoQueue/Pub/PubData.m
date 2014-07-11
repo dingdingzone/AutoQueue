@@ -17,11 +17,12 @@
 {
     NSString *param = @"{channel:\"Q\",channelType:\"PC\",serviceType:\"BUS1011\",securityCode:\"0000000000\",params:{paramType:\"AREA_DEFINATION\"},rtnDataFormatType:\"user-defined\"}";
     
+    NSLog(@"Start GetArea");
     NSString *result = [InvokeService callService:param];
     
-    NSString *jsonStr = [SoapXmlParseHelper SoapMessageResultXml:result ServiceMethodName:@"ns:return"];
+//    NSString *jsonStr = [SoapXmlParseHelper SoapMessageResultXml:result ServiceMethodName:@"ns:return"];
     
-    NSMutableDictionary *retVal = [SBJsonObj fromDitionary:jsonStr];
+    NSMutableDictionary *retVal = [SBJsonObj fromDitionary:result];
     
     return retVal;
 }
