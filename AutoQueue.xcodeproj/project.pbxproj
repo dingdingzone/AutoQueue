@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0F0374C519AEB52300227A39 /* NextWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0374C219AEB52300227A39 /* NextWebController.m */; };
 		0F0374C619AEB52300227A39 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0374C419AEB52300227A39 /* WebViewController.m */; };
-		0F0374C819AEC6D500227A39 /* 目录结构.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 0F0374C719AEC6D500227A39 /* 目录结构.rtf */; };
+		0F0374CA19AEC78100227A39 /* 目录结构.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 0F0374C919AEC78100227A39 /* 目录结构.rtf */; };
 		0F0C253419669A86003D61D9 /* AutoQueueUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0C253319669A86003D61D9 /* AutoQueueUtil.m */; };
 		0F6E51FE196D2EAE00A3BF3F /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E51EC196D2EAE00A3BF3F /* fontawesome-webfont.ttf */; };
 		0F6E51FF196D2EAE00A3BF3F /* FAImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E51F0196D2EAE00A3BF3F /* FAImageView.m */; };
@@ -338,7 +338,7 @@
 		0F0374C219AEB52300227A39 /* NextWebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextWebController.m; sourceTree = "<group>"; };
 		0F0374C319AEB52300227A39 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		0F0374C419AEB52300227A39 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
-		0F0374C719AEC6D500227A39 /* 目录结构.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "目录结构.rtf"; sourceTree = "<group>"; };
+		0F0374C919AEC78100227A39 /* 目录结构.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "目录结构.rtf"; sourceTree = "<group>"; };
 		0F0C253219669A86003D61D9 /* AutoQueueUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoQueueUtil.h; sourceTree = "<group>"; };
 		0F0C253319669A86003D61D9 /* AutoQueueUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoQueueUtil.m; sourceTree = "<group>"; };
 		0F6E51EC196D2EAE00A3BF3F /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
@@ -1573,7 +1573,7 @@
 		9F87FB5E183B1E1200DE6FDD /* AutoQueue */ = {
 			isa = PBXGroup;
 			children = (
-				0F0374C719AEC6D500227A39 /* 目录结构.rtf */,
+				0F0374C919AEC78100227A39 /* 目录结构.rtf */,
 				9F87FB67183B1E1200DE6FDD /* QueueAppDelegate.h */,
 				9F87FB68183B1E1200DE6FDD /* QueueAppDelegate.m */,
 				9F87FB70183B1E1300DE6FDD /* MainStoryboard.storyboard */,
@@ -1730,7 +1730,7 @@
 				0FB2B91C18F7917200844627 /* navigation.jpg in Resources */,
 				0FB2B96618F7917200844627 /* 灰心.png in Resources */,
 				0FB2B96118F7917200844627 /* 收藏.png in Resources */,
-				0F0374C819AEC6D500227A39 /* 目录结构.rtf in Resources */,
+				0F0374CA19AEC78100227A39 /* 目录结构.rtf in Resources */,
 				0FB2B94E18F7917200844627 /* unchoice.png in Resources */,
 				0FB2B94D18F7917200844627 /* timeline_new_status_background@2x.png in Resources */,
 				0FB2B97D18F7917200844627 /* 锁.png in Resources */,

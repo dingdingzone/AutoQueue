@@ -2,7 +2,7 @@
 //  QueueViewController.m
 //  AutoQueue
 //
-//  Created by alone on 14-04-11.
+//  Created by Lapland_Alone on 14-04-11.
 //  Copyright (c) 2013年 Queue. All rights reserved.
 //
 
@@ -41,7 +41,8 @@ User *userObj;
 UIImageView *barView;
 UIImageView *posImgView;
 UILabel *coordLabel;
-int refreshNum;
+
+/*分页页数*/
 int posNum;
 
 @synthesize tableView;
@@ -54,6 +55,72 @@ int posNum;
 NSString *const MJTableViewCellIdentifier = @"Cell";
 
 AKSegmentedControl * segmentedControl;
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    posNum =1;
+    
+    // 1.注册cell
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:MJTableViewCellIdentifier];
+    
+    // 2.集成刷新控件
+    [self setupRefresh];
+    
+    MerImageArr = [[NSMutableArray alloc] init];
+    MerNameArr = [[NSMutableArray alloc] init];
+    MerAddrArr = [[NSMutableArray alloc] init];
+    MerCountArr = [[NSMutableArray alloc] init];
+    MerIdArr = [[NSMutableArray alloc] init];
+    
+    
+    searchShop.delegate = self;
+    myDelegate = [[UIApplication sharedApplication] delegate];
+    userObj = myDelegate.userObj;
+    
+    segmentedControl = [[AKSegmentedControl alloc] initWithFrame:CGRectMake(-1.0,63.0,322.0, 35.0)];
+    
+    segmentedControl=[segmentedControl setupSegmentedControl:segmentedControl];
+    
+    // [segmentedControl setDelegate:self];
+    
+    segmentedControl.queueViewController=self;
+    [self.view addSubview:segmentedControl];
+    
+    self.view.layer.backgroundColor = [UIColor grayColor].CGColor;
+    
+    UIImageView *image=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"放大镜.png"]];
+    image.frame = CGRectMake(0, 0, 16, 16);
+    
+    searchShop.leftView=image;
+    searchShop.leftViewMode = UITextFieldViewModeAlways;
+    searchShop.placeholder = @"搜索排队";
+    
+    //tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    if ([self.navigationController.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)])
+    {
+        //[self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation.jpg"] forBarMetrics:UIBarMetricsDefault];
+        //[SELF.navigationController.navigationBar SET]
+    }
+   
+	// Do any additional setup after loading the view, typically from a nib.
+    self.view.layer.backgroundColor = [ProSetting getColorByStr:@"f5f5f5"].CGColor;
+    
+    
+    coordLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 97, 322.0, 25.0)];
+    UIImage *posImage = [UIImage imageNamed:@"local_erea_img.png"];
+    posImgView = [[UIImageView alloc]initWithImage:posImage];
+    posImgView.frame = CGRectMake(4, 101, 12, 20);
+    coordLabel.backgroundColor = [ProSetting getColorByStr:@"f5f5f5"];
+    
+    //[self locationPosition];GPS
+    [self loadingTableData];
+    
+    [self controlTopBarDisplay:NO];
+    
+}
 
 /**
  *  集成刷新控件
@@ -78,11 +145,12 @@ AKSegmentedControl * segmentedControl;
     
     // 2.2秒后刷新表格UI
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        // 刷新表格
-        [self.tableView reloadData];
+    
+    // 刷新表格
+    [self.tableView reloadData];
         
-        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
-        [self.tableView headerEndRefreshing];
+    // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
+    [self.tableView headerEndRefreshing];
     });
 }
 
@@ -100,108 +168,15 @@ AKSegmentedControl * segmentedControl;
 //    });
 }
 
-- (void)viewDidLoad
-{
-    posNum =1;
-    
-    // 1.注册cell
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:MJTableViewCellIdentifier];
-    
-    // 2.集成刷新控件
-    [self setupRefresh];
-    
-    MerImageArr = [[NSMutableArray alloc] init];
-    MerNameArr = [[NSMutableArray alloc] init];
-    MerAddrArr = [[NSMutableArray alloc] init];
-    MerCountArr = [[NSMutableArray alloc] init];
-    MerIdArr = [[NSMutableArray alloc] init];
 
-    
-    searchShop.delegate = self;
-    myDelegate = [[UIApplication sharedApplication] delegate];
-    userObj = myDelegate.userObj;
-    
-    segmentedControl = [[AKSegmentedControl alloc] initWithFrame:CGRectMake(-1.0,63.0,322.0, 35.0)];
-   
-    segmentedControl=[segmentedControl setupSegmentedControl:segmentedControl];
-    
-    // [segmentedControl setDelegate:self];
-    
-    segmentedControl.queueViewController=self;
-    [self.view addSubview:segmentedControl];
-
-    // m_sqlite = [[CSqlite alloc]init];//SQL
-    // [m_sqlite openSqlite];
-    
-//    PPiFlatSegmentedControl *segmented2=[[PPiFlatSegmentedControl alloc] initWithFrame:CGRectMake(0, 64, 320, 35) items:
-//    @[
-//                                                                                                                          
-//       @{@"text":@"地区"},
-//       @{@"text":@"菜系"},
-//       @{@"text":@"人气"}
-//     ]
-//    iconPosition:IconPositionRight andSelectionBlock:^(NSUInteger segmentIndex) {
-//                                                                              
-//                                                                          }];
-//    segmented2.color=[UIColor whiteColor];
-//    segmented2.borderWidth=0.5;
-//    segmented2.borderColor=[UIColor colorWithRed:244.0f/255.0 green:67.0f/255.0 blue:60.0f/255.0 alpha:1];
-//    segmented2.selectedColor=[UIColor colorWithRed:244.0f/255.0 green:67.0f/255.0 blue:60.0f/255.0 alpha:1];
-//    segmented2.textAttributes=@{NSFontAttributeName:[UIFont systemFontOfSize:13],
-//                                NSForegroundColorAttributeName:[UIColor colorWithRed:244.0f/255.0 green:67.0f/255.0 blue:60.0f/255.0 alpha:1]};
-//    segmented2.selectedTextAttributes=@{NSFontAttributeName:[UIFont systemFontOfSize:13],
-//                                        NSForegroundColorAttributeName:[UIColor whiteColor]};
-//    [self.view addSubview:segmented2];
-
-
-    
-
-
-    
-    self.view.layer.backgroundColor = [UIColor grayColor].CGColor;
-    
-    UIImageView *image=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"放大镜.png"]];
-    image.frame = CGRectMake(0, 0, 16, 16);
-    
-    searchShop.leftView=image;
-    searchShop.leftViewMode = UITextFieldViewModeAlways;
-    searchShop.placeholder = @"搜索排队";
-    
-    //tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
-    if ([self.navigationController.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)])
-    {
-       //[self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigation.jpg"] forBarMetrics:UIBarMetricsDefault];
-       //[SELF.navigationController.navigationBar SET]
-    }
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    self.view.layer.backgroundColor = [ProSetting getColorByStr:@"f5f5f5"].CGColor;
-    
-    
-    coordLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 97, 322.0, 25.0)];
-    UIImage *posImage = [UIImage imageNamed:@"local_erea_img.png"];
-    posImgView = [[UIImageView alloc]initWithImage:posImage];
-    posImgView.frame = CGRectMake(4, 101, 12, 20);
-    coordLabel.backgroundColor = [ProSetting getColorByStr:@"f5f5f5"];
-    
-    //[self locationPosition];GPS
-    [self loadingTableData];
-    
-    
-    
-    [self controlTopBarDisplay:NO];
-
-    
-}
 
 #pragma mark------------------加载tableview数据
 -(void)loadingTableData
 {
+    double h=STATUS_NAVI_H;
+    double listHeight=SCREEN_HEIGHT-STATUS_NAVI_H;
     
-    float srcHeight = [ProSetting getSysHeight:self.view];
-
-    tableView.frame = CGRectMake(tableView.frame.origin.x , 32 , tableView.frame.size.width , srcHeight-32);
+    tableView.frame = CGRectMake(tableView.frame.origin.x , h, tableView.frame.size.width , listHeight);
     
     UIView *v = [[UIView alloc] initWithFrame:CGRectZero];
     [tableView setTableFooterView:v];
@@ -228,19 +203,18 @@ AKSegmentedControl * segmentedControl;
 
 }
 
-
+#pragma mark------------------开始异步请求数据tableview
 - (void)netRequestStarted:(NetWebServiceRequest *)request
 {
-   [self showProgress];
+//   [self showProgress];
     NSLog(@"Start");
 }
 
-
+#pragma mark------------------结束异步请求数据tableview
 - (void)netRequestFinished:(NetWebServiceRequest *)request finishedInfoToResult:(NSString *)result responseData:(NSData *)requestData
 {
     NSLog(@"Result");
     NSString *resultMsg = [[NSString alloc] initWithData:requestData  encoding:NSUTF8StringEncoding];
-//    NSLog(@"%@",resultMsg);
     
     NSString *jsonStr = [SoapXmlParseHelper SoapMessageResultXml:resultMsg ServiceMethodName:@"ns:return"];
     NSString *returnMsgStr = [SBJsonObj getNodeStr:jsonStr :@"merchantList"];
@@ -257,32 +231,21 @@ AKSegmentedControl * segmentedControl;
         [MerIdArr    addObject:[value objectForKey:@"merchantId"]];
     }
     
-//    if (refreshHeaderView == nil)
-//    {
-//    
-//    	 EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height)];
-//    		view.delegate = self;
-//        [self.tableView addSubview:view];
-//        refreshHeaderView = view;
-//        [tableView reloadData];
-//    }else
-//    {
-//         [tableView reloadData];
-//    }
-    
     [tableView reloadData];
 
-    
     // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
     [self.tableView footerEndRefreshing];
     [self hudWasHidden:HUD];//结束进度条
     
 }
 
+
+#pragma mark------------------异步请求数据失败tableview
 - (void)netRequestFailed:(NetWebServiceRequest *)request didRequestError:(NSError *)error
 {
     NSLog(@"%@",error);
 }
+
 
 #pragma mark -----------------控制topbar的item显示
 -(void) controlTopBarDisplay:(Boolean *)flag
@@ -316,10 +279,6 @@ AKSegmentedControl * segmentedControl;
         }
     }
 }
-
-
-
-
 
 -(IBAction)loginClick:(id)sender
 {
@@ -379,112 +338,6 @@ AKSegmentedControl * segmentedControl;
     cell.MerGold.frame  = CGRectMake([cell.MerName.text length]*15+89, 6, 16, 16);
     return cell;
 }
-
-
-
-- (void)reloadTableViewDataSource{
-	reloading = YES;
-}
-
-- (void)doneLoadingTableViewData{
-	reloading = NO;
-	[refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-	
-	[refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
-    
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-	
-	[refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
-	
-}
-
-- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view{
-    
-	[self reloadTableViewDataSource];
-    
-    //停止加载，弹回下拉
-	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:2.0];
-    
-    if (barView == nil) {
-        UIImage *img = [[UIImage imageNamed:@"timeline_new_status_background.png"] stretchableImageWithLeftCapWidth:5 topCapHeight:5];
-        barView = [[UIImageView alloc] initWithImage:img];
-        barView.frame = CGRectMake(0, 60, 320, 40);
-        [self.view addSubview:barView];
-        
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
-        label.tag = 100;
-        label.font = [UIFont systemFontOfSize:16.0f];
-        label.textColor = [UIColor whiteColor];
-        label.backgroundColor = [UIColor clearColor];
-        [barView addSubview:label];
-    }
-    UILabel *label = (UILabel *)[barView viewWithTag:100];
-    if (refreshNum == 0)
-    {
-        label.text = @"木有更新咯";
-    }
-    else
-    {
-        label.text = [NSString stringWithFormat:@"%d条信息更新",refreshNum];
-    }
-    label.textColor = [ProSetting getColorByStr:@"52718b"];
-    [label sizeToFit];
-    CGRect frame = label.frame;
-    frame.origin = CGPointMake((barView.frame.size.width - frame.size.width)/2, (barView.frame.size.height - frame.size.height)/2);
-    label.frame = frame;
-    
-    
-    [self performSelector:@selector(updateUI) withObject:nil afterDelay:0.6];
-    
-}
-
-- (void)updateUI {
-    [UIView animateWithDuration:0.6 animations:^{
-        CGRect frame = barView.frame;
-        frame.origin.y = 60;
-        barView.frame = frame;
-    } completion:^(BOOL finished){
-        if (finished) {
-            [UIView beginAnimations:nil context:nil];
-            [UIView setAnimationDelay:1.0];
-            [UIView setAnimationDuration:0.6];
-            CGRect frame = barView.frame;
-            frame.origin.y = -40;
-            barView.frame = frame;
-            [UIView commitAnimations];
-        }
-    }];
-    if(refreshNum != 0)
-    {
-        posNum++;
-    }
-    int tempNum = [MerNameArr count];
-    [queueService getMerchantInfo:@"" :@"" :@"" :@"" :@"" :@"" :@"" :MerImageArr :MerNameArr :MerAddrArr :MerCountArr :MerIdArr :[NSString stringWithFormat:@"%d",posNum] :@"10"];
-    refreshNum = [MerNameArr count] - tempNum;
-    
-    [tableView reloadData];
-    
-}
-- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view{
-	
-	return reloading; // should return if data source model is reloading
-	
-}
-
-//取得下拉刷新的时间
-- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view{
-	
-	return [NSDate date]; // should return date data source was last changed
-	
-}
-
-/////////////////////
-
 
 
 -(IBAction)scanQR:(id)sender
@@ -730,3 +583,27 @@ AKSegmentedControl * segmentedControl;
 //self.navigationController.navigationBar.clipsToBounds = YES;
 
 // [self.navigationController setNavigationBarHidden:YES];
+// m_sqlite = [[CSqlite alloc]init];//SQL
+// [m_sqlite openSqlite];
+
+//    PPiFlatSegmentedControl *segmented2=[[PPiFlatSegmentedControl alloc] initWithFrame:CGRectMake(0, 64, 320, 35) items:
+//    @[
+//
+//       @{@"text":@"地区"},
+//       @{@"text":@"菜系"},
+//       @{@"text":@"人气"}
+//     ]
+//    iconPosition:IconPositionRight andSelectionBlock:^(NSUInteger segmentIndex) {
+//
+//                                                                          }];
+//    segmented2.color=[UIColor whiteColor];
+//    segmented2.borderWidth=0.5;
+//    segmented2.borderColor=[UIColor colorWithRed:244.0f/255.0 green:67.0f/255.0 blue:60.0f/255.0 alpha:1];
+//    segmented2.selectedColor=[UIColor colorWithRed:244.0f/255.0 green:67.0f/255.0 blue:60.0f/255.0 alpha:1];
+//    segmented2.textAttributes=@{NSFontAttributeName:[UIFont systemFontOfSize:13],
+//                                NSForegroundColorAttributeName:[UIColor colorWithRed:244.0f/255.0 green:67.0f/255.0 blue:60.0f/255.0 alpha:1]};
+//    segmented2.selectedTextAttributes=@{NSFontAttributeName:[UIFont systemFontOfSize:13],
+//                                        NSForegroundColorAttributeName:[UIColor whiteColor]};
+//    [self.view addSubview:segmented2];
+
+
