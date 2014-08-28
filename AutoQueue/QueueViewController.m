@@ -173,8 +173,8 @@ AKSegmentedControl * segmentedControl;
 #pragma mark------------------加载tableview数据
 -(void)loadingTableData
 {
-    double h=STATUS_NAVI_H;
-    double listHeight=SCREEN_HEIGHT-STATUS_NAVI_H;
+    int h=STATUS_NAVI_H;
+    int listHeight=CONTENT_HEIGHT;
     
     tableView.frame = CGRectMake(tableView.frame.origin.x , h, tableView.frame.size.width , listHeight);
     
@@ -246,7 +246,6 @@ AKSegmentedControl * segmentedControl;
     NSLog(@"%@",error);
 }
 
-
 #pragma mark -----------------控制topbar的item显示
 -(void) controlTopBarDisplay:(Boolean *)flag
 {
@@ -279,6 +278,10 @@ AKSegmentedControl * segmentedControl;
         }
     }
 }
+
+
+
+
 
 -(IBAction)loginClick:(id)sender
 {

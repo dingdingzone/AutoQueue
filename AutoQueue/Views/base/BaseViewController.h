@@ -30,6 +30,9 @@
 /*屏幕高度*/
 #define SCREEN_HEIGHT [ProSetting getSysHeight:self.view];
 
+/*屏幕内容高度*/
+#define CONTENT_HEIGHT [ProSetting getSysHeight:self.view]-STATUS_NAVI_H;
+
 @interface BaseViewController : UIViewController<MBProgressHUDDelegate,NetWebServiceRequestDelegate>
 {
     /*加载控件*/
