@@ -14,5 +14,4 @@
 }
 - (void)openCamera;
 
-- (void)setA:(id)a b:(id)b c:(id)c;
 @end

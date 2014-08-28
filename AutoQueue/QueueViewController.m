@@ -130,8 +130,8 @@ AKSegmentedControl * segmentedControl;
     segmentedControl.queueViewController=self;
     [self.view addSubview:segmentedControl];
 
-       // m_sqlite = [[CSqlite alloc]init];//SQL
-       // [m_sqlite openSqlite];
+    // m_sqlite = [[CSqlite alloc]init];//SQL
+    // [m_sqlite openSqlite];
     
 //    PPiFlatSegmentedControl *segmented2=[[PPiFlatSegmentedControl alloc] initWithFrame:CGRectMake(0, 64, 320, 35) items:
 //    @[
@@ -200,9 +200,8 @@ AKSegmentedControl * segmentedControl;
 {
     
     float srcHeight = [ProSetting getSysHeight:self.view];
-    float chaVal = srcHeight - 505;
 
-    tableView.frame = CGRectMake(tableView.frame.origin.x , tableView.frame.origin.y - chaVal , tableView.frame.size.width , tableView.frame.size.height + chaVal);
+    tableView.frame = CGRectMake(tableView.frame.origin.x , 32 , tableView.frame.size.width , srcHeight-32);
     
     UIView *v = [[UIView alloc] initWithFrame:CGRectZero];
     [tableView setTableFooterView:v];
@@ -232,7 +231,7 @@ AKSegmentedControl * segmentedControl;
 
 - (void)netRequestStarted:(NetWebServiceRequest *)request
 {
-//    [self showProgress];
+   [self showProgress];
     NSLog(@"Start");
 }
 
