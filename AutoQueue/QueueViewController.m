@@ -137,7 +137,7 @@ AKSegmentedControl * segmentedControl;
     [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
 }
 
-#pragma mark 开始进入刷新状态
+#pragma mark ---------------------开始进入刷新状态
 - (void)headerRereshing
 {
     // 1.加载数据
@@ -314,6 +314,7 @@ AKSegmentedControl * segmentedControl;
     return [MerNameArr count];
 }
 
+#pragma mark-----------------初始化TableView cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *queueTableIdentifier = @"queueCell";

@@ -66,7 +66,7 @@
                                                     <rect key="frame" x="5" y="4" width="68" height="67"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="走路小人.png" id="kpj-ll-HTR">
-                                                    <rect key="frame" x="235" y="54" width="14" height="16"/>
+                                                    <rect key="frame" x="279" y="52" width="14" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="红心.png" id="Jt1-ac-JhO">
@@ -343,23 +343,12 @@
                                 <rect key="frame" x="168" y="34" width="12" height="11"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="菜单.png" id="Q8k-Tj-zFy">
-                                <rect key="frame" x="286" y="9" width="26" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="走路小人.png" id="tM6-rU-JKt">
                                 <rect key="frame" x="275" y="101" width="10" height="12"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="210m" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UBw-kb-Hue">
                                 <rect key="frame" x="287" y="99" width="44" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="菜单" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="k2u-xs-Ww8">
-                                <rect key="frame" x="278" y="24" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -969,7 +958,6 @@
         <image name="系统设置.png" width="26" height="28"/>
         <image name="红心.png" width="12" height="11"/>
         <image name="自助排队.png" width="315" height="324"/>
-        <image name="菜单.png" width="34" height="29"/>
         <image name="蓝色按键.png" width="284" height="59"/>
         <image name="走路小人.png" width="14" height="20"/>
         <image name="选项卡背景.png" width="127" height="29"/>
@@ -980,9 +968,9 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="C8Z-mm-T3O"/>
         <segue reference="q3y-iV-XlN"/>
-        <segue reference="QDP-se-N19"/>
         <segue reference="yVE-pO-cpB"/>
+        <segue reference="QDP-se-N19"/>
+        <segue reference="232-mb-p4J"/>
     </inferredMetricsTieBreakers>
 </document>

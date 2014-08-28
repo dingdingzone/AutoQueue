@@ -299,6 +299,7 @@
 		0FC5BF0118F671D700F4A509 /* SortedService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC5BEF718F671D700F4A509 /* SortedService.m */; };
 		0FC5BF0218F671D700F4A509 /* UserUpdateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC5BEF918F671D700F4A509 /* UserUpdateService.m */; };
 		0FD930A2196ED87000C89C2D /* FPPopoverKeyboardResponsiveController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD930A1196ED87000C89C2D /* FPPopoverKeyboardResponsiveController.m */; };
+		0FEE742719AF2167005A99BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FEE742619AF2167005A99BE /* Images.xcassets */; };
 		0FF9D388195D4CB70051A572 /* find.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FF9D382195D4CB70051A572 /* find.png */; };
 		0FF9D389195D4CB70051A572 /* foodenjoy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FF9D383195D4CB70051A572 /* foodenjoy@2x.png */; };
 		0FF9D38A195D4CB70051A572 /* order.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FF9D384195D4CB70051A572 /* order.png */; };
@@ -758,6 +759,7 @@
 		0FC5BEF918F671D700F4A509 /* UserUpdateService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserUpdateService.m; sourceTree = "<group>"; };
 		0FD930A0196ED87000C89C2D /* FPPopoverKeyboardResponsiveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPPopoverKeyboardResponsiveController.h; sourceTree = "<group>"; };
 		0FD930A1196ED87000C89C2D /* FPPopoverKeyboardResponsiveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPPopoverKeyboardResponsiveController.m; sourceTree = "<group>"; };
+		0FEE742619AF2167005A99BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0FF9D382195D4CB70051A572 /* find.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = find.png; sourceTree = "<group>"; };
 		0FF9D383195D4CB70051A572 /* foodenjoy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "foodenjoy@2x.png"; sourceTree = "<group>"; };
 		0FF9D384195D4CB70051A572 /* order.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = order.png; sourceTree = "<group>"; };
@@ -1585,6 +1587,7 @@
 				0FB2B83518F7915900844627 /* Models */,
 				0FC5BEE718F671D700F4A509 /* Service */,
 				0FB2B85318F7917200844627 /* Resources */,
+				0FEE742619AF2167005A99BE /* Images.xcassets */,
 				9F87FB5F183B1E1200DE6FDD /* Supporting Files */,
 			);
 			path = AutoQueue;
@@ -1776,6 +1779,7 @@
 				0FF9D389195D4CB70051A572 /* foodenjoy@2x.png in Resources */,
 				0FB2B91E18F7917200844627 /* near_goods_up.png in Resources */,
 				0F9884A0196E9ABB0046BA6D /* foot.png in Resources */,
+				0FEE742719AF2167005A99BE /* Images.xcassets in Resources */,
 				9F87FB6D183B1E1200DE6FDD /* Default@2x.png in Resources */,
 				0FB2B90318F7917200844627 /* del_rubbish_box.png in Resources */,
 				0FB2B93C18F7917200844627 /* share_img.png in Resources */,
@@ -2069,6 +2073,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = armv7;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -2102,6 +2107,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = armv7;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
