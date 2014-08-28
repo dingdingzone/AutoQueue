@@ -51,10 +51,72 @@ int posNum;
 @synthesize myDelegate;
 @synthesize topBarDelegate;
 
+NSString *const MJTableViewCellIdentifier = @"Cell";
+
 AKSegmentedControl * segmentedControl;
+
+/**
+ *  集成刷新控件
+ */
+- (void)setupRefresh
+{
+    // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
+    [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
+    
+    #warning 自动刷新(一进入程序就下拉刷新)
+    [self.tableView headerBeginRefreshing];
+    
+    // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
+    [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
+}
+
+#pragma mark 开始进入刷新状态
+- (void)headerRereshing
+{
+    // 1.加载数据
+    
+    
+    // 2.2秒后刷新表格UI
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 刷新表格
+        [self.tableView reloadData];
+        
+        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
+        [self.tableView headerEndRefreshing];
+    });
+}
+
+- (void)footerRereshing
+{
+    // 1.加载数据
+    [self loadingTableData];
+    // 2.2秒后刷新表格UI
+//      dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        // 刷新表格
+//        [self.tableView reloadData];
+//        
+//        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
+//        [self.tableView footerEndRefreshing];
+//    });
+}
 
 - (void)viewDidLoad
 {
+    posNum =1;
+    
+    // 1.注册cell
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:MJTableViewCellIdentifier];
+    
+    // 2.集成刷新控件
+    [self setupRefresh];
+    
+    MerImageArr = [[NSMutableArray alloc] init];
+    MerNameArr = [[NSMutableArray alloc] init];
+    MerAddrArr = [[NSMutableArray alloc] init];
+    MerCountArr = [[NSMutableArray alloc] init];
+    MerIdArr = [[NSMutableArray alloc] init];
+
+    
     searchShop.delegate = self;
     myDelegate = [[UIApplication sharedApplication] delegate];
     userObj = myDelegate.userObj;
@@ -65,7 +127,7 @@ AKSegmentedControl * segmentedControl;
     
     // [segmentedControl setDelegate:self];
     
-
+    segmentedControl.queueViewController=self;
     [self.view addSubview:segmentedControl];
 
        // m_sqlite = [[CSqlite alloc]init];//SQL
@@ -136,11 +198,6 @@ AKSegmentedControl * segmentedControl;
 #pragma mark------------------加载tableview数据
 -(void)loadingTableData
 {
-    MerImageArr = [[NSMutableArray alloc] init];
-    MerNameArr = [[NSMutableArray alloc] init];
-    MerAddrArr = [[NSMutableArray alloc] init];
-    MerCountArr = [[NSMutableArray alloc] init];
-    MerIdArr = [[NSMutableArray alloc] init];
     
     float srcHeight = [ProSetting getSysHeight:self.view];
     float chaVal = srcHeight - 505;
@@ -150,20 +207,32 @@ AKSegmentedControl * segmentedControl;
     UIView *v = [[UIView alloc] initWithFrame:CGRectZero];
     [tableView setTableFooterView:v];
     
-    posNum = 1;
+    
     NSString * param = [AutoQueueUtil getMerchantInfoParam:@"" :@"" :@"" :@"" :@"" :@"" :@"":[NSString stringWithFormat:@"%d",posNum] :@"10"];
-    NSLog(@"%@",runningRequest);
+    posNum++;
+    
     NetWebServiceRequest *request =[AutoQueueUtil  initServiceRequest:param];
-    [request setDownCache:appDelegate.appCache];
+//  [request setDownCache:appDelegate.appCache];
     [request startAsynchronous];
     [request setDelegate:self];
     self.runningRequest = request;
 }
 
+#pragma mark-------------------刷新tableview
+-(void) freashTableView
+{
+   
+    queueService=[QueueService alloc];
+    [queueService getMerchantInfo:@"" :@"" :@"" :@"" :@"" :@"" :@"" :MerImageArr :MerNameArr :MerAddrArr :MerCountArr :MerIdArr :[NSString stringWithFormat:@"%d",posNum] :@"5"];
+    posNum++;
+    [tableView reloadData];
+
+}
+
 
 - (void)netRequestStarted:(NetWebServiceRequest *)request
 {
-    [self showProgress];
+//    [self showProgress];
     NSLog(@"Start");
 }
 
@@ -189,16 +258,24 @@ AKSegmentedControl * segmentedControl;
         [MerIdArr    addObject:[value objectForKey:@"merchantId"]];
     }
     
-    if (refreshHeaderView == nil)
-    {
+//    if (refreshHeaderView == nil)
+//    {
+//    
+//    	 EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height)];
+//    		view.delegate = self;
+//        [self.tableView addSubview:view];
+//        refreshHeaderView = view;
+//        [tableView reloadData];
+//    }else
+//    {
+//         [tableView reloadData];
+//    }
     
-    	 EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height)];
-    		view.delegate = self;
-        [self.tableView addSubview:view];
-        refreshHeaderView = view;
-        [tableView reloadData];
-    }
+    [tableView reloadData];
+
     
+    // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
+    [self.tableView footerEndRefreshing];
     [self hudWasHidden:HUD];//结束进度条
     
 }
@@ -285,6 +362,7 @@ AKSegmentedControl * segmentedControl;
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"queueCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
+   
     cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     cell.MerName.text = [MerNameArr objectAtIndex:indexPath.row];
     NSString *url = [MerImageArr objectAtIndex:indexPath.row];
@@ -303,7 +381,7 @@ AKSegmentedControl * segmentedControl;
     return cell;
 }
 
-///////////////////
+
 
 - (void)reloadTableViewDataSource{
 	reloading = YES;

@@ -30,8 +30,8 @@
 {
     NSString *param = [NSString stringWithFormat:@"{channel:\"Q\",channelType:\"PC\",serviceType:\"BUS10320\",securityCode:\"0000000000\",params:{pageNum:%@,pageSize:%@,merchantName:\"%@\",merchantType:\"%@\",merchantDetailType:\"%@\",province:\"%@\",city:\"%@\",area:\"%@\",businessDistrict:\"%@\",queueFlag:\"Y\",advertFlag:\"N\",receivedLevel:\"\",merchantLevel:\"\",onlineOrderFlag:\"\",GPSLatitude:\"\",GPSLongtude:\"\",userId:\"\"},rtnDataFormatType:\"user-defined\"}",pageNum,pageSize,merchantName,merchantType,merchantDetailType,province,city,area,businessDistrict];
     NSString *data = [InvokeService callService:param];
-    NSString *result = [SoapXmlParseHelper SoapMessageResultXml:data ServiceMethodName:@"ns:return"];
-    NSString *jsonStr = [SBJsonObj getNodeStr:result :@"merchantList"];
+//  NSString *result = [SoapXmlParseHelper SoapMessageResultXml:data ServiceMethodName:@"ns:return"];
+    NSString * jsonStr = [SBJsonObj getNodeStr:data :@"merchantList"];
     return [SBJsonObj fromDitionary:jsonStr];
 }
 

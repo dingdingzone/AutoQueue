@@ -63,8 +63,8 @@ SortedSelViewController *sortedSelViewController;
 - (void)viewDidLoad
 {
     UIButton * backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 44)];
-    [backButton addTarget:self action:@selector(backToIndex) forControlEvents:UIControlEventTouchUpInside];
-    [self.navigationItem setUIBarButtonItem:self.navigationItem : backButton];
+//    [backButton addTarget:self action:@selector(backToIndex) forControlEvents:UIControlEventTouchUpInside];
+//    [self.navigationItem setUIBarButtonItem:self.navigationItem : backButton];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.view.layer.backgroundColor = [ProSetting getColorByStr:@"f5f5f5"].CGColor;
@@ -92,6 +92,7 @@ SortedSelViewController *sortedSelViewController;
     [remBtn addTarget:self action:@selector(exitImageView:) forControlEvents:UIControlEventTouchDown];
     
     [shopDetailService getMerchantDetailInfo:MerId :dataArr];
+    NSLog(@"%@",dataArr);
     NSString *merName = [dataArr objectAtIndex:0];
     MerName.text = merName;
     [ProSetting setNaviTitle:merName :self];
@@ -108,7 +109,7 @@ SortedSelViewController *sortedSelViewController;
     if([picArr count] != 0)
     {
         NSString *str = [[picArr objectAtIndex:0] objectForKey:@"imageName"];
-        [StringUtil getImageView:str :MerPicImage];
+//        [StringUtil getImageView:str :MerPicImage];
     }
     else
     {

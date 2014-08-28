@@ -24,6 +24,7 @@
 #import "AKSegmentedControl.h"
 #import "DoubleTableController.h"
 #import "FPPopoverController.h"
+#import "QueueViewController.h"
 
 #define kAKButtonSeparatorWidth 1.0
 
@@ -35,6 +36,7 @@
 - (void)segmentButtonPressed:(id)sender;
 
 @end
+
 
 @implementation AKSegmentedControl
 {
@@ -51,6 +53,7 @@
 
 }
 
+@synthesize queueViewController=_queueViewController;
 #pragma mark -
 #pragma mark Init and Dealloc
 
@@ -138,6 +141,7 @@
 {
     NSLog(@"SELECTED ROW %d",rowNum);
     [popover dismissPopoverAnimated:YES];
+    [self.queueViewController freashTableView];
 }
 
 #pragma mark -
@@ -229,7 +233,6 @@
     [_buttonsArray enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
          if (idx < separatorsNumber)
          {
-             NSLog(@"-------");
              UIImageView *separatorImageView = [[UIImageView alloc] initWithImage:_separatorImage];
              [self addSubview:separatorImageView];
              [separatorsArray addObject:separatorImageView];

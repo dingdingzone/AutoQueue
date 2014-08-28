@@ -23,13 +23,13 @@ extern NSString*  axisurl = @"http://pay.hb.189.cn/autoQueueUp/ios.htm";
     
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:asiUrl];
 
-    [request setRequestMethod:@"GET"];
-    [request setTimeOutSeconds:60];
+    [request setRequestMethod:@"POST"];
+    [request setTimeOutSeconds:10];
     
     QueueAppDelegate * app =  [[UIApplication sharedApplication] delegate];
-    [request setDownloadCache:app.appCache];
-    [request setCacheStoragePolicy:ASICachePermanentlyCacheStoragePolicy];
-    request.delegate = self;
+//    [request setDownloadCache:app.appCache];
+//    [request setCacheStoragePolicy:ASICachePermanentlyCacheStoragePolicy];
+//    request.delegate = self;
     
     [request setPostValue:param forKey:@"param"];
     
@@ -69,7 +69,7 @@ extern NSString*  axisurl = @"http://pay.hb.189.cn/autoQueueUp/ios.htm";
     
     
     NSString *soapActionURL = @"http://service.hbgz.com";
-    NSURL * asiUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@", axisurl]];
+    NSURL * asiUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@", url]];
     
     ASIHTTPRequest *request =[[ASIHTTPRequest alloc] initWithURL:asiUrl];
     
@@ -121,8 +121,8 @@ extern NSString*  axisurl = @"http://pay.hb.189.cn/autoQueueUp/ios.htm";
 +(NSString  *) getServiceResult:(NSString *)param
 {
     NSString *data = [self callService:param];
-    NSString *result = [SoapXmlParseHelper SoapMessageResultXml:data ServiceMethodName:@"ns:return"];
-    return result;
+//    NSString *result = [SoapXmlParseHelper SoapMessageResultXml:data ServiceMethodName:@"ns:return"];
+    return data;
 }
 
 @end

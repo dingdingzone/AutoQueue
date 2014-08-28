@@ -30,7 +30,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tvz-ld-TrG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2797" y="-693"/>
+            <point key="canvasLocation" x="-2797" y="-775"/>
         </scene>
         <!--Queue View Controller-->
         <scene sceneID="5">
@@ -44,11 +44,11 @@
                                 <rect key="frame" x="0.0" y="32" width="320" height="448"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="queueCell" rowHeight="77" id="rnT-rM-uJd" customClass="QueueViewTableCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="queueCell" rowHeight="77" id="rnT-rM-uJd" customClass="QueueViewTableCell">
                                         <rect key="frame" x="0.0" y="86" width="320" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rnT-rM-uJd" id="tPI-CI-WaA">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="76"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="76"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Addr" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3wk-rp-cOK">
@@ -69,12 +69,6 @@
                                                     <rect key="frame" x="235" y="54" width="14" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100m" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dmN-IQ-kqz">
-                                                    <rect key="frame" x="249" y="55" width="32" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="红心.png" id="Jt1-ac-JhO">
                                                     <rect key="frame" x="81" y="40" width="12" height="11"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -152,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2279" y="-693"/>
+            <point key="canvasLocation" x="-2155" y="-775"/>
         </scene>
         <!--Shop Detail View Controller-->
         <scene sceneID="wgj-Jf-N5z">
@@ -408,10 +402,6 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chenge_recommended.png" id="y12-pF-30W">
-                                <rect key="frame" x="228" y="0.0" width="47" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="风味：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uzA-Ol-EJS">
                                 <rect key="frame" x="184" y="60" width="37" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -574,7 +564,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1YT-oM-8i4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1060" y="-1023"/>
+            <point key="canvasLocation" x="-1086" y="-1023"/>
         </scene>
         <!--Regeister View Controller-->
         <scene sceneID="vta-k2-kx0">
@@ -651,7 +641,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ut8-rW-Bfv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-569" y="540"/>
+            <point key="canvasLocation" x="-529" y="354"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="e9r-kc-dad">
@@ -722,7 +712,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qg1-M4-Zsp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1624" y="-260"/>
+            <point key="canvasLocation" x="-1086" y="-186"/>
         </scene>
         <!--My Queue Controller-->
         <scene sceneID="DGX-AH-WTx">
@@ -815,7 +805,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g4n-G5-psD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-569" y="-471"/>
+            <point key="canvasLocation" x="-529" y="-469"/>
         </scene>
         <!--Sorted View Controller - 已排队列-->
         <scene sceneID="0is-TV-TaU">
@@ -844,7 +834,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0iY-cr-5m4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26" y="-1031"/>
+            <point key="canvasLocation" x="4" y="-1023"/>
         </scene>
         <!--User Update View Controller - 修改资料-->
         <scene sceneID="ozI-74-j6n">
@@ -937,7 +927,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3hT-6S-NYX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-38" y="-37"/>
+            <point key="canvasLocation" x="16" y="-47"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XLx-Ha-TEm">
@@ -955,12 +945,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yhg-Yo-ZYU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3308" y="-693"/>
+            <point key="canvasLocation" x="-3328" y="-775"/>
         </scene>
     </scenes>
     <resources>
         <image name="bakflag.png" width="300" height="30"/>
-        <image name="chenge_recommended.png" width="98" height="89"/>
         <image name="detail_bk.png" width="640" height="99"/>
         <image name="main_top_logo.png" width="32" height="32"/>
         <image name="main_top_search.png" width="32" height="32"/>
@@ -992,8 +981,8 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="q3y-iV-XlN"/>
-        <segue reference="57t-of-hly"/>
-        <segue reference="icq-EF-ZDe"/>
         <segue reference="232-mb-p4J"/>
+        <segue reference="CnM-fQ-Bxl"/>
+        <segue reference="icq-EF-ZDe"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -42,6 +42,8 @@ NSString* const NetWebServiceRequestErrorDomain = @"NetWebServiceRequestErrorDom
 
 
 
+
+
 //创建请求对象
 - (id)initWithUrl:(NSString *)WebURL SOAPActionURL:(NSString *)soapActionURL
                                  ServiceMethodName:(NSString *)strMethod
@@ -131,7 +133,12 @@ NSString* const NetWebServiceRequestErrorDomain = @"NetWebServiceRequestErrorDom
     [_runningRequest startAsynchronous];
 }
 
-
+- (void)startSynchronous
+{
+    NSLog(@"Url_path:%@",_runningRequest.url);
+    NSLog(@"Method:%@",_runningRequest.requestMethod);
+    [_runningRequest startSynchronous];
+}
 
 - (void) cancel
 {

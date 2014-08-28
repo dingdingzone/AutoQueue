@@ -21,8 +21,7 @@
     //设置缓存路径
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentDirectory = [paths objectAtIndex:0];
-    NSLog(@"%@",documentDirectory);
-    
+      
     [self.appCache setStoragePath:[documentDirectory stringByAppendingPathComponent:@"resource"]];
     [self.appCache setDefaultCachePolicy:ASIOnlyLoadIfNotCachedCachePolicy];
     

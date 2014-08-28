@@ -27,7 +27,6 @@
         [MerImageArr addObject:[value objectForKey:@"imageName"]];
         [MerNameArr addObject:[value objectForKey:@"merchantName"]];
         [MerAddrArr addObject:[value objectForKey:@"addr"]];
-//        [MerCountArr addObject:[value objectForKey:@"count"]];
         [MerCountArr addObject:[value objectForKey:@"queueUserNum"]];
         [MerIdArr addObject:[value objectForKey:@"merchantId"]];
     }

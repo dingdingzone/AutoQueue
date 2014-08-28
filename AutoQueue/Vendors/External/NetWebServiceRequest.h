@@ -48,7 +48,7 @@ extern NSString* const NetWebServiceRequestErrorDomain;
 - (BOOL)isFinished;
 
 - (void)startAsynchronous;
-
+- (void)startSynchronous;
 
 -(void) setDownCache:(ASIDownloadCache *)cache;
 

@@ -13,6 +13,8 @@
 
 +(NSString*) callService:(NSString*)param;
 
++(NSString*) callWebService:(NSString*)param;
+
 +(NSString  *) getServiceResult:(NSString *)param;
 
 - (void)requestFinished:(ASIHTTPRequest *)request;

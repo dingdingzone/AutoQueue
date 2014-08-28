@@ -16,6 +16,7 @@
 #import "EGORefreshTableHeaderView.h"
 #import "MBProgressHUD.h"
 #import "BaseViewController.h"
+#import "MJRefresh.h"
 
 #define SCREENSHOT_MODE 0
 
@@ -78,4 +79,7 @@
 - (void)doneLoadingTableViewData;
 
 -(void)loadingTableData;
+
+-(void) freashTableView;
+
 @end
