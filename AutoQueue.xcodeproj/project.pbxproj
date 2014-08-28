@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F0374C519AEB52300227A39 /* NextWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0374C219AEB52300227A39 /* NextWebController.m */; };
+		0F0374C619AEB52300227A39 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0374C419AEB52300227A39 /* WebViewController.m */; };
 		0F0C253419669A86003D61D9 /* AutoQueueUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0C253319669A86003D61D9 /* AutoQueueUtil.m */; };
 		0F6E51FE196D2EAE00A3BF3F /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E51EC196D2EAE00A3BF3F /* fontawesome-webfont.ttf */; };
 		0F6E51FF196D2EAE00A3BF3F /* FAImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E51F0196D2EAE00A3BF3F /* FAImageView.m */; };
@@ -331,6 +333,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F0374C119AEB52300227A39 /* NextWebController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextWebController.h; sourceTree = "<group>"; };
+		0F0374C219AEB52300227A39 /* NextWebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextWebController.m; sourceTree = "<group>"; };
+		0F0374C319AEB52300227A39 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		0F0374C419AEB52300227A39 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		0F0C253219669A86003D61D9 /* AutoQueueUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoQueueUtil.h; sourceTree = "<group>"; };
 		0F0C253319669A86003D61D9 /* AutoQueueUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoQueueUtil.m; sourceTree = "<group>"; };
 		0F6E51EC196D2EAE00A3BF3F /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
@@ -818,6 +824,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F0374C019AEB4FF00227A39 /* web */ = {
+			isa = PBXGroup;
+			children = (
+				0F0374C119AEB52300227A39 /* NextWebController.h */,
+				0F0374C219AEB52300227A39 /* NextWebController.m */,
+				0F0374C319AEB52300227A39 /* WebViewController.h */,
+				0F0374C419AEB52300227A39 /* WebViewController.m */,
+			);
+			path = web;
+			sourceTree = "<group>";
+		};
 		0F6E51EB196D2EAE00A3BF3F /* PPiFlatSegmented */ = {
 			isa = PBXGroup;
 			children = (
@@ -1387,6 +1404,7 @@
 		0FB2BA4018F7918600844627 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0F0374C019AEB4FF00227A39 /* web */,
 				0F927D5019677B8D004E4F7A /* base */,
 				0FB2BA5B18F7918600844627 /* Popover */,
 				0F6E51EB196D2EAE00A3BF3F /* PPiFlatSegmented */,
@@ -1875,6 +1893,7 @@
 				0FB2BA3718F7917D00844627 /* rscode.c in Sources */,
 				0FB2BA2618F7917D00844627 /* SBJsonStreamWriterState.m in Sources */,
 				0FB2BA2318F7917D00844627 /* SBJsonStreamParserState.m in Sources */,
+				0F0374C619AEB52300227A39 /* WebViewController.m in Sources */,
 				0FB2B85118F7916800844627 /* StringUtil.m in Sources */,
 				0FB2BA2118F7917D00844627 /* SBJsonStreamParserAccumulator.m in Sources */,
 				0FB2BA0B18F7917D00844627 /* ASIDataDecompressor.m in Sources */,
@@ -1922,6 +1941,7 @@
 				0FB2BA3818F7917D00844627 /* split.c in Sources */,
 				0FB2B83D18F7915900844627 /* SortedQueue.m in Sources */,
 				0FB2BA0F18F7917D00844627 /* ASIInputStream.m in Sources */,
+				0F0374C519AEB52300227A39 /* NextWebController.m in Sources */,
 				0FB2BA7918F7918600844627 /* QueueViewTableCell.m in Sources */,
 				0FC5BF0018F671D700F4A509 /* ShopDetailService.m in Sources */,
 				0FB2BA8118F7918600844627 /* HeadViewController.m in Sources */,
