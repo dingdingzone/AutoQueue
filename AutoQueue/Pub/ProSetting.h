@@ -19,4 +19,7 @@
 +(float)getSysHeight:(UIView *)view;
 
 +(float)getScreenHeight;
+
++(float)getScrollViewHeight:(UIView *)view;
+
 @end

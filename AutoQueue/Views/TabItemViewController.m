@@ -31,13 +31,13 @@
     float screenHight=[ProSetting getScreenHeight];
     myscrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0,0.0,320,screenHight)];
     myscrollview.directionalLockEnabled = YES; //只能一个方向滑动
-    myscrollview.pagingEnabled = NO; //是否翻页
+    myscrollview.pagingEnabled = YES; //是否翻页
     myscrollview.backgroundColor = [UIColor whiteColor];
     myscrollview.showsVerticalScrollIndicator =YES; //垂直方向的滚动指示
     myscrollview.indicatorStyle = UIScrollViewIndicatorStyleWhite;//滚动指示的风格
     myscrollview.showsHorizontalScrollIndicator = NO;//水平方向的滚动指示
     myscrollview.delegate = self;
-    CGSize newSize = CGSizeMake(self.view.frame.size.width, self.view.bounds.size.height+480);
+    CGSize newSize = CGSizeMake(self.view.frame.size.width, self.view.bounds.size.height+200);
     [myscrollview setContentSize:newSize];
     
     headViewController=[HeadViewController alloc];

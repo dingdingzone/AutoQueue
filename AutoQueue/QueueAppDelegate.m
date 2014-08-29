@@ -12,7 +12,6 @@
 
 @synthesize tabBarViewController;
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //创建缓存对象

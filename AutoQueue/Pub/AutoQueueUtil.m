@@ -33,6 +33,7 @@
     return request;
 }
 
+
 +(NSString *) loginAction:(NSString *)userName :(NSString*) password
 {
 //        NSString *param = [[NSString alloc] initWithFormat:@"{channel:\"Q\",channelType:\"PC\",serviceType:\"BUS1022\",securityCode:\"0000000000\",params:{userName:\"%@\",password:\"%@\",userType:\"C\"},rtnDataFormatType:\"JSON\"}",userName,password];
@@ -46,7 +47,7 @@
 + (NSString *) getMerchantInfoParam:(NSString *)merchantName :(NSString *)merchantType :(NSString *)merchantDetailType :(NSString *)province :(NSString *)city :(NSString *)area :(NSString *)businessDistrict :(NSString *)pageNum :(NSString *)pageSize
 {
     
-    NSString *param = [NSString stringWithFormat:@"{channel:\"Q\",channelType:\"PC\",serviceType:\"BUS10320\",securityCode:\"0000000000\",params:{pageNum:%@,pageSize:%@,merchantName:\"%@\",merchantType:\"%@\",merchantDetailType:\"%@\",province:\"%@\",city:\"%@\",area:\"%@\",businessDistrict:\"%@\",queueFlag:\"Y\",advertFlag:\"N\",receivedLevel:\"\",merchantLevel:\"\",onlineOrderFlag:\"\",GPSLatitude:\"\",GPSLongtude:\"\",userId:\"\"},rtnDataFormatType:\"user-defined\"}",pageNum,pageSize,merchantName,merchantType,merchantDetailType,province,city,area,businessDistrict];
+    NSString *param = [NSString stringWithFormat:@"{channel:\"Q\",channelType:\"PC\",serviceType:\"BUS10320\",securityCode:\"0000000000\",params:{pageNum:%@,pageSize:%@,merchantName:\"%@\",merchantType:\"%@\",merchantDetailType:\"%@\",province:\"%@\",city:\"%@\",area:\"%@\",businessDistrict:\"%@\",queueFlag:\"Y\",advertFlag:\"N\",receivedLevel:\"\",merchantLevel:\"\",onlineOrderFlag:\"\",GPSLatitude:\"\",GPSLongtude:\"\",userId:\"\"},rtnDataFormatType:\"JSON\"}",pageNum,pageSize,merchantName,merchantType,merchantDetailType,province,city,area,businessDistrict];
     return param;
 }
 @end

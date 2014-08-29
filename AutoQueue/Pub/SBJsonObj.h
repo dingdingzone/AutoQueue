@@ -16,6 +16,8 @@
 
 + (NSString *) getNodeStr:(NSString *)jsonStr :(NSString *)nodeName;
 
++ (NSString *) getStr:(NSString *)jsonStr :(NSString *)nodeName;
+
 + (id) toBean:(NSString *)jsonStr:(NSString *)beanName;
 
 @end

@@ -94,4 +94,27 @@
 {
     return [UIScreen mainScreen].bounds.size.height;
 }
+
+/*计算scrollView高度*/
++(float)getScrollViewHeight:(UIView *)view
+{
+    int YY=0;
+    int HH=0;
+    for(UIView * myView in view.subviews)
+    {
+        
+        if ([myView isKindOfClass:[UIView class]])
+        {
+            int y=myView.frame.origin.y;
+            int h=myView.frame.size.height;
+            if(y>YY)
+            {
+                YY=y;
+                HH=YY+h;
+            }
+        }
+    }
+    return HH;
+}
+
 @end

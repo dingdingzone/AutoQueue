@@ -60,18 +60,35 @@ SortedSelViewController *sortedSelViewController;
     return self;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+   
+}
+
 - (void)viewDidLoad
 {
-    UIButton * backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 44)];
+//    UIButton * backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 44)];
 //    [backButton addTarget:self action:@selector(backToIndex) forControlEvents:UIControlEventTouchUpInside];
 //    [self.navigationItem setUIBarButtonItem:self.navigationItem : backButton];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.view.layer.backgroundColor = [ProSetting getColorByStr:@"f5f5f5"].CGColor;
-    CGSize scrSize = self.view.frame.size;
-    scrSize.height  = scrSize.height + 800;
-    scrollViewArea.contentSize = scrSize;
     
+
+    scrollViewArea.directionalLockEnabled = YES; //只能一个方向滑动
+    scrollViewArea.pagingEnabled = NO; //是否翻页
+    scrollViewArea.backgroundColor = [UIColor whiteColor];
+    scrollViewArea.showsVerticalScrollIndicator =YES; //垂直方向的滚动指示
+    scrollViewArea.indicatorStyle = UIScrollViewIndicatorStyleWhite;//滚动指示的风格
+    scrollViewArea.showsHorizontalScrollIndicator = NO;//水平方向的滚动指示
+
+    /*获取ScrollView高度*/
+    float scrollHeigth=[ProSetting getScrollViewHeight:self.scrollViewArea];
+    
+    CGSize newSize = CGSizeMake(self.view.frame.size.width, scrollHeigth);
+    [scrollViewArea setContentSize:newSize];
+
     myDelegate = [[UIApplication sharedApplication] delegate];
     userObj = myDelegate.userObj;
     queueObj = [Queue alloc];
@@ -83,21 +100,21 @@ SortedSelViewController *sortedSelViewController;
     UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onClickImage)];
     [MerPicImage addGestureRecognizer:singleTap];
     
-    CGRect rect = {{20,40},{250,340}};
-    slideImageView = [[SlideImageView alloc]initWithFrame:rect ZMarginValue:5 XMarginValue:10 AngleValue:0.3 Alpha:1000];
-    slideImageView.borderColor = [UIColor whiteColor];
-    slideImageView.delegate = self;
+//    CGRect rect = {{20,40},{250,340}};
+//    slideImageView = [[SlideImageView alloc]initWithFrame:rect ZMarginValue:5 XMarginValue:10 AngleValue:0.3 Alpha:1000];
+//    slideImageView.borderColor = [UIColor whiteColor];
+//    slideImageView.delegate = self;
     remBtn = [[UIButton alloc] initWithFrame:CGRectMake(20, 400, 300, 40)];
     [remBtn setTitle:@"" forState:UIControlStateNormal];
     [remBtn addTarget:self action:@selector(exitImageView:) forControlEvents:UIControlEventTouchDown];
     
     [shopDetailService getMerchantDetailInfo:MerId :dataArr];
-    NSLog(@"%@",dataArr);
+   
     NSString *merName = [dataArr objectAtIndex:0];
     MerName.text = merName;
     [ProSetting setNaviTitle:merName :self];
     [[dataArr objectAtIndex:1] isEqualToString:@""];
-    MerAveConsume.text = [NSString stringWithFormat:@"￥%@",![[dataArr objectAtIndex:1] isEqualToString:@""]?[dataArr objectAtIndex:1]:@"0"];
+    MerAveConsume.text = [NSString stringWithFormat:@"￥%@",![[dataArr objectAtIndex:1] isEqualToString:@""]?[dataArr objectAtIndex:0]:@"0"];
     MerType.text = [dataArr objectAtIndex:2];
     MerCount.text = [NSString stringWithFormat:@"%@",[dataArr objectAtIndex:3]];
     MerAddr.text = [dataArr objectAtIndex:4];

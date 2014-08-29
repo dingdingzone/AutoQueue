@@ -170,27 +170,6 @@ AKSegmentedControl * segmentedControl;
 
 
 
-#pragma mark------------------加载tableview数据
--(void)loadingTableData
-{
-    int h=STATUS_NAVI_H;
-    int listHeight=CONTENT_HEIGHT;
-    
-    tableView.frame = CGRectMake(tableView.frame.origin.x , h, tableView.frame.size.width , listHeight);
-    
-    UIView *v = [[UIView alloc] initWithFrame:CGRectZero];
-    [tableView setTableFooterView:v];
-    
-    
-    NSString * param = [AutoQueueUtil getMerchantInfoParam:@"" :@"" :@"" :@"" :@"" :@"" :@"":[NSString stringWithFormat:@"%d",posNum] :@"10"];
-    posNum++;
-    
-    NetWebServiceRequest *request =[AutoQueueUtil  initServiceRequest:param];
-//  [request setDownCache:appDelegate.appCache];
-    [request startAsynchronous];
-    [request setDelegate:self];
-    self.runningRequest = request;
-}
 
 #pragma mark-------------------刷新tableview
 -(void) freashTableView
@@ -203,48 +182,96 @@ AKSegmentedControl * segmentedControl;
 
 }
 
-#pragma mark------------------开始异步请求数据tableview
+#pragma mark -----------------------------调用webservice服务组件
+/*加载tableview数据*/
+-(void)loadingTableData
+{
+    int h=STATUS_NAVI_H;
+    int listHeight=CONTENT_HEIGHT;
+    
+    tableView.frame = CGRectMake(tableView.frame.origin.x , h, tableView.frame.size.width , listHeight);
+    
+    UIView *v = [[UIView alloc] initWithFrame:CGRectZero];
+    [tableView setTableFooterView:v];
+    
+    /*获取调用webservice服务入参*/
+    NSString * param = [AutoQueueUtil getMerchantInfoParam:@"" :@"" :@"" :@"" :@"" :@"" :@"":[NSString stringWithFormat:@"%d",posNum] :@"10"];
+    posNum++;
+    
+    /*获取服务实例*/
+    NetWebServiceRequest *request =[AutoQueueUtil  initServiceRequest:param];
+    
+    /*缓存设置*/
+    //  [request setDownCache:appDelegate.appCache];
+    
+    /*异步设置*/
+    [request startAsynchronous];
+    
+    [request setDelegate:self];
+    
+    self.runningRequest = request;
+}
+
+
+/*开始异步请求数据tableview*/
 - (void)netRequestStarted:(NetWebServiceRequest *)request
 {
 //   [self showProgress];
     NSLog(@"Start");
 }
 
-#pragma mark------------------结束异步请求数据tableview
+/*结束异步请求数据tableview*/
 - (void)netRequestFinished:(NetWebServiceRequest *)request finishedInfoToResult:(NSString *)result responseData:(NSData *)requestData
 {
     NSLog(@"Result");
     NSString *resultMsg = [[NSString alloc] initWithData:requestData  encoding:NSUTF8StringEncoding];
     
     NSString *jsonStr = [SoapXmlParseHelper SoapMessageResultXml:resultMsg ServiceMethodName:@"ns:return"];
-    NSString *returnMsgStr = [SBJsonObj getNodeStr:jsonStr :@"merchantList"];
     
-    NSMutableDictionary *dict = [SBJsonObj fromDitionary:returnMsgStr];
-    NSEnumerator *enumerator = [dict objectEnumerator];
-    id value;
-    while(value = [enumerator nextObject])
-    {
-        [MerImageArr addObject:[value objectForKey:@"imageName"]];
-        [MerNameArr  addObject:[value objectForKey:@"merchantName"]];
-        [MerAddrArr  addObject:[value objectForKey:@"addr"]];
-        [MerCountArr addObject:[value objectForKey:@"queueUserNum"]];
-        [MerIdArr    addObject:[value objectForKey:@"merchantId"]];
-    }
+    /*服务调用执行结果标示*/
+    NSString * executeType=[SBJsonObj getStr:jsonStr :@"executeType"];
     
-    [tableView reloadData];
+    /*服务请求ID*/
+    NSString * serviceCode=[SBJsonObj getStr:jsonStr :@"serviceCode"];
 
-    // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
-    [self.tableView footerEndRefreshing];
-    [self hudWasHidden:HUD];//结束进度条
-    
+    /*服务调用返回结果*/
+    NSString *returnMsg =  [SBJsonObj getNodeStr:jsonStr :@"returnMsg"];
+   
+    /*判断调用服务类型，用于处理不同服务返回值*/
+    BOOL isequal = HOT_SALES(serviceCode);
+
+    if (isequal)
+    {
+        NSString *returnMsgStr = [SBJsonObj getNodeStr:returnMsg :@"merchantList"];
+        
+        NSMutableDictionary *dict = [SBJsonObj fromDitionary:returnMsgStr];
+        NSEnumerator *enumerator = [dict objectEnumerator];
+        id value;
+        while(value = [enumerator nextObject])
+        {
+            [MerImageArr addObject:[value objectForKey:@"imageName"]];
+            [MerNameArr  addObject:[value objectForKey:@"merchantName"]];
+            [MerAddrArr  addObject:[value objectForKey:@"addr"]];
+            [MerCountArr addObject:[value objectForKey:@"queueUserNum"]];
+            [MerIdArr    addObject:[value objectForKey:@"merchantId"]];
+        }
+        
+        [tableView reloadData];
+        
+        // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
+        [self.tableView footerEndRefreshing];
+        [self hudWasHidden:HUD];//结束进度条
+    }
 }
 
 
-#pragma mark------------------异步请求数据失败tableview
+#pragma mark ------------------------------结束调用webservice服务组件
+/*异步请求数据失败tableview*/
 - (void)netRequestFailed:(NetWebServiceRequest *)request didRequestError:(NSError *)error
 {
     NSLog(@"%@",error);
 }
+
 
 #pragma mark -----------------控制topbar的item显示
 -(void) controlTopBarDisplay:(Boolean *)flag

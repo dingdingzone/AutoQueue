@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "QueueAppDelegate.h"
 #import "SlideImageView.h"
+#import "BaseViewController.h"
 
-@interface ShopDetailViewController : UIViewController<UIAlertViewDelegate,SlideImageViewDelegate>
+@interface ShopDetailViewController : BaseViewController<UIAlertViewDelegate,SlideImageViewDelegate>
 {
     SlideImageView* slideImageView;
     UIButton *remBtn;

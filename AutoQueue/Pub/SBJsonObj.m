@@ -27,7 +27,14 @@
 + (NSString *) getNodeStr:(NSString *)jsonStr :(NSString *)nodeName
 {
     NSMutableDictionary *jsonDict = [self fromDitionary:jsonStr];
+    [jsonDict objectForKey:nodeName];
     return [[jsonDict objectForKey:nodeName] JSONRepresentation];
+}
+
++ (NSString *) getStr:(NSString *)jsonStr :(NSString *)nodeName
+{
+    NSMutableDictionary *jsonDict = [self fromDitionary:jsonStr];
+    return[jsonDict objectForKey:nodeName];
 }
 
 + (id) toBean:(NSString *)jsonStr:(NSString *)beanName

@@ -33,6 +33,10 @@
 /*屏幕内容高度*/
 #define CONTENT_HEIGHT [ProSetting getSysHeight:self.view]-STATUS_NAVI_H;
 
+/*热卖服务*/
+#define HOT_SALES(str)  [@"BUS10320" isEqualToString:str];
+
+
 @interface BaseViewController : UIViewController<MBProgressHUDDelegate,NetWebServiceRequestDelegate>
 {
     /*加载控件*/
