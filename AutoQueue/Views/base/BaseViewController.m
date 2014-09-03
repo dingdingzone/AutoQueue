@@ -16,13 +16,11 @@
 @synthesize appDelegate;
 @synthesize runningRequest = _runningRequest;
 
-
-
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if (self)
+    {
         // Custom initialization
     }
     return self;
@@ -33,6 +31,34 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.appDelegate=[[UIApplication sharedApplication] delegate];
+    
+    UIButton * backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+    UIImage * img = [UIImage imageNamed:@"main_top_logo.png"];
+    img=[img scaleToSize:CGSizeMake(25.0f, 25.0f)];
+    [backButton setBackgroundImage:[img stretchableImageWithLeftCapWidth:20 topCapHeight:15] forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(backToIndex) forControlEvents:UIControlEventTouchUpInside];
+    
+    //    [self.navigationItem setUIBarButtonItem:self.navigationItem : backButton];
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    self.navigationItem.leftBarButtonItem =backItem;
+}
+
+
+-(void) setNavigationLeftItemTitle:(NSString*)title:(int) viewTag
+{
+    for(UIView * myView in self.navigationController.navigationBar.subviews)
+    {
+        if(myView.tag==viewTag)
+        {
+            UILabel * label=myView;
+            label.text=@"123";
+        }
+    }
+}
+
+-(void)backToIndex
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning

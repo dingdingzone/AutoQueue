@@ -10,16 +10,16 @@
 
 @implementation UINavigationItem (custom)
 
--(void) setUIBarButtonItem:(UINavigationItem*)item : (UIButton*) backButton;
+-(void) setUIBarButtonItem:(UINavigationItem*)item : (UIButton*) backButton
 {
     
-    [backButton setImage:[UIImage imageNamed:@"向左箭头.png"] forState:UIControlStateNormal];
+//    [backButton setImage:[UIImage imageNamed:@"向左箭头.png"] forState:UIControlStateNormal];
     
     //[backButton setBackgroundImage: [UIImage imageNamed:@"navigation.jpg"] forState:UIControlStateHighlighted];
     
     //[backButton setBackgroundImage: [UIImage imageNamed:@"navigation.jpg"] forState:UIControlStateNormal];
     
-    UIBarButtonItem*icon =[[UIBarButtonItem alloc] initWithCustomView :backButton];
+    UIBarButtonItem* icon =[[UIBarButtonItem alloc] initWithCustomView :backButton];
     
     item.leftBarButtonItem = icon;
     

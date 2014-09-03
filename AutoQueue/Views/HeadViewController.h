@@ -16,5 +16,6 @@
 
 @interface HeadViewController : UIViewController
 -(IBAction)foodOnClick:(id)sender;
+-(IBAction)queueOnClick:(id)sender;
 @property (assign, nonatomic) id<PushViewDelegate> delegate;
 @end

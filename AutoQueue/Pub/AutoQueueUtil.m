@@ -50,4 +50,11 @@
     NSString *param = [NSString stringWithFormat:@"{channel:\"Q\",channelType:\"PC\",serviceType:\"BUS10320\",securityCode:\"0000000000\",params:{pageNum:%@,pageSize:%@,merchantName:\"%@\",merchantType:\"%@\",merchantDetailType:\"%@\",province:\"%@\",city:\"%@\",area:\"%@\",businessDistrict:\"%@\",queueFlag:\"Y\",advertFlag:\"N\",receivedLevel:\"\",merchantLevel:\"\",onlineOrderFlag:\"\",GPSLatitude:\"\",GPSLongtude:\"\",userId:\"\"},rtnDataFormatType:\"JSON\"}",pageNum,pageSize,merchantName,merchantType,merchantDetailType,province,city,area,businessDistrict];
     return param;
 }
+
+/*获取商家信息*/
++(NSString *) getMerchantById:(NSString *)merId
+{
+    NSString *param =[NSString stringWithFormat:@"{channel:\"Q\",channelType:\"PC\",serviceType:\"BUS1032\",securityCode:\"0000000000\",params:{merchantId:\"%@\"},rtnDataFormatType:\"JSON\"}", merId];
+    return param;
+}
 @end

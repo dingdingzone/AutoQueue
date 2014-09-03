@@ -59,4 +59,10 @@
     [delegate.tabView performSegueWithIdentifier:@"tabSegue" sender:self];
 }
 
+-(void)queueOnClick:(id)sender
+{
+    QueueAppDelegate * delegate=[[UIApplication sharedApplication] delegate];
+    [delegate.tabView performSegueWithIdentifier:@"queue_segue" sender:self];
+}
+
 @end

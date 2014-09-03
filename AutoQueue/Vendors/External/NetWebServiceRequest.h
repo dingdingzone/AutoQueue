@@ -65,7 +65,6 @@ extern NSString* const NetWebServiceRequestErrorDomain;
 - (void)netRequestStarted:(NetWebServiceRequest *)request;
 //失败
 - (void)netRequestFailed:(NetWebServiceRequest *)request didRequestError:(NSError *)error;
-
 @required
 //成功
 - (void)netRequestFinished:(NetWebServiceRequest *)request finishedInfoToResult:(NSString *)result responseData:(NSData *)requestData;

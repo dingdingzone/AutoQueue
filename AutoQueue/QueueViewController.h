@@ -13,7 +13,6 @@
 #import "ZBarSDK.h"
 #import "ShopDetailViewController.h"
 #import "QueueAppDelegate.h"
-#import "EGORefreshTableHeaderView.h"
 #import "MBProgressHUD.h"
 #import "BaseViewController.h"
 #import "MJRefresh.h"
@@ -44,10 +43,8 @@
 @end
 
 @interface QueueViewController : BaseViewController
-<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,EGORefreshTableHeaderDelegate,EGORefreshTableHeaderDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,ZBarReaderDelegate,CLLocationManagerDelegate,MBProgressHUDDelegate>
+<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,ZBarReaderDelegate,CLLocationManagerDelegate,MBProgressHUDDelegate>
 {
-    
-    EGORefreshTableHeaderView *refreshHeaderView;
     CLLocationManager *locationManager;
     CSqlite *m_sqlite;
     int num;

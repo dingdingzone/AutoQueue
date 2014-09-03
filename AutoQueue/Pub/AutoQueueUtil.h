@@ -15,4 +15,6 @@
 +(NSString *) loginAction:(NSString *)userName :(NSString*) password;
 
 + (NSString *) getMerchantInfoParam:(NSString *)merchantName :(NSString *)merchantType :(NSString *)merchantDetailType :(NSString *)province :(NSString *)city :(NSString *)area :(NSString *)businessDistrict :(NSString *)pageNum :(NSString *)pageSize;
+
++(NSString *) getMerchantById:(NSString *)merId;
 @end

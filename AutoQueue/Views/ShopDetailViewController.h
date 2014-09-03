@@ -10,8 +10,9 @@
 #import "QueueAppDelegate.h"
 #import "SlideImageView.h"
 #import "BaseViewController.h"
+#import "LoginViewController.h"
 
-@interface ShopDetailViewController : BaseViewController<UIAlertViewDelegate,SlideImageViewDelegate>
+@interface ShopDetailViewController : BaseViewController<UIAlertViewDelegate,SlideImageViewDelegate,LoginDelegate>
 {
     SlideImageView* slideImageView;
     UIButton *remBtn;
@@ -34,6 +35,5 @@
 @property (nonatomic, strong) NSString *MerId;
 
 - (IBAction)getNumClick:(id)sender;
-
 
 @end

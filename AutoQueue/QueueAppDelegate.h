@@ -17,12 +17,12 @@
     ASIDownloadCache * appCache;
     
 }
-@property (nonatomic,retain) ASIDownloadCache * appCache;
+@property (nonatomic,retain)  ASIDownloadCache * appCache;
 @property (strong, nonatomic) UIWindow *window;
-@property (nonatomic,retain) id userObj;
-@property (nonatomic,retain) NSString * userNameApp;
-@property (nonatomic,retain) NSString * passWordApp;
-@property (nonatomic,retain) UITabBarController* tabBarViewController;
-@property (nonatomic,retain) TabViewController * tabView;
+@property (nonatomic,retain)  id userObj;
+@property (nonatomic,retain)  NSString * userNameApp;
+@property (nonatomic,retain)  NSString * passWordApp;
+@property (nonatomic,retain)  UITabBarController* tabBarViewController;
+@property (nonatomic,retain)  TabViewController * tabView;
 @property (nonatomic,retain)  UIViewController * topView ;
 @end

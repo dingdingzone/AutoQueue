@@ -17,6 +17,7 @@
 #import "SBJsonObj.h"
 #import "ProSetting.h"
 #import "SortedSelViewController.h"
+#import "LoginViewController.h"
 
 @interface ShopDetailViewController ()
 
@@ -60,22 +61,15 @@ SortedSelViewController *sortedSelViewController;
     return self;
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-   
-}
 
 - (void)viewDidLoad
 {
-//    UIButton * backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 44)];
-//    [backButton addTarget:self action:@selector(backToIndex) forControlEvents:UIControlEventTouchUpInside];
-//    [self.navigationItem setUIBarButtonItem:self.navigationItem : backButton];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.view.layer.backgroundColor = [ProSetting getColorByStr:@"f5f5f5"].CGColor;
     
-
+    [self setNavigationLeftItemTitle:@"123":4];
+    
     scrollViewArea.directionalLockEnabled = YES; //只能一个方向滑动
     scrollViewArea.pagingEnabled = NO; //是否翻页
     scrollViewArea.backgroundColor = [UIColor whiteColor];
@@ -92,10 +86,11 @@ SortedSelViewController *sortedSelViewController;
     myDelegate = [[UIApplication sharedApplication] delegate];
     userObj = myDelegate.userObj;
     queueObj = [Queue alloc];
-    shopDetailService = [ShopDetailService alloc];
+    
     dataSelNumArr = [[NSMutableArray alloc] init];
     merImageArr = [[NSMutableArray alloc] init];
     dataArr = [[NSMutableArray alloc] init];
+    [self initDataLoad];
     MerPicImage.userInteractionEnabled = YES;
     UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onClickImage)];
     [MerPicImage addGestureRecognizer:singleTap];
@@ -108,34 +103,108 @@ SortedSelViewController *sortedSelViewController;
     [remBtn setTitle:@"" forState:UIControlStateNormal];
     [remBtn addTarget:self action:@selector(exitImageView:) forControlEvents:UIControlEventTouchDown];
     
-    [shopDetailService getMerchantDetailInfo:MerId :dataArr];
-   
-    NSString *merName = [dataArr objectAtIndex:0];
-    MerName.text = merName;
-    [ProSetting setNaviTitle:merName :self];
-    [[dataArr objectAtIndex:1] isEqualToString:@""];
-    MerAveConsume.text = [NSString stringWithFormat:@"￥%@",![[dataArr objectAtIndex:1] isEqualToString:@""]?[dataArr objectAtIndex:0]:@"0"];
-    MerType.text = [dataArr objectAtIndex:2];
-    MerCount.text = [NSString stringWithFormat:@"%@",[dataArr objectAtIndex:3]];
-    MerAddr.text = [dataArr objectAtIndex:4];
-    MerPhone.text = [dataArr objectAtIndex:5];
-    MerDiscount.text = [dataArr objectAtIndex:6];
-    MerDisc.text = [dataArr objectAtIndex:7];
-    MerTime.text = [dataArr objectAtIndex:8];
-    picArr = [dataArr objectAtIndex:9];
-    if([picArr count] != 0)
-    {
-        NSString *str = [[picArr objectAtIndex:0] objectForKey:@"imageName"];
-//        [StringUtil getImageView:str :MerPicImage];
-    }
-    else
-    {
-        UIImage *image = [UIImage imageNamed:@"default_loading_img.png"];
-        MerPicImage.image = image;
-    }
-    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(loadMerImage) object:nil];
-    [thread start];
+
+//    picArr = [dataArr objectAtIndex:9];
+//    if([picArr count] != 0)
+//    {
+//        NSString *str = [[picArr objectAtIndex:0] objectForKey:@"imageName"];
+////        [StringUtil getImageView:str :MerPicImage];
+//    }
+//    else
+//    {
+//        UIImage *image = [UIImage imageNamed:@"default_loading_img.png"];
+//        MerPicImage.image = image;
+//    }
+//    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(loadMerImage) object:nil];
+//    [thread start];
 }
+
+#pragma mark------------------------初始数据
+-(void) initDataLoad
+{
+     NSString * param = [AutoQueueUtil getMerchantById:MerId];
+    
+    /*获取服务实例*/
+    NetWebServiceRequest *request =[AutoQueueUtil  initServiceRequest:param];
+    
+    /*缓存设置*/
+    //  [request setDownCache:appDelegate.appCache];
+    
+    /*异步设置*/
+    [request startAsynchronous];
+    
+    [request setDelegate:self];
+    
+    self.runningRequest = request;
+}
+
+/*开始异步请求数据tableview*/
+- (void)netRequestStarted:(NetWebServiceRequest *)request
+{
+   [self showProgress];
+    NSLog(@"Start");
+}
+
+/*结束异步请求数据tableview*/
+- (void)netRequestFinished:(NetWebServiceRequest *)request finishedInfoToResult:(NSString *)result responseData:(NSData *)requestData
+{
+    NSLog(@"Result");
+    NSString *resultMsg = [[NSString alloc] initWithData:requestData  encoding:NSUTF8StringEncoding];
+    
+    NSString *jsonStr = [SoapXmlParseHelper SoapMessageResultXml:resultMsg ServiceMethodName:@"ns:return"];
+    
+    /*服务调用执行结果标示*/
+    NSString * executeType=[SBJsonObj getStr:jsonStr :@"executeType"];
+    
+    /*服务请求ID*/
+    NSString * serviceCode=[SBJsonObj getStr:jsonStr :@"serviceCode"];
+    
+    /*服务调用返回结果*/
+    NSString *returnMsg =  [SBJsonObj getNodeStr:jsonStr :@"returnMsg"];
+    
+    /*判断调用服务类型，用于处理不同服务返回值*/
+    BOOL MER_BASE_INFO_BOOL = MER_BASE_INFO(serviceCode);
+    
+    if (MER_BASE_INFO_BOOL)
+    {
+        NSMutableDictionary *dict = [SBJsonObj fromDitionary:returnMsg];
+        [dataArr addObject:[dict objectForKey:@"merchantName"]];
+        [dataArr addObject:[dict objectForKey:@"averageConsume"]];
+        [dataArr addObject:[dict objectForKey:@"merchantType"]];
+        [dataArr addObject:[dict objectForKey:@"queueCount"]];
+        [dataArr addObject:[dict objectForKey:@"addr"]];
+        [dataArr addObject:[dict objectForKey:@"contactNbr"]];
+        [dataArr addObject:[dict objectForKey:@"discount"]];
+        [dataArr addObject:[dict objectForKey:@"merchantDesc"]];
+        [dataArr addObject:[dict objectForKey:@"openTime"]];
+        [dataArr addObject:[dict objectForKey:@"imageInfo"]];
+        
+        NSString *merName = [dataArr objectAtIndex:0];
+        MerName.text = merName;
+        [ProSetting setNaviTitle:merName :self];
+        [[dataArr objectAtIndex:1] isEqualToString:@""];
+        MerAveConsume.text = [NSString stringWithFormat:@"￥%@",![[dataArr objectAtIndex:1] isEqualToString:@""]?[dataArr objectAtIndex:0]:@"0"];
+        MerType.text = [dataArr objectAtIndex:2];
+        MerCount.text = [NSString stringWithFormat:@"%@",[dataArr objectAtIndex:3]];
+        MerAddr.text = [dataArr objectAtIndex:4];
+        MerPhone.text = [dataArr objectAtIndex:5];
+        MerDiscount.text = [dataArr objectAtIndex:6];
+        MerDisc.text = [dataArr objectAtIndex:7];
+        MerTime.text = [dataArr objectAtIndex:8];
+    }
+    [self hudWasHidden:HUD];//结束进度条
+}
+
+
+#pragma mark ------------------------------结束调用webservice服务组件
+/*异步请求数据失败tableview*/
+- (void)netRequestFailed:(NetWebServiceRequest *)request didRequestError:(NSError *)error
+{
+    NSLog(@"%@",error);
+}
+
+
+
 
 -(void)loadMerImage
 {
@@ -206,8 +275,11 @@ SortedSelViewController *sortedSelViewController;
     }
     else
     {
-        noLoginAlertView= [[UIAlertView alloc] initWithTitle:@"取号失败" message:@"您还未进行登录" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-        [noLoginAlertView show];
+//        noLoginAlertView= [[UIAlertView alloc] initWithTitle:@"取号失败" message:@"您还未进行登录" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+//        [noLoginAlertView show];
+        LoginViewController * loginView=[LoginViewController alloc];
+        [loginView setDelegate:self];
+        [self.navigationController pushViewController:loginView animated:YES];
     }
     
 //    NSArray *viewArr = [[NSBundle mainBundle]loadNibNamed:@"SortedSelController" owner:self options:nil];
@@ -215,6 +287,11 @@ SortedSelViewController *sortedSelViewController;
 //    sortedSelViewController.view.frame = CGRectMake(0.0f, 190.0f, 320.0f, 197.0f);
 //    sortedSelViewController.view.backgroundColor = [ProSetting getColorByStr:@"f5f5f5"];
 //    [self.view addSubview:sortedSelViewController.view];
+}
+
+-(void) loginCallBack:(NSString *) result
+{
+    NSLog(@"------------@%",result);
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -225,7 +302,8 @@ SortedSelViewController *sortedSelViewController;
     }
     else if(alertView == noLoginAlertView)
     {
-        [self performSegueWithIdentifier:@"Segue_noLogin" sender:self];
+        LoginViewController * loginView=[LoginViewController alloc];
+        [self.navigationController pushViewController:loginView animated:YES];
     }
 }
 
@@ -292,13 +370,7 @@ SortedSelViewController *sortedSelViewController;
 //    indexLabel.text = indexStr;
 }
 
--(void)backToIndex
-{
-    //do something.
-    
-    [self.navigationController popViewControllerAnimated:YES];
-    
-}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -308,3 +380,16 @@ SortedSelViewController *sortedSelViewController;
 
 
 @end
+
+
+//    UIButton * backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+//    UIImage * img = [UIImage imageNamed:@"main_top_logo.png"];
+//    img=[img scaleToSize:CGSizeMake(25.0f, 25.0f)];
+//    [backButton setBackgroundImage:[img stretchableImageWithLeftCapWidth:20 topCapHeight:15] forState:UIControlStateNormal];
+//    [backButton addTarget:self action:@selector(backToIndex) forControlEvents:UIControlEventTouchUpInside];
+//
+////    [self.navigationItem setUIBarButtonItem:self.navigationItem : backButton];
+//    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+//    self.navigationItem.leftBarButtonItem =backItem;
+
+

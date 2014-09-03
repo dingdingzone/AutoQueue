@@ -17,7 +17,7 @@
 #import "QueueAppDelegate.h"
 #import "PPiFlatSegmentedControl.h"
 #import "NSString+FontAwesome.h"
-
+#import "UIImage.h"
 /*状态栏高度*/
 #define  STATUS_BAR_H 20.0;
 
@@ -35,6 +35,8 @@
 
 /*热卖服务*/
 #define HOT_SALES(str)  [@"BUS10320" isEqualToString:str];
+/*商家基本信息*/
+#define MER_BASE_INFO(str)  [@"BUS1032" isEqualToString:str];
 
 
 @interface BaseViewController : UIViewController<MBProgressHUDDelegate,NetWebServiceRequestDelegate>
@@ -57,5 +59,6 @@
 - (void)myProgressTask;
 - (void)hudWasHidden:(MBProgressHUD *)hud;
 -(void) showProgress;
+-(void) setNavigationLeftItemTitle:(NSString*)title:(int) viewTag;
 
 @end

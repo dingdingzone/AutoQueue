@@ -199,7 +199,7 @@ AKSegmentedControl * segmentedControl;
     posNum++;
     
     /*获取服务实例*/
-    NetWebServiceRequest *request =[AutoQueueUtil  initServiceRequest:param];
+    NetWebServiceRequest * request =[AutoQueueUtil  initServiceRequest:param];
     
     /*缓存设置*/
     //  [request setDownCache:appDelegate.appCache];

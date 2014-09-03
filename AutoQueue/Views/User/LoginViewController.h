@@ -2,14 +2,18 @@
 //  LoginViewController.h
 //  AutoQueue
 //
-//  Created by alone on 13-11-19.
-//  Copyright (c) 2013年 Queue. All rights reserved.
+//  Created by Lapland_Alone on 14-9-3.
+//  Copyright (c) 2014年 Queue. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "UIImage.h"
-#import "QueueAppDelegate.h"
 #import "BaseViewController.h"
+
+@protocol LoginDelegate <NSObject>
+
+-(void) loginCallBack:(NSString *) result;
+
+@end
+
 
 @interface LoginViewController : BaseViewController<UITextFieldDelegate>
 
@@ -18,6 +22,9 @@
 @property (strong, nonatomic) IBOutlet UITextField *userName;
 @property (nonatomic,retain) QueueAppDelegate * myDelegate;
 
+@property (nonatomic, assign) id<LoginDelegate> delegate;
+
 -(IBAction) loginAction:(id)sender;
 
+- (void) setDelegate:(id)delegate;
 @end

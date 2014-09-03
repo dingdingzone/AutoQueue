@@ -34,11 +34,7 @@
     }
 }
 
--(NSString *) getMerchantById:(NSString *)merId
-{
-    NSString *param =[NSString stringWithFormat:@"{channel:\"Q\",channelType:\"PC\",serviceType:\"BUS1032\",securityCode:\"0000000000\",params:{merchantId:\"%@\"},rtnDataFormatType:\"user-defined\"}", merId];
-    return [InvokeService getServiceResult:param];
-}
+
 
 -(void) getQueueInfo:(NSString *)merId :(NSMutableArray *)arr
 {
