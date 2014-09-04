@@ -2,14 +2,13 @@
 //  UserUpdateViewController.h
 //  AutoQueue
 //
-//  Created by leo on 13-12-16.
-//  Copyright (c) 2013年 Queue. All rights reserved.
+//  Created by Lapland_Alone on 14-9-4.
+//  Copyright (c) 2014年 Queue. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "QueueAppDelegate.h"
+#import "BaseViewController.h"
 
-@interface UserUpdateViewController : UIViewController<UITextFieldDelegate,UIAlertViewDelegate>
+@interface UserUpdateViewController : BaseViewController<UITextFieldDelegate,UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *userPhone;
 @property (weak, nonatomic) IBOutlet UITextField *passOld;

@@ -1,14 +1,14 @@
 //
-//  RegeisterViewController.h
+//  RegisterViewController.h
 //  AutoQueue
 //
-//  Created by alone on 13-11-21.
-//  Copyright (c) 2013年 Queue. All rights reserved.
+//  Created by Lapland_Alone on 14-9-4.
+//  Copyright (c) 2014年 Queue. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface RegeisterViewController : UIViewController<UITextFieldDelegate,UIAlertViewDelegate>
+@interface RegisterViewController : BaseViewController<UITextFieldDelegate,UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *regPhone;
 @property (weak, nonatomic) IBOutlet UITextField *regValiCode;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *regSegment;
@@ -17,6 +17,6 @@
 
 - (IBAction)getValiCodeClick:(id)sender;
 
-- (IBAction)regClick:(id)sender;
+- (IBAction)registerClick:(id)sender;
 
 @end

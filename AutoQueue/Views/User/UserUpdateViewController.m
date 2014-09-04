@@ -2,8 +2,8 @@
 //  UserUpdateViewController.m
 //  AutoQueue
 //
-//  Created by leo on 13-12-16.
-//  Copyright (c) 2013年 Queue. All rights reserved.
+//  Created by Lapland_Alone on 14-9-4.
+//  Copyright (c) 2014年 Queue. All rights reserved.
 //
 
 #import "UserUpdateViewController.h"
@@ -12,7 +12,6 @@
 #import "StringUtil.h"
 #import "UserUpdateService.h"
 #import "ProSetting.h"
-
 @interface UserUpdateViewController ()
 
 @end
@@ -45,10 +44,6 @@ UserUpdateService *userUpdateService;
     passOld.delegate = self;
     passNew.delegate = self;
     passConfirm.delegate = self;
-    
-    UIButton * backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 44)];
-    [backButton addTarget:self action:@selector(backToIndex) forControlEvents:UIControlEventTouchUpInside];
-    [self.navigationItem setUIBarButtonItem:self.navigationItem : backButton];
     
     userUpdateService = [[UserUpdateService alloc] init];
     
@@ -117,7 +112,7 @@ UserUpdateService *userUpdateService;
 }
 
 -(IBAction)enterClick:(id)sender
-{    
+{
     if(![StringUtil isNullString:userName.text,nil])
     {
         [StringUtil tipsInfo:@"修改资料出错" :@"用户名不能为空"];

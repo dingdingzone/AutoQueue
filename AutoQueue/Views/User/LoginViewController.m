@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-
+#import "RegisterViewController.h"
 @interface LoginViewController ()
 
 @end
@@ -75,6 +75,14 @@
 {
     [textField resignFirstResponder];
     return YES;
+}
+
+-(void) registerOnClick:(id)sender
+{
+    RegisterViewController * registerView = [RegisterViewController alloc];
+    
+ 
+    [self.navigationController pushViewController:registerView animated:YES];
 }
 
 -(IBAction) loginAction:(id)sender

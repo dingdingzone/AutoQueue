@@ -1,22 +1,22 @@
 //
-//  RegeisterViewController.m
+//  RegisterViewController.m
 //  AutoQueue
 //
-//  Created by alone on 13-11-21.
-//  Copyright (c) 2013年 Queue. All rights reserved.
+//  Created by Lapland_Alone on 14-9-4.
+//  Copyright (c) 2014年 Queue. All rights reserved.
 //
 
-#import "RegeisterViewController.h"
+#import "RegisterViewController.h"
 #import "UINavigationItem+custom.h"
 #import "StringUtil.h"
 #import "RegeisterService.h"
 #import "ProSetting.h"
 
-@interface RegeisterViewController ()
+@interface RegisterViewController ()
 
 @end
 
-@implementation RegeisterViewController
+@implementation RegisterViewController
 
 RegeisterService *regeisterService;
 
@@ -38,9 +38,9 @@ RegeisterService *regeisterService;
 {
     regPhone.delegate = self;
     regValiCode.delegate = self;
-    UIButton * backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 44)];
-    [backButton addTarget:self action:@selector(backToIndex) forControlEvents:UIControlEventTouchUpInside];
-    [self.navigationItem setUIBarButtonItem:self.navigationItem : backButton];
+//    UIButton * backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 44)];
+//    [backButton addTarget:self action:@selector(backToIndex) forControlEvents:UIControlEventTouchUpInside];
+//    [self.navigationItem setUIBarButtonItem:self.navigationItem : backButton];
     [super viewDidLoad];
     [ProSetting setNaviTitle:@"注册自助排队" :self];
 	// Do any additional setup after loading the view.
@@ -78,8 +78,10 @@ RegeisterService *regeisterService;
     return YES;
 }
 
-- (IBAction)regClick:(id)sender
+- (IBAction)registerClick:(id)sender
 {
+    [self removeNavigationViewController];
+    /*
     if(![StringUtil isNullString:regPhone.text,nil])
     {
         [StringUtil tipsInfo:@"用户注册失败" :@"请输入手机号码"];
@@ -115,7 +117,7 @@ RegeisterService *regeisterService;
             UIAlertView *uiAlertView = [[UIAlertView alloc] initWithTitle:@"用户注册成功" message:@"您的账户已注册成功" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
             [uiAlertView show];
         }
-    }
+    }*/
 }
 
 - (IBAction)getValiCodeClick:(id)sender

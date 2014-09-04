@@ -43,7 +43,20 @@
     self.navigationItem.leftBarButtonItem =backItem;
 }
 
+#pragma mark------------------管理视图控制器堆栈数组(删除顶端试图及倒数第二层视图)
+-(void) removeNavigationViewController
+{
+    NSArray *currentControllers = self.navigationController.viewControllers;//获得视图控制器堆栈数组
+    NSMutableArray *newControllers = [NSMutableArray arrayWithArray:currentControllers];//基于堆栈数组实例化新的数组
+    
+    [newControllers removeLastObject];//移除堆栈顶端数组
+    
+    [newControllers removeObjectAtIndex:[newControllers count]-1];//移除堆栈顶端数组
+    //    self.navigationController.viewControllers = newControllers;//为堆栈重新赋值
+    [self.navigationController setViewControllers:newControllers animated:YES];//为堆栈重新赋值
+}
 
+#pragma mark------------------设置导航条左边title
 -(void) setNavigationLeftItemTitle:(NSString*)title:(int) viewTag
 {
     for(UIView * myView in self.navigationController.navigationBar.subviews)
@@ -51,7 +64,7 @@
         if(myView.tag==viewTag)
         {
             UILabel * label=myView;
-            label.text=@"123";
+            label.text=title;
         }
     }
 }

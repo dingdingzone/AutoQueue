@@ -280,6 +280,7 @@ SortedSelViewController *sortedSelViewController;
         LoginViewController * loginView=[LoginViewController alloc];
         [loginView setDelegate:self];
         [self.navigationController pushViewController:loginView animated:YES];
+
     }
     
 //    NSArray *viewArr = [[NSBundle mainBundle]loadNibNamed:@"SortedSelController" owner:self options:nil];

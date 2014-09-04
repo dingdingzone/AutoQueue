@@ -25,6 +25,6 @@
 @property (nonatomic, assign) id<LoginDelegate> delegate;
 
 -(IBAction) loginAction:(id)sender;
-
+-(IBAction) registerOnClick:(id)sender;
 - (void) setDelegate:(id)delegate;
 @end
