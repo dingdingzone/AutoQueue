@@ -53,7 +53,7 @@
 
 }
 
-@synthesize queueViewController=_queueViewController;
+
 #pragma mark -
 #pragma mark Init and Dealloc
 
@@ -141,7 +141,7 @@
 {
     NSLog(@"SELECTED ROW %d",rowNum);
     [popover dismissPopoverAnimated:YES];
-    [self.queueViewController freashTableView];
+    [self.segmentedDelegate  touchedAtIndex:rowNum];
 }
 
 #pragma mark -

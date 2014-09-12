@@ -16,6 +16,8 @@
 #import "MBProgressHUD.h"
 #import "BaseViewController.h"
 #import "MJRefresh.h"
+#import "AKSegmentedControl.h"
+#import "LoginViewController.h"
 
 #define SCREENSHOT_MODE 0
 
@@ -43,7 +45,7 @@
 @end
 
 @interface QueueViewController : BaseViewController
-<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,ZBarReaderDelegate,CLLocationManagerDelegate,MBProgressHUDDelegate>
+<SegmentedControlDelegate,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,ZBarReaderDelegate,CLLocationManagerDelegate,MBProgressHUDDelegate>
 {
     CLLocationManager *locationManager;
     CSqlite *m_sqlite;
@@ -79,4 +81,5 @@
 
 -(void) freashTableView;
 
+- (void)touchedAtIndex:(NSUInteger)index;
 @end
