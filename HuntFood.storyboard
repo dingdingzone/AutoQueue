@@ -131,10 +131,6 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book_my_dish.png" id="DsV-3K-YQs">
-                                        <rect key="frame" x="276" y="74" width="24" height="19"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收藏" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JVu-FT-azy">
                                         <rect key="frame" x="271" y="94" width="34" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -559,6 +555,10 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book_my_seat.png" id="W5a-FT-bx2">
+                                        <rect key="frame" x="271" y="60" width="34" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.87680991491910343" blue="0.52078768958636723" alpha="1" colorSpace="calibratedRGB"/>
                             </scrollView>
@@ -574,43 +574,37 @@
             </objects>
             <point key="canvasLocation" x="83" y="129"/>
         </scene>
-        <!--View Controller-->
+        <!--Hunt Order View Controller-->
         <scene sceneID="VGb-vU-0v5">
             <objects>
-                <viewController id="eUO-qv-syI" sceneMemberID="viewController">
+                <viewController id="eUO-qv-syI" customClass="HuntOrderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ccr-yk-CWA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="l3A-gV-hlj">
-                                <rect key="frame" x="40" y="20" width="241" height="29"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="就餐时间：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gd7-dz-HmJ">
+                                <rect key="frame" x="20" y="113" width="261" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title=" 订座"/>
-                                    <segment title="点菜"/>
-                                </segments>
-                            </segmentedControl>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="Ay8-ag-m3f">
-                                <rect key="frame" x="50" y="191" width="130" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.84839365430000002" green="0.26474690169999998" blue="0.30722339630000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="gh6-zQ-OVX"/>
+                    <connections>
+                        <outlet property="eatTime" destination="gd7-dz-HmJ" id="rl3-Yj-6ph"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TM7-TP-8Ll" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="697" y="129"/>
+            <point key="canvasLocation" x="670" y="129"/>
         </scene>
     </scenes>
     <resources>
         <image name="bakflag.png" width="300" height="30"/>
-        <image name="book_my_dish.png" width="34" height="29"/>
+        <image name="book_my_seat.png" width="34" height="29"/>
         <image name="booking_seat.png" width="31" height="31"/>
         <image name="detail_bk.png" width="640" height="99"/>
         <image name="estimate_red_btn.png" width="27" height="26"/>
