@@ -23,6 +23,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FPPopoverKeyboardResponsiveController.h"
+#import  "QueueViewController.h"
 
 @class AKSegmentedControl;
 
@@ -55,6 +56,8 @@ typedef enum : NSUInteger
 - (AKSegmentedControl * )setupSegmentedControl:(AKSegmentedControl*)selecter;
 
 @property (nonatomic,assign) BaseViewController * baseViewController;
+
+@property (nonatomic, assign) id<SegmentedControlDelegate> segmentedDelegate;
 
 @property (nonatomic, assign) id<AKSegmentedControlDelegate> delegate;
 

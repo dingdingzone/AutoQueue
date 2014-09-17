@@ -85,7 +85,6 @@ AKSegmentedControl * segmentedControl;
     
     [segmentedControl setSegmentedDelegate:self];
     
-    
     segmentedControl.baseViewController=self;
     [self.view addSubview:segmentedControl];
     
