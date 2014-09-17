@@ -23,7 +23,6 @@
 
 #import <UIKit/UIKit.h>
 #import "FPPopoverKeyboardResponsiveController.h"
-#import  "QueueViewController.h"
 
 @class AKSegmentedControl;
 
@@ -31,12 +30,17 @@ typedef enum : NSUInteger
 {
     AKSegmentedControlModeSticky,
     AKSegmentedControlModeButton
-} AKSegmentedControlMode;
+}   AKSegmentedControlMode;
 
 @protocol AKSegmentedControlDelegate <NSObject>
 
-@optional
 - (void)segmentedViewController:(AKSegmentedControl *)segmentedControl touchedAtIndex:(NSUInteger)index;
+
+@end
+
+@protocol SegmentedControlDelegate <NSObject>
+
+- (void)touchedAtIndex:(NSUInteger)index;
 
 @end
 

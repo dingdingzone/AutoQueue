@@ -83,10 +83,12 @@ AKSegmentedControl * segmentedControl;
     
     segmentedControl=[segmentedControl setupSegmentedControl:segmentedControl];
     
-    // [segmentedControl setDelegate:self];
+    [segmentedControl setSegmentedDelegate:self];
+    
     
     segmentedControl.baseViewController=self;
     [self.view addSubview:segmentedControl];
+    
     
     self.view.layer.backgroundColor = [UIColor grayColor].CGColor;
     
@@ -169,7 +171,18 @@ AKSegmentedControl * segmentedControl;
 }
 
 
+#pragma mark-----------------弹出窗口选择后调函数
+- (void) segmentedViewController:segmentedControl touchedAtIndex:(NSUInteger)index
+{
 
+    NSLog(@"%d",index);
+    
+}
+
+- (void)touchedAtIndex:(NSUInteger)index
+{
+ NSLog(@"%d",index);
+}
 
 #pragma mark-------------------刷新tableview
 -(void) freashTableView
@@ -183,6 +196,7 @@ AKSegmentedControl * segmentedControl;
 }
 
 #pragma mark -----------------------------调用webservice服务组件
+
 /*加载tableview数据*/
 -(void)loadingTableData
 {
