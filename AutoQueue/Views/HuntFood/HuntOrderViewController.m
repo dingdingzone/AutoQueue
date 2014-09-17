@@ -8,6 +8,8 @@
 
 #import "HuntOrderViewController.h"
 #import "ProSetting.h"
+#import "HuntOrderCell.h"
+#import "HuntBookCell.h"
 
 @interface HuntOrderViewController ()
 
@@ -27,8 +29,16 @@
 
 @synthesize orderDataList;
 @synthesize orderTableView;
+@synthesize orderDataBoxList;
+@synthesize boxTableView;
+@synthesize orderDataCasualList;
+@synthesize casualTableView;
 @synthesize bookDataList;
 @synthesize bookTableView;
+@synthesize coldDataList;
+@synthesize coldTableView;
+@synthesize hotDataList;
+@synthesize hotTableView;
 
 UIView *huntChoOrder;
 
@@ -123,7 +133,7 @@ UIView *huntChoOrder;
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, idx * screenHeight, scrollWidth, screenHeight)];
         [view setBackgroundColor:[UIColor whiteColor]];
         [self.orderScrollView addSubview:view];
-        [self createExample:idx inView:view];
+        [self createExampleOrder:idx inView:view];
     }];
     
     __block HuntOrderViewController *_self = self;
@@ -163,7 +173,7 @@ UIView *huntChoOrder;
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, idx * screenHeight, scrollWidth, screenHeight)];
         [view setBackgroundColor:[UIColor whiteColor]];
         [self.bookScrollView addSubview:view];
-        [self createExample:idx inView:view];
+        [self createExampleBook:idx inView:view];
     }];
     
     __block HuntOrderViewController *_self = self;
@@ -172,9 +182,67 @@ UIView *huntChoOrder;
     };
 }
 
-- (void)createExample:(NSUInteger)exampleNumber inView:(UIView *)view
+- (void)createExampleOrder:(NSUInteger)exampleNumber inView:(UIView *)view
 {
+    
+}
 
+- (void)createExampleBook:(NSUInteger)exampleNumber inView:(UIView *)view
+{
+//    NSArray *titles = @[@"item 1", @"item 2", @"item 3", @"item 4", @"item 5"];
+//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(2, 20, CGRectGetWidth(view.frame) - 4, 80)];
+//    label.font = [UIFont systemFontOfSize:10];
+//    label.textColor = [UIColor whiteColor];
+//    label.textAlignment = NSTextAlignmentCenter;
+//    label.backgroundColor = [UIColor clearColor];
+//    label.numberOfLines = 0;
+//    [view addSubview:label];
+//    
+//    SMVerticalSegmentedControl *segmentedControl = [[SMVerticalSegmentedControl alloc] initWithSectionTitles:titles];
+//    
+//    CGFloat segmentedControlHeight = 250;
+//    CGFloat segmentedControlWidth  = 100;
+//    
+//    switch(exampleNumber) {
+//        case 0:
+//            label.text = @"Left aligned text\nLeft aligned selection indicator\nSelection indicator height is equal to text height";
+//            break;
+//        case 1:
+//            label.text = @"Right aligned text\nRight aligned selection indicator\nSelection indicator height is equal to text height";
+//            segmentedControl.textAlignment = SMVerticalSegmentedControlTextAlignmentRight;
+//            segmentedControl.selectionLocation = SMVerticalSegmentedControlSelectionLocationRight;
+//            break;
+//        case 2:
+//            label.text = @"Center aligned text\nSelection indictator style is equal to cell height";
+//            segmentedControl.selectionStyle = SMVerticalSegmentedControlSelectionStyleFullHeightStrip;
+//            segmentedControl.textAlignment = SMVerticalSegmentedControlTextAlignmentCenter;
+//            break;
+//        case 3:
+//            label.text = @"Center aligned text\nBox selection style\nSelection indicator thickness is equal to zero\nBox border is equal to zero";
+//            segmentedControl.textAlignment = SMVerticalSegmentedControlTextAlignmentCenter;
+//            segmentedControl.selectionStyle = SMVerticalSegmentedControlSelectionStyleBox;
+//            segmentedControl.selectionIndicatorThickness = 0;
+//            segmentedControl.selectionBoxBorderWidth = 0;
+//            break;
+//        case 4:
+//            label.text = @"Center aligned text\nBox selection style\nSelection indicator thickness is equal to zero\nBox border is equal to 2\nBox background color alpha is equal to 0.5\nBox border color alpha is equal to 0.7";
+//            segmentedControl.textAlignment = SMVerticalSegmentedControlTextAlignmentCenter;
+//            segmentedControl.selectionStyle = SMVerticalSegmentedControlSelectionStyleBox;
+//            segmentedControl.selectionIndicatorThickness = 0;
+//            segmentedControl.selectionBoxBorderWidth = 2;
+//            segmentedControl.selectionBoxBackgroundColorAlpha = 0.5;
+//            segmentedControl.selectionBoxBorderColorAlpha = 0.7;
+//            
+//            break;
+//        default:
+//            break;
+//    }
+//    
+//    segmentedControl.frame = CGRectMake(CGRectGetWidth(view.frame) / 2 - segmentedControlWidth / 2,
+//                                        CGRectGetHeight(view.frame) / 2 - segmentedControlHeight / 2,
+//                                        segmentedControlWidth,
+//                                        segmentedControlHeight);
+//    [view addSubview:segmentedControl];
     
 }
 
@@ -198,64 +266,75 @@ UIView *huntChoOrder;
     {
         return [orderDataList count];
     }
-    else
+    else if(tableView == boxTableView)
+    {
+        return [orderDataBoxList count];
+    }
+    else if(tableView == casualTableView)
+    {
+        return [orderDataCasualList count];
+    }
+    else if(tableView == bookTableView)
     {
         return [bookDataList count];
+    }
+    else if(tableView == coldTableView)
+    {
+        return [coldDataList count];
+    }
+    else if(tableView == hotTableView)
+    {
+        return [hotDataList count];
     }
 }
 
 #pragma mark-----------------初始化TableView cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(tableView == orderTableView)
+    if(tableView == orderTableView || tableView == boxTableView || tableView == casualTableView)
     {
-//        static NSString *queueTableIdentifier = @"huntCell";
-//        HuntFoodCellViewController *cell = (HuntFoodCellViewController *)[self.tableView dequeueReusableCellWithIdentifier:queueTableIdentifier];
-//        if (cell == nil)
-//        {
-//            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"huntCell" owner:self options:nil];
-//            cell = [nib objectAtIndex:0];
-//        }
-//        
-//        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-//        cell.MerName.text = [MerNameArr objectAtIndex:indexPath.row];
-//        NSString *url = [MerImageArr objectAtIndex:indexPath.row];
-//        if(![url isEqualToString:@""])
-//        {
-//            [StringUtil getImageView:[MerImageArr objectAtIndex:indexPath.row] :cell.MerImage];
-//        }
-//        else
-//        {
-//            UIImage *image = [UIImage imageNamed:@"default_loading_img.png"];
-//            cell.MerImage.image = image;
-//        }
-//        cell.MerAddr.text = [MerAddrArr objectAtIndex:indexPath.row];
-//        return cell;
+        static NSString *queueTableIdentifier = @"HuntOrder";
+        HuntOrderCell *cell = (HuntOrderCell *)[tableView dequeueReusableCellWithIdentifier:queueTableIdentifier];
+        if (cell == nil)
+        {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"HuntOrder" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        if(tableView == orderTableView)
+        {
+            //cell.picLogo
+        }
+        else if(tableView == boxTableView)
+        {
+            
+        }
+        else if(tableView == casualTableView)
+        {
+            
+        }
+        return cell;
     }
     else
     {
-//        static NSString *queueTableIdentifier = @"huntCell";
-//        HuntFoodCellViewController *cell = (HuntFoodCellViewController *)[self.tableView dequeueReusableCellWithIdentifier:queueTableIdentifier];
-//        if (cell == nil)
-//        {
-//            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"huntCell" owner:self options:nil];
-//            cell = [nib objectAtIndex:0];
-//        }
-//        
-//        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-//        cell.MerName.text = [MerNameArr objectAtIndex:indexPath.row];
-//        NSString *url = [MerImageArr objectAtIndex:indexPath.row];
-//        if(![url isEqualToString:@""])
-//        {
-//            [StringUtil getImageView:[MerImageArr objectAtIndex:indexPath.row] :cell.MerImage];
-//        }
-//        else
-//        {
-//            UIImage *image = [UIImage imageNamed:@"default_loading_img.png"];
-//            cell.MerImage.image = image;
-//        }
-//        cell.MerAddr.text = [MerAddrArr objectAtIndex:indexPath.row];
-//        return cell;
+        static NSString *queueTableIdentifier = @"HuntBook";
+        HuntBookCell *cell = (HuntBookCell *)[tableView dequeueReusableCellWithIdentifier:queueTableIdentifier];
+        if (cell == nil)
+        {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"HuntBook" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        if(tableView == bookTableView)
+        {
+            
+        }
+        else if(tableView == coldTableView)
+        {
+            
+        }
+        else if(tableView == hotTableView)
+        {
+            
+        }
     }
     return nil;
 }
@@ -264,6 +343,17 @@ UIView *huntChoOrder;
 {
     
 }
+
+-(IBAction)plusAdd:(id)sender
+{
+    
+}
+
+-(IBAction)plusSub:(id)sender
+{
+    
+}
+
 
 - (void)didReceiveMemoryWarning
 {

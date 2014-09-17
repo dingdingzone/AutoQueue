@@ -320,6 +320,11 @@
 		0FFE46E619B6A1890059E461 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFE46E419B6A1890059E461 /* LoginViewController.m */; };
 		0FFE46E719B6A1890059E461 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FFE46E519B6A1890059E461 /* LoginViewController.xib */; };
 		351EA80019C972110026CC8A /* huntOrderBottom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 351EA7FF19C972110026CC8A /* huntOrderBottom.xib */; };
+		351EA80819C98A920026CC8A /* HuntOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 351EA80719C98A920026CC8A /* HuntOrderCell.m */; };
+		351EA80A19C98ABE0026CC8A /* HuntOrder.xib in Resources */ = {isa = PBXBuildFile; fileRef = 351EA80919C98ABE0026CC8A /* HuntOrder.xib */; };
+		351EA80C19C98B2F0026CC8A /* bx.png in Resources */ = {isa = PBXBuildFile; fileRef = 351EA80B19C98B2F0026CC8A /* bx.png */; };
+		351EA80F19C99FB80026CC8A /* HuntBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 351EA80E19C99FB80026CC8A /* HuntBookCell.m */; };
+		351EA81119C99FDB0026CC8A /* HuntBook.xib in Resources */ = {isa = PBXBuildFile; fileRef = 351EA81019C99FDB0026CC8A /* HuntBook.xib */; };
 		351FE6E719C6DFF900AB5D07 /* HuntFoodDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 351FE6E619C6DFF900AB5D07 /* HuntFoodDetailViewController.m */; };
 		3520FF7E19C7CFF30072F5E7 /* estimate_red_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3520FF7D19C7CFF20072F5E7 /* estimate_red_btn.png */; };
 		3520FF8019C7D1F90072F5E7 /* good_img.png in Resources */ = {isa = PBXBuildFile; fileRef = 3520FF7F19C7D1F90072F5E7 /* good_img.png */; };
@@ -814,6 +819,13 @@
 		0FFE46E419B6A1890059E461 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		0FFE46E519B6A1890059E461 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		351EA7FF19C972110026CC8A /* huntOrderBottom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = huntOrderBottom.xib; path = HuntFood/HuntXib/huntOrderBottom.xib; sourceTree = "<group>"; };
+		351EA80619C98A920026CC8A /* HuntOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HuntOrderCell.h; path = HuntFood/HuntCell/HuntOrderCell.h; sourceTree = "<group>"; };
+		351EA80719C98A920026CC8A /* HuntOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HuntOrderCell.m; path = HuntFood/HuntCell/HuntOrderCell.m; sourceTree = "<group>"; };
+		351EA80919C98ABE0026CC8A /* HuntOrder.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HuntOrder.xib; path = HuntFood/HuntCell/HuntOrder.xib; sourceTree = "<group>"; };
+		351EA80B19C98B2F0026CC8A /* bx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bx.png; sourceTree = "<group>"; };
+		351EA80D19C99FB80026CC8A /* HuntBookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HuntBookCell.h; path = HuntFood/HuntCell/HuntBookCell.h; sourceTree = "<group>"; };
+		351EA80E19C99FB80026CC8A /* HuntBookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HuntBookCell.m; path = HuntFood/HuntCell/HuntBookCell.m; sourceTree = "<group>"; };
+		351EA81019C99FDB0026CC8A /* HuntBook.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HuntBook.xib; path = HuntFood/HuntCell/HuntBook.xib; sourceTree = "<group>"; };
 		351FE6E519C6DFF900AB5D07 /* HuntFoodDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HuntFoodDetailViewController.h; path = HuntFood/HuntFoodDetailViewController.h; sourceTree = "<group>"; };
 		351FE6E619C6DFF900AB5D07 /* HuntFoodDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HuntFoodDetailViewController.m; path = HuntFood/HuntFoodDetailViewController.m; sourceTree = "<group>"; };
 		3520FF7D19C7CFF20072F5E7 /* estimate_red_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = estimate_red_btn.png; sourceTree = "<group>"; };
@@ -1079,6 +1091,7 @@
 		0FB2B85418F7917200844627 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				351EA80B19C98B2F0026CC8A /* bx.png */,
 				35E74D7E19C840A600ACEED5 /* bak.png */,
 				3520FF7F19C7D1F90072F5E7 /* good_img.png */,
 				3520FF7D19C7CFF20072F5E7 /* estimate_red_btn.png */,
@@ -1661,6 +1674,12 @@
 			children = (
 				3520FF8619C8178C0072F5E7 /* HuntQueue.xib */,
 				351EA7FF19C972110026CC8A /* huntOrderBottom.xib */,
+				351EA80619C98A920026CC8A /* HuntOrderCell.h */,
+				351EA80719C98A920026CC8A /* HuntOrderCell.m */,
+				351EA80919C98ABE0026CC8A /* HuntOrder.xib */,
+				351EA80D19C99FB80026CC8A /* HuntBookCell.h */,
+				351EA80E19C99FB80026CC8A /* HuntBookCell.m */,
+				351EA81019C99FDB0026CC8A /* HuntBook.xib */,
 			);
 			name = HuntXib;
 			sourceTree = "<group>";
@@ -1976,6 +1995,7 @@
 				0FB2B91718F7917200844627 /* main_list_recommended.png in Resources */,
 				0F6E51FE196D2EAE00A3BF3F /* fontawesome-webfont.ttf in Resources */,
 				0FB2B90518F7917200844627 /* dish_plus.png in Resources */,
+				351EA80A19C98ABE0026CC8A /* HuntOrder.xib in Resources */,
 				0FB2B8F018F7917200844627 /* book_red_right_arrow.png in Resources */,
 				0FB2BA1618F7917D00844627 /* grayArrow.png in Resources */,
 				0FB2B90F18F7917200844627 /* home_dishsearch_frame2.png in Resources */,
@@ -1983,6 +2003,7 @@
 				0FB2B8F518F7917200844627 /* booking_seat.png in Resources */,
 				0FB2B92818F7917200844627 /* red_btn_bg@2x.png in Resources */,
 				9F87FB6F183B1E1300DE6FDD /* Default-568h@2x.png in Resources */,
+				351EA81119C99FDB0026CC8A /* HuntBook.xib in Resources */,
 				0FB2B92718F7917200844627 /* red_btn_bg.png in Resources */,
 				0F979C04196140650055506F /* tab_gray_info@2x.png in Resources */,
 				0F9D41DF196292020088F7D9 /* TopBarViewController.xib in Resources */,
@@ -1998,6 +2019,7 @@
 				0FB2B92F18F7917200844627 /* segmented-bg-pressed-center@2x.png in Resources */,
 				0FB2B92118F7917200844627 /* pick_bg@2x.png in Resources */,
 				0FB2B91118F7917200844627 /* home_queue_frame2.png in Resources */,
+				351EA80C19C98B2F0026CC8A /* bx.png in Resources */,
 				0FB2BA2F18F7917D00844627 /* SortedSelectCell.xib in Resources */,
 				0FB2B97918F7917200844627 /* 走路小人.png in Resources */,
 				0FB2B96518F7917200844627 /* 注册图标背景.png in Resources */,
@@ -2125,6 +2147,7 @@
 				0FC5BEFE18F671D700F4A509 /* QueueService.m in Sources */,
 				0F9680701966F18A00DDB307 /* MBProgressHUD.m in Sources */,
 				0FB2B84D18F7916800844627 /* InvokeService.m in Sources */,
+				351EA80819C98A920026CC8A /* HuntOrderCell.m in Sources */,
 				0FB2BA0D18F7917D00844627 /* ASIFormDataRequest.m in Sources */,
 				0FC5BEFF18F671D700F4A509 /* RegeisterService.m in Sources */,
 				0FB2BA8918F7918600844627 /* FPTouchView.m in Sources */,
@@ -2136,6 +2159,7 @@
 				0FB2BA3618F7917D00844627 /* qrspec.c in Sources */,
 				0FB2BA9318F7918600844627 /* ViewControllerObject.m in Sources */,
 				0FB2BA3818F7917D00844627 /* split.c in Sources */,
+				351EA80F19C99FB80026CC8A /* HuntBookCell.m in Sources */,
 				3537F2E819C14A2C00DAE74F /* HuntFoodViewController.m in Sources */,
 				0FB2B83D18F7915900844627 /* SortedQueue.m in Sources */,
 				0FB2BA0F18F7917D00844627 /* ASIInputStream.m in Sources */,
