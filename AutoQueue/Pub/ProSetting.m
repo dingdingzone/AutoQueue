@@ -117,4 +117,16 @@
     return HH;
 }
 
++(void)setNaviLeftTitle:(NSString *)title color:(NSString *)colorStr obj:(UIViewController *)obj
+{
+    UILabel* titleLabel;
+    titleLabel=[[UILabel alloc] initWithFrame:CGRectMake(42.0f, 16.0f, 70.0f, 20.0f)];
+    titleLabel.text = title;
+    titleLabel.font=[UIFont systemFontOfSize:14];
+    titleLabel.backgroundColor = [ProSetting getColorByStr:colorStr];
+    titleLabel.hidden=YES;
+    [obj.navigationController.navigationBar addSubview: titleLabel];
+}
+
+
 @end

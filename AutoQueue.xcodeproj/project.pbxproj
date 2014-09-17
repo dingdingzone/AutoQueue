@@ -309,8 +309,6 @@
 		0FEE742719AF2167005A99BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FEE742619AF2167005A99BE /* Images.xcassets */; };
 		0FF8CA6519B7FF5100832F55 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF8CA6319B7FF5100832F55 /* RegisterViewController.m */; };
 		0FF8CA6619B7FF5100832F55 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FF8CA6419B7FF5100832F55 /* RegisterViewController.xib */; };
-		0FF8CA6D19B815AE00832F55 /* MerQueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF8CA6C19B815AE00832F55 /* MerQueueViewController.m */; };
-		0FF8CA7119B815CE00832F55 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF8CA7019B815CE00832F55 /* BaseViewController.m */; };
 		0FF8CA7519B8164400832F55 /* UserUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF8CA7319B8164400832F55 /* UserUpdateViewController.m */; };
 		0FF8CA7619B8164400832F55 /* UserUpdateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FF8CA7419B8164400832F55 /* UserUpdateViewController.xib */; };
 		0FF9D388195D4CB70051A572 /* find.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FF9D382195D4CB70051A572 /* find.png */; };
@@ -321,6 +319,16 @@
 		0FF9D38D195D4CB70051A572 /* youhui.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FF9D387195D4CB70051A572 /* youhui.png */; };
 		0FFE46E619B6A1890059E461 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFE46E419B6A1890059E461 /* LoginViewController.m */; };
 		0FFE46E719B6A1890059E461 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FFE46E519B6A1890059E461 /* LoginViewController.xib */; };
+		351FE6E719C6DFF900AB5D07 /* HuntFoodDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 351FE6E619C6DFF900AB5D07 /* HuntFoodDetailViewController.m */; };
+		3520FF7E19C7CFF30072F5E7 /* estimate_red_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3520FF7D19C7CFF20072F5E7 /* estimate_red_btn.png */; };
+		3520FF8019C7D1F90072F5E7 /* good_img.png in Resources */ = {isa = PBXBuildFile; fileRef = 3520FF7F19C7D1F90072F5E7 /* good_img.png */; };
+		3520FF8819C8178C0072F5E7 /* HuntQueue.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3520FF8619C8178C0072F5E7 /* HuntQueue.xib */; };
+		352C57E619C1ACD80009EB6E /* HuntFoodCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 352C57E519C1ACD80009EB6E /* HuntFoodCellViewController.m */; };
+		3537F2E819C14A2C00DAE74F /* HuntFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3537F2E719C14A2C00DAE74F /* HuntFoodViewController.m */; };
+		35AA2DC319C056570045EA8E /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AA2DC219C056570045EA8E /* BaseViewController.m */; };
+		35AA2DC619C0566A0045EA8E /* MerQueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AA2DC519C0566A0045EA8E /* MerQueueViewController.m */; };
+		35AA2DC819C056E90045EA8E /* HuntFood.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35AA2DC719C056E90045EA8E /* HuntFood.storyboard */; };
+		35E74D7F19C840A600ACEED5 /* bak.png in Resources */ = {isa = PBXBuildFile; fileRef = 35E74D7E19C840A600ACEED5 /* bak.png */; };
 		9F83507C183F2FD100E1C0B5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F83507B183F2FD100E1C0B5 /* CFNetwork.framework */; };
 		9F83507E183F2FDB00E1C0B5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F83507D183F2FDB00E1C0B5 /* SystemConfiguration.framework */; };
 		9F835080183F2FEA00E1C0B5 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F83507F183F2FEA00E1C0B5 /* libxml2.dylib */; };
@@ -789,10 +797,6 @@
 		0FF8CA6219B7FF5100832F55 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		0FF8CA6319B7FF5100832F55 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		0FF8CA6419B7FF5100832F55 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
-		0FF8CA6B19B815AE00832F55 /* MerQueueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerQueueViewController.h; sourceTree = "<group>"; };
-		0FF8CA6C19B815AE00832F55 /* MerQueueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerQueueViewController.m; sourceTree = "<group>"; };
-		0FF8CA6F19B815CE00832F55 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
-		0FF8CA7019B815CE00832F55 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		0FF8CA7219B8164400832F55 /* UserUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserUpdateViewController.h; sourceTree = "<group>"; };
 		0FF8CA7319B8164400832F55 /* UserUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserUpdateViewController.m; sourceTree = "<group>"; };
 		0FF8CA7419B8164400832F55 /* UserUpdateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserUpdateViewController.xib; sourceTree = "<group>"; };
@@ -805,6 +809,21 @@
 		0FFE46E319B6A1890059E461 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		0FFE46E419B6A1890059E461 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		0FFE46E519B6A1890059E461 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		351FE6E519C6DFF900AB5D07 /* HuntFoodDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HuntFoodDetailViewController.h; path = HuntFood/HuntFoodDetailViewController.h; sourceTree = "<group>"; };
+		351FE6E619C6DFF900AB5D07 /* HuntFoodDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HuntFoodDetailViewController.m; path = HuntFood/HuntFoodDetailViewController.m; sourceTree = "<group>"; };
+		3520FF7D19C7CFF20072F5E7 /* estimate_red_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = estimate_red_btn.png; sourceTree = "<group>"; };
+		3520FF7F19C7D1F90072F5E7 /* good_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = good_img.png; sourceTree = "<group>"; };
+		3520FF8619C8178C0072F5E7 /* HuntQueue.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HuntQueue.xib; path = HuntFood/HuntXib/HuntQueue.xib; sourceTree = "<group>"; };
+		352C57E419C1ACD80009EB6E /* HuntFoodCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HuntFoodCellViewController.h; path = HuntFood/HuntCell/HuntFoodCellViewController.h; sourceTree = "<group>"; };
+		352C57E519C1ACD80009EB6E /* HuntFoodCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HuntFoodCellViewController.m; path = HuntFood/HuntCell/HuntFoodCellViewController.m; sourceTree = "<group>"; };
+		3537F2E619C14A2C00DAE74F /* HuntFoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HuntFoodViewController.h; path = HuntFood/HuntFoodViewController.h; sourceTree = "<group>"; };
+		3537F2E719C14A2C00DAE74F /* HuntFoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HuntFoodViewController.m; path = HuntFood/HuntFoodViewController.m; sourceTree = "<group>"; };
+		35AA2DC119C056570045EA8E /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseViewController.h; path = AutoQueue/Views/base/BaseViewController.h; sourceTree = SOURCE_ROOT; };
+		35AA2DC219C056570045EA8E /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseViewController.m; path = AutoQueue/Views/base/BaseViewController.m; sourceTree = SOURCE_ROOT; };
+		35AA2DC419C0566A0045EA8E /* MerQueueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MerQueueViewController.h; path = AutoQueue/Views/queue/MerQueueViewController.h; sourceTree = SOURCE_ROOT; };
+		35AA2DC519C0566A0045EA8E /* MerQueueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MerQueueViewController.m; path = AutoQueue/Views/queue/MerQueueViewController.m; sourceTree = SOURCE_ROOT; };
+		35AA2DC719C056E90045EA8E /* HuntFood.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HuntFood.storyboard; sourceTree = SOURCE_ROOT; };
+		35E74D7E19C840A600ACEED5 /* bak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bak.png; sourceTree = "<group>"; };
 		9F83507B183F2FD100E1C0B5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		9F83507D183F2FDB00E1C0B5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9F83507F183F2FEA00E1C0B5 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -1051,6 +1070,9 @@
 		0FB2B85418F7917200844627 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				35E74D7E19C840A600ACEED5 /* bak.png */,
+				3520FF7F19C7D1F90072F5E7 /* good_img.png */,
+				3520FF7D19C7CFF20072F5E7 /* estimate_red_btn.png */,
 				0FE7915119B46A350023CCE1 /* welcome.png */,
 				0F98849F196E9ABB0046BA6D /* foot.png */,
 				0F968072196700A100DDB307 /* loading */,
@@ -1470,6 +1492,7 @@
 		0FB2BA4018F7918600844627 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3537F2E519C149DF00DAE74F /* HuntFood */,
 				0FF8CA6E19B815CE00832F55 /* Base */,
 				0FF8CA6A19B815AE00832F55 /* Queue */,
 				0F0374C019AEB4FF00227A39 /* web */,
@@ -1592,8 +1615,8 @@
 		0FF8CA6A19B815AE00832F55 /* Queue */ = {
 			isa = PBXGroup;
 			children = (
-				0FF8CA6B19B815AE00832F55 /* MerQueueViewController.h */,
-				0FF8CA6C19B815AE00832F55 /* MerQueueViewController.m */,
+				35AA2DC419C0566A0045EA8E /* MerQueueViewController.h */,
+				35AA2DC519C0566A0045EA8E /* MerQueueViewController.m */,
 			);
 			path = Queue;
 			sourceTree = "<group>";
@@ -1601,8 +1624,8 @@
 		0FF8CA6E19B815CE00832F55 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				0FF8CA6F19B815CE00832F55 /* BaseViewController.h */,
-				0FF8CA7019B815CE00832F55 /* BaseViewController.m */,
+				35AA2DC119C056570045EA8E /* BaseViewController.h */,
+				35AA2DC219C056570045EA8E /* BaseViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1621,6 +1644,36 @@
 				0FF8CA7419B8164400832F55 /* UserUpdateViewController.xib */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		3520FF8119C815960072F5E7 /* HuntXib */ = {
+			isa = PBXGroup;
+			children = (
+				3520FF8619C8178C0072F5E7 /* HuntQueue.xib */,
+			);
+			name = HuntXib;
+			sourceTree = "<group>";
+		};
+		352C57E319C1ACAD0009EB6E /* HuntCell */ = {
+			isa = PBXGroup;
+			children = (
+				352C57E419C1ACD80009EB6E /* HuntFoodCellViewController.h */,
+				352C57E519C1ACD80009EB6E /* HuntFoodCellViewController.m */,
+			);
+			name = HuntCell;
+			sourceTree = "<group>";
+		};
+		3537F2E519C149DF00DAE74F /* HuntFood */ = {
+			isa = PBXGroup;
+			children = (
+				3520FF8119C815960072F5E7 /* HuntXib */,
+				352C57E319C1ACAD0009EB6E /* HuntCell */,
+				3537F2E619C14A2C00DAE74F /* HuntFoodViewController.h */,
+				3537F2E719C14A2C00DAE74F /* HuntFoodViewController.m */,
+				351FE6E519C6DFF900AB5D07 /* HuntFoodDetailViewController.h */,
+				351FE6E619C6DFF900AB5D07 /* HuntFoodDetailViewController.m */,
+			);
+			name = HuntFood;
 			sourceTree = "<group>";
 		};
 		9F87FB4C183B1E1200DE6FDD = {
@@ -1672,6 +1725,7 @@
 				9F87FB68183B1E1200DE6FDD /* QueueAppDelegate.m */,
 				9F87FB70183B1E1300DE6FDD /* MainStoryboard.storyboard */,
 				0F121B5919B5ADE50060AC82 /* Queue.storyboard */,
+				35AA2DC719C056E90045EA8E /* HuntFood.storyboard */,
 				0F121B6919B5C5B30060AC82 /* PreferentialCard.storyboard */,
 				0F121B6B19B5C5E80060AC82 /* OrderFood.storyboard */,
 				9F87FB73183B1E1300DE6FDD /* QueueViewController.h */,
@@ -1772,6 +1826,7 @@
 				0FB2B97118F7917200844627 /* 红心.png in Resources */,
 				0FB2B93818F7917200844627 /* selector_background.png in Resources */,
 				0FB2B94A18F7917200844627 /* tab_white_sale@2x.png in Resources */,
+				35E74D7F19C840A600ACEED5 /* bak.png in Resources */,
 				0F6E5201196D2EAE00A3BF3F /* README.md in Resources */,
 				0FB2B97418F7917200844627 /* 蓝色按键.9.png in Resources */,
 				0FB2B94118F7917200844627 /* superman_image.png in Resources */,
@@ -1797,6 +1852,7 @@
 				0FB2B97318F7917200844627 /* 菜单.png in Resources */,
 				0FB2B90418F7917200844627 /* detail_bk.png in Resources */,
 				0FB2B90018F7917200844627 /* choice.png in Resources */,
+				35AA2DC819C056E90045EA8E /* HuntFood.storyboard in Resources */,
 				0FB2B95318F7917200844627 /* 列表背景.png in Resources */,
 				0FB2B96318F7917200844627 /* 新浪图标.png in Resources */,
 				0FF9D38A195D4CB70051A572 /* order.png in Resources */,
@@ -1935,6 +1991,7 @@
 				0FB2B8FD18F7917200844627 /* btn_021@2x.png in Resources */,
 				0FB2B96B18F7917200844627 /* 登录背景.jpg in Resources */,
 				0FB2B93E18F7917200844627 /* social-icon@2x.png in Resources */,
+				3520FF7E19C7CFF30072F5E7 /* estimate_red_btn.png in Resources */,
 				0FF8CA7619B8164400832F55 /* UserUpdateViewController.xib in Resources */,
 				0FB2B93F18F7917200844627 /* star-icon.png in Resources */,
 				0F121B6C19B5C5E80060AC82 /* OrderFood.storyboard in Resources */,
@@ -1945,6 +2002,7 @@
 				0FB2BA8D18F7918600844627 /* SecondViewController.xib in Resources */,
 				0FB2BA3B18F7917D00844627 /* zbar-back.png in Resources */,
 				0FB2B96D18F7917200844627 /* 确认勾.png in Resources */,
+				3520FF8819C8178C0072F5E7 /* HuntQueue.xib in Resources */,
 				0FB2B96818F7917200844627 /* 用户2.png in Resources */,
 				B3D8246218C5E889003C1E1D /* gps.db in Resources */,
 				0FF8CA6619B7FF5100832F55 /* RegisterViewController.xib in Resources */,
@@ -1954,6 +2012,7 @@
 				0FB2BA1318F7917D00844627 /* blueArrow.png in Resources */,
 				0F121B6A19B5C5B30060AC82 /* PreferentialCard.storyboard in Resources */,
 				0FF9D38B195D4CB70051A572 /* queue.png in Resources */,
+				3520FF8019C7D1F90072F5E7 /* good_img.png in Resources */,
 				0FB2B96A18F7917200844627 /* 登录与搜索输入框.png in Resources */,
 				0FB2B90118F7917200844627 /* default_loading_img.9.png in Resources */,
 				0FB2B95618F7917200844627 /* 勾选2.png in Resources */,
@@ -1982,7 +2041,6 @@
 				0FB2BA3418F7917D00844627 /* qrencode.c in Sources */,
 				0FB2BA2018F7917D00844627 /* SBJsonStreamParser.m in Sources */,
 				0F6E5207196D2EAE00A3BF3F /* PPiFlatSegmentedControl.m in Sources */,
-				0FF8CA7119B815CE00832F55 /* BaseViewController.m in Sources */,
 				0F121B5119B5AB010060AC82 /* RBStoryboardLink.m in Sources */,
 				0FB2B85018F7916800844627 /* SBJsonObj.m in Sources */,
 				0FB2BA7D18F7918600844627 /* UINavigationItem+custom.m in Sources */,
@@ -1994,12 +2052,16 @@
 				0FB2BA0E18F7917D00844627 /* ASIHTTPRequest.m in Sources */,
 				0FB2B84E18F7916800844627 /* ProSetting.m in Sources */,
 				9F87FB69183B1E1200DE6FDD /* QueueAppDelegate.m in Sources */,
+				352C57E619C1ACD80009EB6E /* HuntFoodCellViewController.m in Sources */,
 				0FB2BA9118F7918600844627 /* TabViewController.m in Sources */,
 				0FD930A2196ED87000C89C2D /* FPPopoverKeyboardResponsiveController.m in Sources */,
 				0FB2BA8018F7918600844627 /* GetNumInfoController.m in Sources */,
+				351FE6E719C6DFF900AB5D07 /* HuntFoodDetailViewController.m in Sources */,
 				0FB2BA3118F7917D00844627 /* bitstream.c in Sources */,
+				35AA2DC319C056570045EA8E /* BaseViewController.m in Sources */,
 				0F943BE5196FDC0700FE5875 /* UIScrollView+MJRefresh.m in Sources */,
 				0FB2BA1E18F7917D00844627 /* Reachability.m in Sources */,
+				35AA2DC619C0566A0045EA8E /* MerQueueViewController.m in Sources */,
 				0FB2BA1F18F7917D00844627 /* SBJsonParser.m in Sources */,
 				0FB2BA3218F7917D00844627 /* mask.c in Sources */,
 				0FB2BA3718F7917D00844627 /* rscode.c in Sources */,
@@ -2049,6 +2111,7 @@
 				0FB2BA3618F7917D00844627 /* qrspec.c in Sources */,
 				0FB2BA9318F7918600844627 /* ViewControllerObject.m in Sources */,
 				0FB2BA3818F7917D00844627 /* split.c in Sources */,
+				3537F2E819C14A2C00DAE74F /* HuntFoodViewController.m in Sources */,
 				0FB2B83D18F7915900844627 /* SortedQueue.m in Sources */,
 				0FB2BA0F18F7917D00844627 /* ASIInputStream.m in Sources */,
 				0F0374C519AEB52300227A39 /* NextWebController.m in Sources */,
@@ -2081,7 +2144,6 @@
 				0FB2BA3F18F7917D00844627 /* CSqlite.m in Sources */,
 				0FFE46E619B6A1890059E461 /* LoginViewController.m in Sources */,
 				0FF8CA6519B7FF5100832F55 /* RegisterViewController.m in Sources */,
-				0FF8CA6D19B815AE00832F55 /* MerQueueViewController.m in Sources */,
 				0FB2BA8818F7918600844627 /* FPPopoverView.m in Sources */,
 				0FB2BA8518F7918600844627 /* DoubleTableController.m in Sources */,
 				0F6E5200196D2EAE00A3BF3F /* NSString+FontAwesome.m in Sources */,

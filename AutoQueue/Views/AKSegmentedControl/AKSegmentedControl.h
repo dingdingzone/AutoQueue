@@ -50,7 +50,7 @@ typedef enum : NSUInteger
 
 - (AKSegmentedControl * )setupSegmentedControl:(AKSegmentedControl*)selecter;
 
-@property (nonatomic,assign) QueueViewController * queueViewController;
+@property (nonatomic,assign) BaseViewController * baseViewController;
 
 @property (nonatomic, assign) id<AKSegmentedControlDelegate> delegate;
 

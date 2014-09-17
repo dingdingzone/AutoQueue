@@ -61,4 +61,5 @@
 -(void) showProgress;
 -(void) setNavigationLeftItemTitle:(NSString*)title:(int) viewTag;
 -(void) removeNavigationViewController;
+-(void) freashTableView;
 @end

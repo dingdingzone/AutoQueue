@@ -65,4 +65,10 @@
     [delegate.tabView performSegueWithIdentifier:@"queue_segue" sender:self];
 }
 
+-(IBAction)huntOnClick:(id)sender
+{
+    QueueAppDelegate * delegate=[[UIApplication sharedApplication] delegate];
+    [delegate.tabView performSegueWithIdentifier:@"hunt_segue" sender:self];
+}
+
 @end

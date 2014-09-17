@@ -85,7 +85,7 @@ AKSegmentedControl * segmentedControl;
     
     // [segmentedControl setDelegate:self];
     
-    segmentedControl.queueViewController=self;
+    segmentedControl.baseViewController=self;
     [self.view addSubview:segmentedControl];
     
     self.view.layer.backgroundColor = [UIColor grayColor].CGColor;

@@ -121,5 +121,10 @@
 	[HUD showWhileExecuting:@selector(myTask) onTarget:self withObject:nil animated:YES];
 }
 
+-(void) freashTableView
+{
+    NSLog(@"tiankang");
+}
+
 
 @end

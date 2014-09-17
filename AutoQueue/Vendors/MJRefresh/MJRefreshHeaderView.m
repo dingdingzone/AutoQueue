@@ -10,6 +10,9 @@
 #import "MJRefreshHeaderView.h"
 #import "UIView+Extension.h"
 #import "UIScrollView+Extension.h"
+#define MJTOPPLACE 30
+#define MJFINISHPLACE 30
+
 
 @interface MJRefreshHeaderView()
 // 最后的更新时间
@@ -182,7 +185,7 @@
                 self.lastUpdateTime = [NSDate date];
                 
                 [UIView animateWithDuration:MJRefreshSlowAnimationDuration animations:^{
-                    self.scrollView.contentInsetTop = self.scrollViewOriginalInset.top;
+                    self.scrollView.contentInsetTop = self.scrollViewOriginalInset.top - MJFINISHPLACE;
                 }];
             } else {
                 // 执行动画
@@ -212,7 +215,7 @@
             // 执行动画
             [UIView animateWithDuration:MJRefreshFastAnimationDuration animations:^{
                 // 1.增加滚动区域
-                CGFloat top = self.scrollViewOriginalInset.top + self.height;
+                CGFloat top = self.scrollViewOriginalInset.top + self.height - MJTOPPLACE;
                 self.scrollView.contentInsetTop = top;
                 
                 // 2.设置滚动位置

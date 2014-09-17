@@ -104,6 +104,7 @@ UIViewController * topView ;
     [backBtn setBackgroundImage:[UIImage imageNamed:@"left_arrow_gray.png" ] forState:UIControlStateNormal];
     backBtn.tag=1;
     backBtn.hidden=YES;
+    
     [self.navigationController.navigationBar addSubview: backBtn];
     
     

@@ -22,4 +22,6 @@
 
 +(float)getScrollViewHeight:(UIView *)view;
 
++(void)setNaviLeftTitle:(NSString *)title color:(NSString *)colorStr obj:(UIViewController *)obj;
+
 @end
